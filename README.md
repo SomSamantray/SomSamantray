@@ -16,6 +16,7 @@ Tinkering with AI and building skills and CLIs!
 
 ## Opensource Contributions:
 
+- [loopx](https://github.com/huangruiteng/loopx) ![stars](https://img.shields.io/github/stars/huangruiteng/loopx?style=flat&label=stars&color=yellow) - Fixed [#2801](https://github.com/huangruiteng/loopx/pull/2801): repeated `/loopx` calls picked a random agent each time instead of remembering which one a conversation was already using
 - [Printing Press Library - Parallel.ai CLI](https://github.com/mvanhorn/printing-press-library/tree/main/cli-skills) ![stars](https://img.shields.io/github/stars/mvanhorn/printing-press-library?style=flat&label=stars&color=yellow) - Added agent-native Parallel web research with a local SQLite memory
 - [Printing Press Library - v0 CLI](https://github.com/mvanhorn/printing-press-library/pull/1657) ![stars](https://img.shields.io/github/stars/mvanhorn/printing-press-library?style=flat&label=stars&color=yellow) - Added a terminal CLI for Vercel's v0: generate/stream app builds, sync history offline, and track AI credit spend across models
 - [Printing Press Library - NotebookLM CLI](https://github.com/mvanhorn/printing-press-library/pull/1562) ![stars](https://img.shields.io/github/stars/mvanhorn/printing-press-library?style=flat&label=stars&color=yellow) - Added a terminal CLI for Google's NotebookLM: manage notebooks, chat with sources, generate Studio artifacts, and search offline
