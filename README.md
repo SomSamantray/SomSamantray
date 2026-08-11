@@ -16,6 +16,7 @@ Tinkering with AI and building skills and CLIs!
 
 ## Opensource Contributions:
 
+- [openstreetmap-website](https://github.com/openstreetmap/openstreetmap-website) ![stars](https://img.shields.io/github/stars/openstreetmap/openstreetmap-website?style=flat&label=stars&color=yellow) - Fixed [#7297](https://github.com/openstreetmap/openstreetmap-website/pull/7297): future-tense block-expiry text ("in 3 days") bypassed the app's own translation file and fell back to an English-only default
 - [loopx](https://github.com/huangruiteng/loopx) ![stars](https://img.shields.io/github/stars/huangruiteng/loopx?style=flat&label=stars&color=yellow) - Fixed [#2801](https://github.com/huangruiteng/loopx/pull/2801): repeated `/loopx` calls picked a random agent each time instead of remembering which one a conversation was already using
 - [Printing Press Library - Weaviate CLI](https://github.com/mvanhorn/printing-press-library/tree/main/cli-skills) ![stars](https://img.shields.io/github/stars/mvanhorn/printing-press-library?style=flat&label=stars&color=yellow) - Added Agent native Wevaiate Vector Database CLI with Get/Store/Shard/Search and other operations 
 - [Printing Press Library - Parallel.ai CLI](https://github.com/mvanhorn/printing-press-library/tree/main/cli-skills) ![stars](https://img.shields.io/github/stars/mvanhorn/printing-press-library?style=flat&label=stars&color=yellow) - Added agent-native Parallel web research with a local SQLite memory
