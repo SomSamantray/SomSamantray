@@ -17,6 +17,7 @@ Tinkering with AI and building skills
 ## Opensource Contributions:
 
 ### [Printing Press Library](https://github.com/mvanhorn/printing-press-library) ![stars](https://img.shields.io/github/stars/mvanhorn/printing-press-library?style=flat&label=stars&color=yellow)
+- [Screener CLI](https://github.com/mvanhorn/printing-press-library/pull/1715) - Indian stock market fundamental analysis, screening, and market pulse, with company compare, quarterly trend detection, screen overlap/ranking, and insider buy/sell flow tracking
 - [Pinecone CLI](https://github.com/mvanhorn/printing-press-library/pull/1710) - Every Pinecone API feature, plus local sync, snapshot history, and text-first search no other Pinecone tool has
 - [Browserbase CLI](https://github.com/mvanhorn/printing-press-library/pull/1711) - Every Browserbase cloud feature, plus session lifecycle control, local history, and usage analytics no other tool has
 - [Algolia CLI](https://github.com/mvanhorn/printing-press-library/pull/1712) - Manages indices, records, search, rules, synonyms, API keys, and settings from the terminal, with a local SQLite mirror, cross-index search, settings diffing, and relevance regression checks the official CLI can't offer
