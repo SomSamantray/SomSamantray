@@ -43,6 +43,9 @@ Tinkering with AI and building skills
 - [#1292](https://github.com/EveryInc/compound-engineering-plugin/pull/1292) - On Windows, background AI workers could quietly launch on the wrong bash (WSL instead of Git Bash) and skip work without any error
 - [#1291](https://github.com/EveryInc/compound-engineering-plugin/pull/1291) - Renamed a confusing internal flag (`mode:headless` → `mode:non-interactive`) across skills, keeping the old name working temporarily so nothing breaks
 
+### [plano](https://github.com/katanemo/plano) ![stars](https://img.shields.io/github/stars/katanemo/plano?style=flat&label=stars&color=yellow)
+- Fixed [#1018](https://github.com/katanemo/plano/pull/1018): fast, short streaming responses could crash the LLM gateway worker with a divide-by-zero error while recording throughput metrics, taking down other requests sharing that worker
+
 ### [openstreetmap-website](https://github.com/openstreetmap/openstreetmap-website) ![stars](https://img.shields.io/github/stars/openstreetmap/openstreetmap-website?style=flat&label=stars&color=yellow)
 - Fixed [#7297](https://github.com/openstreetmap/openstreetmap-website/pull/7297): future-tense block-expiry text ("in 3 days") bypassed the app's own translation file and fell back to an English-only default
 
@@ -63,4 +66,4 @@ Tinkering with AI and building skills
 
 ### [gstack](https://github.com/garrytan/gstack) ![stars](https://img.shields.io/github/stars/garrytan/gstack?style=flat&label=stars&color=yellow)
 - Fixed [#2409](https://github.com/garrytan/gstack/pull/2409): setup docs told agents to run two memory-sync scripts as bare commands, which fail with "No such file or directory" since they're plain `.ts` files with no bin alias — corrected to the proper `bun run` invocation
-- Audited and help fix [#2409](https://github.com/garrytan/gstack/pull/2409): setup docs told agents to run two memory-sync scripts as bare commands, which fail with "No such file or directory" since they're plain `.ts` files with no bin alias — corrected to the proper `bun run` invocation (absorbed into main via [#2604](https://github.com/garrytan/gstack/pull/2604), credited)
+- Audited and help fix [#2409](https://github.com/garrytan/gstack/pull/2409): setup docs told agents to run two memory-sync scripts as bare commands, which fail with "No such file or directory" since they're plain `.ts` files with no bin alias — corrected to the proper `bun run` invocation
