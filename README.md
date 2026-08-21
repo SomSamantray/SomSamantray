@@ -70,3 +70,4 @@ Tinkering with AI and building skills
 
 ### [OpenMausBot](https://github.com/milind-soni/OpenMausBot) ![stars](https://img.shields.io/github/stars/milind-soni/OpenMausBot?style=flat&label=stars&color=yellow)
 - Fixed [#230](https://github.com/milind-soni/OpenMausBot/pull/230): two permission requests arriving with the same ID could silently clobber each other, leaving one request permanently stuck with no way to answer it — now the second one is rejected outright instead of overwriting the first
+- Fixed [#230](https://github.com/milind-soni/OpenMausBot/pull/230): two permission/question prompts arriving with the same id could let the second silently overwrite the first in the broker's shared queue, permanently orphaning one of the two on-screen request cards — now the colliding one is rejected outright before it can clobber the original
