@@ -13,6 +13,7 @@ Tinkering with AI and building skills
 - [airesearch](https://github.com/SomSamantray/airesearch) ![stars](https://img.shields.io/github/stars/SomSamantray/airesearch?style=flat&label=stars&color=yellow) - Claude Code/Codex research skill that runs a deterministic engine (not the LLM) to pull evidence-led findings across X, Reddit, arXiv, GitHub, HN, and YouTube.
 - [Claude-Dashboard](https://github.com/SomSamantray/Claude-Dashboard) ![stars](https://img.shields.io/github/stars/SomSamantray/Claude-Dashboard?style=flat&label=stars&color=yellow) - Local analytics dashboard for Claude Code usage — tokens, costs, sessions, heatmaps.
 - [Claude-Code-Token-Limit](https://github.com/SomSamantray/Claude-Code-Token-Limit) ![stars](https://img.shields.io/github/stars/SomSamantray/Claude-Code-Token-Limit?style=flat&label=stars&color=yellow) - Claude Code plugin that shows context window %, turns remaining, and daily/weekly token budgets after every response.
+- [iHatePDF CLI](https://github.com/mvanhorn/printing-press-library/pull/1785) - Local-first PDF CLI: privacy scanning, hashing/fingerprinting, merge/split/rotate/encrypt, text extraction, and a local SQLite catalog for offline search — no uploads, unlike the source website
 
 ## Opensource Contributions:
 
