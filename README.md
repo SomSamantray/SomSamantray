@@ -8,6 +8,7 @@ Tinkering with AI and building skills
 
 ## Building:
 
+- [mac-storage-doctor](https://github.com/SomSamantray/mac-storage-doctor) ![stars](https://img.shields.io/github/stars/SomSamantray/mac-storage-doctor?style=flat&label=stars&color=yellow) - A Claude skill that audits a Mac's disk usage — orphaned app data, dev-tool caches, git repo bloat, rarely-used apps — and reports exactly what's safe to delete, with nothing ever removed without explicit per-item confirmation
 - [dwnld-any](https://github.com/SomSamantray/dwnld-any) ![stars](https://img.shields.io/github/stars/SomSamantray/dwnld-any?style=flat&label=stars&color=yellow) - Agent skill + local CLI for downloading videos from 8 platforms (YouTube, Instagram, X, Reddit, and more) via yt-dlp, no cloud deploy.
 - [tidbits](https://github.com/SomSamantray/tidbits) ![stars](https://img.shields.io/github/stars/SomSamantray/tidbits?style=flat&label=stars&color=yellow) - Bite-sized trivia website built with Next.js 16 and Turso/libSQL.
 - [airesearch](https://github.com/SomSamantray/airesearch) ![stars](https://img.shields.io/github/stars/SomSamantray/airesearch?style=flat&label=stars&color=yellow) - Claude Code/Codex research skill that runs a deterministic engine (not the LLM) to pull evidence-led findings across X, Reddit, arXiv, GitHub, HN, and YouTube.
