@@ -30,6 +30,7 @@ Tinkering with AI and building skills
 - [v0 CLI](https://github.com/mvanhorn/printing-press-library/pull/1657) - Generate/stream app builds, sync history offline, and track AI credit spend across models
 - [NotebookLM CLI](https://github.com/mvanhorn/printing-press-library/pull/1562) - Manage notebooks, chat with sources, generate Studio artifacts, and search offline
 - [iHatePDF CLI](https://github.com/mvanhorn/printing-press-library/pull/1785) - Local-first PDF CLI: privacy scanning, hashing/fingerprinting, merge/split/rotate/encrypt, text extraction, and a local SQLite catalog for offline search — no uploads, unlike the source website
+- [is-agentic (Vercel) CLI](https://github.com/mvanhorn/printing-press-library/pull/1810) - Turns Is Agentic readiness reports into durable, scriptable evidence, with local audit history, score/finding diffing, CI-gating policy checks, portfolio-wide scoring across a fleet of sites, issue lifecycle tracking, and portable evidence packaging
 
 ### [CLI Printing Press](https://github.com/mvanhorn/cli-printing-press) ![stars](https://img.shields.io/github/stars/mvanhorn/cli-printing-press?style=flat&label=stars&color=yellow)
 - [#4049](https://github.com/mvanhorn/cli-printing-press/pull/4049) - A passing local check still let an unrewritten module path slip into a packaged CLI; added a module-path check and surfaced the review-gate rules agents were missing
