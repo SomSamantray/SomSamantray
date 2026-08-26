@@ -50,6 +50,9 @@ Tinkering with AI and building skills
 ### [Actual Budget](https://github.com/actualbudget/actual) ![stars](https://img.shields.io/github/stars/actualbudget/actual?style=flat&label=stars&color=yellow)
 - Fixed [#8719](https://github.com/actualbudget/actual/pull/8719): merging two payees left "one of"/"not one of" rule conditions with the merged payee listed twice, so deleting the visible duplicate in the UI silently deleted both underlying entries and dropped the payee from the rule entirely
 
+### [apify-mcp-server](https://github.com/apify/apify-mcp-server) ![stars](https://img.shields.io/github/stars/apify/apify-mcp-server?style=flat&label=stars&color=yellow)
+- Fixed [#1315](https://github.com/apify/apify-mcp-server/pull/1315): running the conformance test suite locally leaked the raw `APIFY_TOKEN` to the terminal in plain text — CI masked it, but the local script had no equivalent redaction
+
 ### [gstack](https://github.com/garrytan/gstack) ![stars](https://img.shields.io/github/stars/garrytan/gstack?style=flat&label=stars&color=yellow)
 - Fixed [#2409](https://github.com/garrytan/gstack/pull/2409): setup docs told agents to run two memory-sync scripts as bare commands, which fail with "No such file or directory" since they're plain `.ts` files with no bin alias — corrected to the proper `bun run` invocation
 - Audited and help fix [#2409](https://github.com/garrytan/gstack/pull/2409): setup docs told agents to run two memory-sync scripts as bare commands, which fail with "No such file or directory" since they're plain `.ts` files with no bin alias — corrected to the proper `bun run` invocation
