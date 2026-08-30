@@ -63,6 +63,9 @@ Tinkering with AI and building skills
 ### [apify-mcp-server](https://github.com/apify/apify-mcp-server) ![stars](https://img.shields.io/github/stars/apify/apify-mcp-server?style=flat&label=stars&color=yellow)
 - Fixed [#1315](https://github.com/apify/apify-mcp-server/pull/1315): running the conformance test suite locally leaked the raw `APIFY_TOKEN` to the terminal in plain text — CI masked it, but the local script had no equivalent redaction
 
+### [caveman](https://github.com/JuliusBrussee/caveman) ![stars](https://img.shields.io/github/stars/JuliusBrussee/caveman?style=flat&label=stars&color=yellow)
+- Fixed [#900](https://github.com/JuliusBrussee/caveman/pull/900): `/caveman-stats` and the statusline showed no cost-savings figure at all on any Claude 5 session, because the pricing table only recognized Claude 3/4 model names
+
 ### [gstack](https://github.com/garrytan/gstack) ![stars](https://img.shields.io/github/stars/garrytan/gstack?style=flat&label=stars&color=yellow)
 - Fixed [#2409](https://github.com/garrytan/gstack/pull/2409): setup docs told agents to run two memory-sync scripts as bare commands, which fail with "No such file or directory" since they're plain `.ts` files with no bin alias — corrected to the proper `bun run` invocation
 - Fixed [#2615](https://github.com/garrytan/gstack/pull/2615): a test meant to catch a missing gbrain install leaked the real system PATH, so it passed even when the bug was present on machines where gbrain is actually installed (e.g. Homebrew on Apple Silicon)
