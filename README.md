@@ -19,93 +19,67 @@ Tinkering with AI and building skills
 ## Opensource Contributions:
 
 ### [Printing Press Library](https://github.com/mvanhorn/printing-press-library) ![stars](https://img.shields.io/github/stars/mvanhorn/printing-press-library?style=flat&label=stars&color=yellow)
-- [Screener](https://github.com/mvanhorn/printing-press-library/pull/1715) - Indian stock market fundamental analysis, screening, and market pulse, with company compare, quarterly trend detection, screen overlap/ranking, and insider buy/sell flow tracking
-- [Pinecone](https://github.com/mvanhorn/printing-press-library/pull/1710) - Every Pinecone API feature, plus local sync, snapshot history, and text-first search no other Pinecone tool has
-- [Browserbase](https://github.com/mvanhorn/printing-press-library/pull/1711) - Every Browserbase cloud feature, plus session lifecycle control, local history, and usage analytics no other tool has
-- [Algolia](https://github.com/mvanhorn/printing-press-library/pull/1712) - Manages indices, records, search, rules, synonyms, API keys, and settings from the terminal, with a local SQLite mirror, cross-index search, settings diffing, and relevance regression checks the official CLI can't offer
-- [Sarvam](https://github.com/mvanhorn/printing-press-library/pull/1718) - Wraps chat, speech-to-text/text-to-speech, translation, transliteration, and document intelligence across 22+ Indian languages, with local history, offline search, and 8 novel commands
-- [Exa](https://github.com/mvanhorn/printing-press-library/pull/1682) - Search API (web search, content retrieval, cited answers, similarity) across 58 endpoints, with spend tracking, monitor diffing, and entity timeline reports
-- [Weaviate](https://github.com/mvanhorn/printing-press-library/tree/main/cli-skills) - Vector database CLI with Get/Store/Shard/Search and other operations
-- [Parallel](https://github.com/mvanhorn/printing-press-library/tree/main/cli-skills) - Web research with a local SQLite memory
-- [v0](https://github.com/mvanhorn/printing-press-library/pull/1657) - Generate/stream app builds, sync history offline, and track AI credit spend across models
-- [NotebookLM](https://github.com/mvanhorn/printing-press-library/pull/1562) - Manage notebooks, chat with sources, generate Studio artifacts, and search offline
-- [iHatePDF](https://github.com/mvanhorn/printing-press-library/pull/1785) - Local-first PDF CLI: privacy scanning, hashing/fingerprinting, merge/split/rotate/encrypt, text extraction, and a local SQLite catalog for offline search — no uploads, unlike the source website
-- [is-agentic](https://github.com/mvanhorn/printing-press-library/pull/1810) - Turns Is Agentic readiness reports into durable, scriptable evidence, with local audit history, score/finding diffing, CI-gating policy checks, portfolio-wide scoring across a fleet of sites, issue lifecycle tracking, and portable evidence packaging
-- [QuickCommerce](https://github.com/mvanhorn/printing-press-library/pull/1835) - Compares live Indian product prices, stock, and delivery ETAs across platforms, with a local SQLite mirror for price-history tracking, field-level diffing, fastest-delivery ranking, and per-unit price comparisons
-- [Keenable](https://github.com/mvanhorn/printing-press-library/pull/1832) - Reproducible web research with citations, backed by a local evidence trail: immutable search/fetch snapshots, run replay with change detection, source-linked citation export, and offline local search over saved results
-- [AgentMail](https://github.com/mvanhorn/printing-press-library/pull/1834) - AgentMail operations with local memory, safe sends, and fleet-wide insight: unresolved-conversation triage across inboxes, pre-send risk checks (recipient/attachment/schedule/duplicate/idempotency), thread handoff rollups, and fleet-wide health/delivery reconciliation
-- [Flighty](https://github.com/mvanhorn/printing-press-library/pull/1847) - Live airport intelligence CLI scraped straight from Flighty's public airport map (no login/API key), adding network-wide rankings, cross-airport airline/route comparisons, and change diffs that the website itself can't show
-- [RapidAPI](https://github.com/mvanhorn/printing-press-library/pull/1850) - Full CLI for the RapidAPI Hub marketplace (79k+ APIs) — search, categories, collections, account/subscription management, and offline sync/export — wrapping the hub's own GraphQL gateway with a Chrome-fingerprint transport to get past its bot gate
-- [mcpmarket](https://github.com/mvanhorn/printing-press-library/pull/1843) - CLI for the 45,000+ server MCP Market catalog (no official CLI existed) — adds trending deltas, snapshot diffing, author portfolios, and time-travel leaderboards by tracking history locally, which the live site itself can't show
-- [Groq](https://github.com/mvanhorn/printing-press-library/pull/1854) - Full Groq Cloud inference CLI, plus a local ledger tracking token cost and rate-limit budget, multi-model prompt comparison (latency/cost/tokens-per-sec), and batch-file validation before upload
+- [Screener](https://github.com/mvanhorn/printing-press-library/pull/1715) — Indian stock screening & fundamental analysis, [Pinecone](https://github.com/mvanhorn/printing-press-library/pull/1710) — full API + local sync & snapshot history, [Browserbase](https://github.com/mvanhorn/printing-press-library/pull/1711) — session lifecycle control + usage analytics, [Algolia](https://github.com/mvanhorn/printing-press-library/pull/1712) — indices/search/rules with local SQLite mirror & diffing, [Sarvam](https://github.com/mvanhorn/printing-press-library/pull/1718) — chat/STT/TTS/translation across 22+ Indian languages, [Exa](https://github.com/mvanhorn/printing-press-library/pull/1682) — search API across 58 endpoints with spend tracking, [Weaviate](https://github.com/mvanhorn/printing-press-library/tree/main/cli-skills) — vector DB Get/Store/Shard/Search, [Parallel](https://github.com/mvanhorn/printing-press-library/tree/main/cli-skills) — web research with local SQLite memory, [v0](https://github.com/mvanhorn/printing-press-library/pull/1657) — generate/stream app builds + credit spend tracking, [NotebookLM](https://github.com/mvanhorn/printing-press-library/pull/1562) — notebooks, chat, Studio artifacts, offline search, [iHatePDF](https://github.com/mvanhorn/printing-press-library/pull/1785) — local-first PDF ops with no uploads, [is-agentic](https://github.com/mvanhorn/printing-press-library/pull/1810) — readiness reports as durable evidence with CI gating, [QuickCommerce](https://github.com/mvanhorn/printing-press-library/pull/1835) — live Indian price/delivery comparison with history tracking, [Keenable](https://github.com/mvanhorn/printing-press-library/pull/1832) — reproducible research with immutable evidence trail, [AgentMail](https://github.com/mvanhorn/printing-press-library/pull/1834) — inbox triage + pre-send risk checks, [Flighty](https://github.com/mvanhorn/printing-press-library/pull/1847) — live airport intel with network-wide rankings, [RapidAPI](https://github.com/mvanhorn/printing-press-library/pull/1850) — full Hub marketplace CLI with offline sync/export, [mcpmarket](https://github.com/mvanhorn/printing-press-library/pull/1843) — MCP catalog with trending deltas & snapshot diffing, [Groq](https://github.com/mvanhorn/printing-press-library/pull/1854) — full inference CLI with cost ledger & model comparison
 
 ### [CLI Printing Press](https://github.com/mvanhorn/cli-printing-press) ![stars](https://img.shields.io/github/stars/mvanhorn/cli-printing-press?style=flat&label=stars&color=yellow)
-- [#4049](https://github.com/mvanhorn/cli-printing-press/pull/4049) - A passing local check still let an unrewritten module path slip into a packaged CLI; added a module-path check and surfaced the review-gate rules agents were missing
-- [#3855](https://github.com/mvanhorn/cli-printing-press/pull/3855) - Windows credential tests failed because sandbox test folders had overly loose permissions, now locked to owner-only
-- [#3856](https://github.com/mvanhorn/cli-printing-press/pull/3856) - A Windows test failure showed the wrong folder path, making the real problem hard to track down
-- [#3857](https://github.com/mvanhorn/cli-printing-press/pull/3857) - Generated export/sync tools could report "success" even when saving the file actually failed
+- [go.mod module-path validation gap](https://github.com/mvanhorn/cli-printing-press/pull/4049), [Windows sandbox permissions lockdown](https://github.com/mvanhorn/cli-printing-press/pull/3855), [misleading Windows test failure path](https://github.com/mvanhorn/cli-printing-press/pull/3856), [export/sync false-success reporting](https://github.com/mvanhorn/cli-printing-press/pull/3857)
 
 ### [Last30Days Skill](https://github.com/mvanhorn/last30days-skill) ![stars](https://img.shields.io/github/stars/mvanhorn/last30days-skill?style=flat&label=stars&color=yellow)
-- [#911](https://github.com/mvanhorn/last30days-skill/pull/911) - Windows setup silently failed to auto-install `npx` because the resolved path wasn't passed to the install command
-- [#912](https://github.com/mvanhorn/last30days-skill/pull/912) - Four bugs: `--web-backend=keyless` flag was rejected by the CLI, arXiv searches returned nothing for normal phrases, source links showed as plain text instead of clickable links, and Truth Social requests were blocked by Cloudflare
-- [#955](https://github.com/mvanhorn/last30days-skill/pull/955) - GitHub searches for a topic could silently return zero results because the tool's own date filter clashed with search filters already baked into the query
+- [Windows npx auto-install path](https://github.com/mvanhorn/last30days-skill/pull/911), [keyless backend, arXiv, link-render & Truth Social bugs](https://github.com/mvanhorn/last30days-skill/pull/912), [GitHub search date-filter clash](https://github.com/mvanhorn/last30days-skill/pull/955)
 
 ### [Node.js](https://github.com/nodejs/node) ![stars](https://img.shields.io/github/stars/nodejs/node?style=flat&label=stars&color=yellow)
-- [#65243](https://github.com/nodejs/node/pull/65243) - Clarified the `process` signal docs: `SIGTERM`/`SIGINT` listeners run asynchronously, so an otherwise-idle process can exit before the listener actually runs — a gap that had confused users since 2019
+- [async signal-listener docs clarification](https://github.com/nodejs/node/pull/65243)
 
 ### [Compound Engineering Plugin](https://github.com/EveryInc/compound-engineering-plugin) ![stars](https://img.shields.io/github/stars/EveryInc/compound-engineering-plugin?style=flat&label=stars&color=yellow)
-- [#1292](https://github.com/EveryInc/compound-engineering-plugin/pull/1292) - On Windows, background AI workers could quietly launch on the wrong bash (WSL instead of Git Bash) and skip work without any error
-- [#1291](https://github.com/EveryInc/compound-engineering-plugin/pull/1291) - Renamed a confusing internal flag (`mode:headless` → `mode:non-interactive`) across skills, keeping the old name working temporarily so nothing breaks
+- [Windows Git Bash vs WSL misrouting](https://github.com/EveryInc/compound-engineering-plugin/pull/1292), [mode:headless → mode:non-interactive rename](https://github.com/EveryInc/compound-engineering-plugin/pull/1291)
 
 ### [Actual Budget](https://github.com/actualbudget/actual) ![stars](https://img.shields.io/github/stars/actualbudget/actual?style=flat&label=stars&color=yellow)
-- Fixed [#8719](https://github.com/actualbudget/actual/pull/8719): merging two payees left "one of"/"not one of" rule conditions with the merged payee listed twice, so deleting the visible duplicate in the UI silently deleted both underlying entries and dropped the payee from the rule entirely
+- [merged-payee rule condition dedup](https://github.com/actualbudget/actual/pull/8719)
 
 ### [rtk](https://github.com/rtk-ai/rtk) ![stars](https://img.shields.io/github/stars/rtk-ai/rtk?style=flat&label=stars&color=yellow)
-- Fixed [#3560](https://github.com/rtk-ai/rtk/pull/3560): three output-compaction filters (spring-boot, liquibase, ssh) had regexes so broad they silently mangled unrelated commands — e.g. any `java -jar` file got Spring-only filtering, `rm -rf /opt/liquibase` triggered liquibase compaction, and `ssh-keygen`/`ssh-add` got caught by a plain `ssh` filter
+- [spring-boot/liquibase/ssh filter over-matching](https://github.com/rtk-ai/rtk/pull/3560)
 
 ### [apify-mcp-server](https://github.com/apify/apify-mcp-server) ![stars](https://img.shields.io/github/stars/apify/apify-mcp-server?style=flat&label=stars&color=yellow)
-- Fixed [#1315](https://github.com/apify/apify-mcp-server/pull/1315): running the conformance test suite locally leaked the raw `APIFY_TOKEN` to the terminal in plain text — CI masked it, but the local script had no equivalent redaction
+- [local APIFY_TOKEN leak in test output](https://github.com/apify/apify-mcp-server/pull/1315)
 
 ### [caveman](https://github.com/JuliusBrussee/caveman) ![stars](https://img.shields.io/github/stars/JuliusBrussee/caveman?style=flat&label=stars&color=yellow)
-- Fixed [#900](https://github.com/JuliusBrussee/caveman/pull/900): `/caveman-stats` and the statusline showed no cost-savings figure at all on any Claude 5 session, because the pricing table only recognized Claude 3/4 model names
+- [missing Claude 5 pricing rows](https://github.com/JuliusBrussee/caveman/pull/900)
 
 ### [gstack](https://github.com/garrytan/gstack) ![stars](https://img.shields.io/github/stars/garrytan/gstack?style=flat&label=stars&color=yellow)
-- Fixed [#2409](https://github.com/garrytan/gstack/pull/2409): setup docs told agents to run two memory-sync scripts as bare commands, which fail with "No such file or directory" since they're plain `.ts` files with no bin alias — corrected to the proper `bun run` invocation
-- Fixed [#2615](https://github.com/garrytan/gstack/pull/2615): a test meant to catch a missing gbrain install leaked the real system PATH, so it passed even when the bug was present on machines where gbrain is actually installed (e.g. Homebrew on Apple Silicon)
+- [bare bash script invocation paths](https://github.com/garrytan/gstack/pull/2409), [hermetic gbrain-missing PATH test](https://github.com/garrytan/gstack/pull/2615) (open PR)
 
-### [rueidis](https://github.com/redis/rueidis) ![stars](https://img.shields.io/github/stars/redis/rueidis?style=flat&label=stars&color=yellow) 
-- Fixed [#1023](https://github.com/redis/rueidis/pull/1023): `rueidiscompatmock` panicked with "unexpected call to DoCache" whenever a test tried to mock a client-side-cached `Cache(ttl)` call, instead of routing it through the existing expectation queue.
+### [rueidis](https://github.com/redis/rueidis) ![stars](https://img.shields.io/github/stars/redis/rueidis?style=flat&label=stars&color=yellow)
+- [DoCache mock panic](https://github.com/redis/rueidis/pull/1023)
 
 ### [tslearn](https://github.com/tslearn-team/tslearn) ![stars](https://img.shields.io/github/stars/tslearn-team/tslearn?style=flat&label=stars&color=yellow)
-- Fixed [#703](https://github.com/tslearn-team/tslearn/pull/703) - Added `silhouette_samples()` for time-series clustering, giving per-series silhouette scores (for outlier detection and silhouette plots) with DTW/soft-DTW metrics — previously only the single aggregate score was available, forcing a manual workaround
+- [silhouette_samples() for time-series clustering](https://github.com/tslearn-team/tslearn/pull/703)
 
 ### [OpenMAIC](https://github.com/THU-MAIC/OpenMAIC) ![stars](https://img.shields.io/github/stars/THU-MAIC/OpenMAIC?style=flat&label=stars&color=yellow)
-- Fixed [#1144](https://github.com/THU-MAIC/OpenMAIC/pull/1144) - Added a "Download Script" feature letting teachers export a classroom's narration text as Markdown or a real Word `.docx` for lesson prep, localized across all 12 supported languages
+- [narration script export to Markdown/DOCX](https://github.com/THU-MAIC/OpenMAIC/pull/1144)
 
 ### [plano](https://github.com/katanemo/plano) ![stars](https://img.shields.io/github/stars/katanemo/plano?style=flat&label=stars&color=yellow)
-- Fixed [#1018](https://github.com/katanemo/plano/pull/1018): fast, short streaming responses could crash the LLM gateway worker with a divide-by-zero error while recording throughput metrics, taking down other requests sharing that worker
+- [divide-by-zero in streaming throughput metrics](https://github.com/katanemo/plano/pull/1018)
 
 ### [openstreetmap-website](https://github.com/openstreetmap/openstreetmap-website) ![stars](https://img.shields.io/github/stars/openstreetmap/openstreetmap-website?style=flat&label=stars&color=yellow)
-- Fixed [#7297](https://github.com/openstreetmap/openstreetmap-website/pull/7297): future-tense block-expiry text ("in 3 days") bypassed the app's own translation file and fell back to an English-only default
+- [untranslatable block-expiry text](https://github.com/openstreetmap/openstreetmap-website/pull/7297)
 
 ### [pypdf](https://github.com/py-pdf/pypdf) ![stars](https://img.shields.io/github/stars/py-pdf/pypdf?style=flat&label=stars&color=yellow)
-- Fixed [#3998](https://github.com/py-pdf/pypdf/pull/3998): PDF outline items created with `is_open=False` still showed expanded in PDF viewers, because the writer never actually marked them collapsed per the PDF spec
+- [is_open=False outline collapse](https://github.com/py-pdf/pypdf/pull/3998)
 
 ### [loopx](https://github.com/huangruiteng/loopx) ![stars](https://img.shields.io/github/stars/huangruiteng/loopx?style=flat&label=stars&color=yellow)
-- Fixed [#2801](https://github.com/huangruiteng/loopx/pull/2801): repeated `/loopx` calls picked a random agent each time instead of remembering which one a conversation was already using
+- [thread-to-agent identity persistence](https://github.com/huangruiteng/loopx/pull/2801)
 
 ### [AgentMemory](https://github.com/rohitg00/agentmemory) ![stars](https://img.shields.io/github/stars/rohitg00/agentmemory?style=flat&label=stars&color=yellow)
-- Fixed [#1132](https://github.com/rohitg00/agentmemory/pull/1132): deleting a memory could falsely say "deleted" when nothing was actually removed, and there was no way to delete a saved lesson at all — both now fixed
+- [honest memory_forget reporting + lesson delete path](https://github.com/rohitg00/agentmemory/pull/1132)
 
 ### [qm](https://github.com/yc-software/qm) ![stars](https://img.shields.io/github/stars/yc-software/qm?style=flat&label=stars&color=yellow)
-- Fixed [#149](https://github.com/yc-software/qm/pull/149): a brief database hiccup while waiting for a job to finish could crash the whole process instead of just timing out safely
+- [unhandled Postgres poll rejection crash](https://github.com/yc-software/qm/pull/149)
 
 ### [Buzz](https://github.com/block/buzz) ![stars](https://img.shields.io/github/stars/block/buzz?style=flat&label=stars&color=yellow)
-- Fixed [#4500](https://github.com/block/buzz/pull/4500): docs told users to import agent packs via a "zip file + Install Pack button" that doesn't exist anymore in the app, now corrected to match the real import flow
+- [stale persona-pack import docs](https://github.com/block/buzz/pull/4500)
 
 ### [planning-with-files](https://github.com/OthmanAdi/planning-with-files) ![stars](https://img.shields.io/github/stars/OthmanAdi/planning-with-files?style=flat&label=stars&color=yellow)
-- Audited [#216](https://github.com/OthmanAdi/planning-with-files/pull/216): found 5 duplicate language skills had silently drifted out of sync (missing bug fixes, missing features)
+- [language-skill duplication audit](https://github.com/OthmanAdi/planning-with-files/pull/216) (audit, not merged — credited)
 
 ### [OpenMausBot](https://github.com/milind-soni/OpenMausBot) ![stars](https://img.shields.io/github/stars/milind-soni/OpenMausBot?style=flat&label=stars&color=yellow)
-- Fixed [#230](https://github.com/milind-soni/OpenMausBot/pull/230): two permission requests arriving with the same ID could silently clobber each other, leaving one request permanently stuck with no way to answer it — now the second one is rejected outright instead of overwriting the first
-- Fixed [#234](https://github.com/milind-soni/OpenMausBot/pull/234): a test suite from #230 broke on Windows because four test cases accidentally shared the same truncated identifier, causing one test's leftover named pipe to block the next — renamed the IDs and added a check so this can't silently recur
+- [colliding permission ask-id overwrite](https://github.com/milind-soni/OpenMausBot/pull/230), [Windows pipe-name test collision](https://github.com/milind-soni/OpenMausBot/pull/234)
