@@ -60,6 +60,9 @@ Tinkering with AI and building skills
 - [#1292](https://github.com/EveryInc/compound-engineering-plugin/pull/1292) - On Windows, background AI workers could quietly launch on the wrong bash (WSL instead of Git Bash) and skip work without any error
 - [#1291](https://github.com/EveryInc/compound-engineering-plugin/pull/1291) - Renamed a confusing internal flag (`mode:headless` → `mode:non-interactive`) across skills, keeping the old name working temporarily so nothing breaks
 
+### [MemPalace/mempalace](https://github.com/MemPalace/mempalace) ![stars](https://img.shields.io/github/stars/MemPalace/mempalace?style=flat&label=stars&color=yellow)
+- [#2342](https://github.com/MemPalace/mempalace/pull/2342) - Pre-commit's Ruff hook could drift from the version pinned in `pyproject.toml` and CI, letting local checks silently pass or fail differently than CI; aligned all three sources and scoped version extraction to the Ruff hook block so unrelated hook bumps can't trip the check
+
 ### [Actual Budget](https://github.com/actualbudget/actual) ![stars](https://img.shields.io/github/stars/actualbudget/actual?style=flat&label=stars&color=yellow)
 - Fixed [#8719](https://github.com/actualbudget/actual/pull/8719): merging two payees left "one of"/"not one of" rule conditions with the merged payee listed twice, so deleting the visible duplicate in the UI silently deleted both underlying entries and dropped the payee from the rule entirely
 
