@@ -50,6 +50,9 @@ Tinkering with AI and building skills
 - [#912](https://github.com/mvanhorn/last30days-skill/pull/912) - Four bugs: `--web-backend=keyless` flag was rejected by the CLI, arXiv searches returned nothing for normal phrases, source links showed as plain text instead of clickable links, and Truth Social requests were blocked by Cloudflare
 - [#955](https://github.com/mvanhorn/last30days-skill/pull/955) - GitHub searches for a topic could silently return zero results because the tool's own date filter clashed with search filters already baked into the query
 
+### [pascalorg/editor](https://github.com/pascalorg/editor) ![stars](https://img.shields.io/github/stars/pascalorg/editor?style=flat&label=stars&color=yellow)
+- [#636](https://github.com/pascalorg/editor/pull/636) - `exportFloorplanPdf` wasn't exported from the package, blocking host apps from building their own floorplan-export UI outside the built-in Settings panel; also deduped a repeated export-scope check into one shared predicate with direct test coverage
+
 ### [Node.js](https://github.com/nodejs/node) ![stars](https://img.shields.io/github/stars/nodejs/node?style=flat&label=stars&color=yellow)
 - [#65243](https://github.com/nodejs/node/pull/65243) - Clarified the `process` signal docs: `SIGTERM`/`SIGINT` listeners run asynchronously, so an otherwise-idle process can exit before the listener actually runs — a gap that had confused users since 2019
 
