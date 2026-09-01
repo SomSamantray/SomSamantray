@@ -51,7 +51,8 @@ Tinkering with AI and building skills
 - [#911](https://github.com/mvanhorn/last30days-skill/pull/911) - Windows setup silently failed to auto-install `npx` because the resolved path wasn't passed to the install command
 - [#912](https://github.com/mvanhorn/last30days-skill/pull/912) - Four bugs: `--web-backend=keyless` flag was rejected by the CLI, arXiv searches returned nothing for normal phrases, source links showed as plain text instead of clickable links, and Truth Social requests were blocked by Cloudflare
 - [#955](https://github.com/mvanhorn/last30days-skill/pull/955) - GitHub searches for a topic could silently return zero results because the tool's own date filter clashed with search filters already baked into the query
-- [#1083](https://github.com/mvanhorn/last30days-skill/pull/1083) - Windows npx auto-install path, keyless backend, arXiv, link-render & Truth Social bugs, GitHub search date-filter clash, Reddit enrichment slots skipping high-comment threads - Co-authored-by credit
+- [#1083](https://github.com/mvanhorn/last30days-skill/pull/1083) - Reddit enrichment slots skipping high-comment threads
+- Fixed [#1072](https://github.com/mvanhorn/last30days-skill/pull/1072): the X-search subprocess was handed a full copy of the environment, so every unrelated API key or secret on the machine could leak to it if that vendored client were ever compromised — now it only receives an explicit allowlist of the variables it actually needs
 
 ### [pascalorg/editor](https://github.com/pascalorg/editor) ![stars](https://img.shields.io/github/stars/pascalorg/editor?style=flat&label=stars&color=yellow)
 - [#636](https://github.com/pascalorg/editor/pull/636) - `exportFloorplanPdf` wasn't exported from the package, blocking host apps from building their own floorplan-export UI outside the built-in Settings panel; also deduped a repeated export-scope check into one shared predicate with direct test coverage
