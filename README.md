@@ -119,3 +119,6 @@ Tinkering with AI and building skills
 ### [OpenMausBot](https://github.com/milind-soni/OpenMausBot) ![stars](https://img.shields.io/github/stars/milind-soni/OpenMausBot?style=flat&label=stars&color=yellow)
 - Fixed [#230](https://github.com/milind-soni/OpenMausBot/pull/230): two permission requests arriving with the same ID could silently clobber each other, leaving one request permanently stuck with no way to answer it — now the second one is rejected outright instead of overwriting the first
 - Fixed [#234](https://github.com/milind-soni/OpenMausBot/pull/234): a test suite from #230 broke on Windows because four test cases accidentally shared the same truncated identifier, causing one test's leftover named pipe to block the next — renamed the IDs and added a check.
+
+### [impeccable](https://github.com/pbakaus/impeccable) ![stars](https://img.shields.io/github/stars/pbakaus/impeccable?style=flat&label=stars&color=yellow)
+- Diagnosed [#551](https://github.com/pbakaus/impeccable/pull/551): `hooks reset` silently re-armed a disabled hook because it deleted the config but left provider manifests wired — fix credited by name in the merged follow-up ([#668](https://github.com/pbakaus/impeccable/pull/668))
