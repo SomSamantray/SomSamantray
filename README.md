@@ -44,6 +44,8 @@ Tinkering with AI and building skills
 - [#3855](https://github.com/mvanhorn/cli-printing-press/pull/3855) - Windows credential tests failed because sandbox test folders had overly loose permissions, now locked to owner-only
 - [#3856](https://github.com/mvanhorn/cli-printing-press/pull/3856) - A Windows test failure showed the wrong folder path, making the real problem hard to track down
 - [#3857](https://github.com/mvanhorn/cli-printing-press/pull/3857) - Generated export/sync tools could report "success" even when saving the file actually failed
+- [#1890](https://github.com/mvanhorn/printing-press-library/pull/1890) - Google Search Console CLI's `sitemaps-submit`/`get`/`delete` 404'd whenever a feedpath was an absolute URL, since the raw `https://` slashes split the REST path; now percent-encoded as a single path segment so it routes correctly
+- [#1893](https://github.com/mvanhorn/printing-press-library/pull/1893) - Movie Goat CLI's local/offline search silently returned zero results (exit 0) because the untyped search branch never assigned results, and separately crashed on FTS5-syntax queries like `Space: 1999`; both fixed with real FTS hits and per-token query sanitization
 
 ### [Last30Days Skill](https://github.com/mvanhorn/last30days-skill) ![stars](https://img.shields.io/github/stars/mvanhorn/last30days-skill?style=flat&label=stars&color=yellow)
 - [#911](https://github.com/mvanhorn/last30days-skill/pull/911) - Windows setup silently failed to auto-install `npx` because the resolved path wasn't passed to the install command
