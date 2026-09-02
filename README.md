@@ -116,6 +116,9 @@ Tinkering with AI and building skills
 ### [Buzz](https://github.com/block/buzz) ![stars](https://img.shields.io/github/stars/block/buzz?style=flat&label=stars&color=yellow)
 - Fixed [#4500](https://github.com/block/buzz/pull/4500): docs told users to import agent packs via a "zip file + Install Pack button" that doesn't exist anymore in the app, now corrected to match the real import flow
 
+### [tesseract-ocr/tesseract](https://github.com/tesseract-ocr/tesseract) ![stars](https://img.shields.io/github/stars/tesseract-ocr/tesseract?style=flat&label=stars&color=yellow)
+- [#4609](https://github.com/tesseract-ocr/tesseract/pull/4609) - `UNICHAR::UTF8ToUTF32` read one byte past a string ending in a truncated multibyte UTF-8 prefix — a real out-of-bounds read confirmed under AddressSanitizer; now clamps the step to the bytes actually remaining and returns empty on invalid input as documented
+
 ### [planning-with-files](https://github.com/OthmanAdi/planning-with-files) ![stars](https://img.shields.io/github/stars/OthmanAdi/planning-with-files?style=flat&label=stars&color=yellow)
 - Audited [#216](https://github.com/OthmanAdi/planning-with-files/pull/216): found 5 duplicate language skills had silently drifted out of sync (missing bug fixes, missing features)
 
