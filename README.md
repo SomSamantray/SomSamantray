@@ -76,6 +76,9 @@ Tinkering with AI and building skills
 ### [rtk](https://github.com/rtk-ai/rtk) ![stars](https://img.shields.io/github/stars/rtk-ai/rtk?style=flat&label=stars&color=yellow)
 - Fixed [#3560](https://github.com/rtk-ai/rtk/pull/3560): three output-compaction filters (spring-boot, liquibase, ssh) had regexes so broad they silently mangled unrelated commands — e.g. any `java -jar` file got Spring-only filtering, `rm -rf /opt/liquibase` triggered liquibase compaction, and `ssh-keygen`/`ssh-add` got caught by a plain `ssh` filter
 
+### [Needle](https://github.com/cactus-compute/needle) ![stars](https://img.shields.io/github/stars/cactus-compute/needle?style=flat&label=stars&color=yellow)
+- [#98](https://github.com/cactus-compute/needle/pull/98) - Made the setup script auto-detect and prefer `uv` (10-100x faster than pip) when available, falling back to pip only when it isn't installed
+
 ### [apify-mcp-server](https://github.com/apify/apify-mcp-server) ![stars](https://img.shields.io/github/stars/apify/apify-mcp-server?style=flat&label=stars&color=yellow)
 - Fixed [#1315](https://github.com/apify/apify-mcp-server/pull/1315): running the conformance test suite locally leaked the raw `APIFY_TOKEN` to the terminal in plain text — CI masked it, but the local script had no equivalent redaction
 
