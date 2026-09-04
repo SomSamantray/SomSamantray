@@ -54,6 +54,9 @@ Tinkering with AI and building skills
 - [#1083](https://github.com/mvanhorn/last30days-skill/pull/1083) - Reddit enrichment slots skipping high-comment threads
 - Fixed [#1072](https://github.com/mvanhorn/last30days-skill/pull/1072): the X-search subprocess was handed a full copy of the environment, so every unrelated API key or secret on the machine could leak to it if that vendored client were ever compromised — now it only receives an explicit allowlist of the variables it actually needs
 
+### [hermes-agent](https://github.com/NousResearch/hermes-agent) ![stars](https://img.shields.io/github/stars/NousResearch/hermes-agent?style=flat&label=stars&color=yellow)
+- Diagnosed and fixed [#92242](https://github.com/NousResearch/hermes-agent/pull/92242): large streamed tool calls (big `write_file`/`apply_patch` payloads) got quadratically slower to assemble as more chunks arrived, credited by the maintainer in the merged salvage ([#101906](https://github.com/NousResearch/hermes-agent/pull/101906))
+
 ### [pascalorg/editor](https://github.com/pascalorg/editor) ![stars](https://img.shields.io/github/stars/pascalorg/editor?style=flat&label=stars&color=yellow)
 - [#636](https://github.com/pascalorg/editor/pull/636) - `exportFloorplanPdf` wasn't exported from the package, blocking host apps from building their own floorplan-export UI outside the built-in Settings panel; also deduped a repeated export-scope check into one shared predicate with direct test coverage
 
@@ -78,6 +81,12 @@ Tinkering with AI and building skills
 
 ### [Needle](https://github.com/cactus-compute/needle) ![stars](https://img.shields.io/github/stars/cactus-compute/needle?style=flat&label=stars&color=yellow)
 - [#98](https://github.com/cactus-compute/needle/pull/98) - Made the setup script auto-detect and prefer `uv` (10-100x faster than pip) when available, falling back to pip only when it isn't installed
+
+### [quickjs-ng](https://github.com/quickjs-ng/quickjs) ![stars](https://img.shields.io/github/stars/quickjs-ng/quickjs?style=flat&label=stars&color=yellow)
+- Fixed [#1657](https://github.com/quickjs-ng/quickjs/pull/1657): `quickjs.c` failed to compile on GCC 14+ for any ESP32 target, because six call sites passed `int*` where the platform's `int32_t*` was expected (or vice versa)
+
+### [DeepAgents](https://github.com/langchain-ai/deepagents) ![stars](https://img.shields.io/github/stars/langchain-ai/deepagents?style=flat&label=stars&color=yellow)
+- Fixed [#5747](https://github.com/langchain-ai/deepagents/pull/5747): `edit_file` with an empty search string silently corrupted files by inserting the replacement between every single character instead of erroring out
 
 ### [apify-mcp-server](https://github.com/apify/apify-mcp-server) ![stars](https://img.shields.io/github/stars/apify/apify-mcp-server?style=flat&label=stars&color=yellow)
 - Fixed [#1315](https://github.com/apify/apify-mcp-server/pull/1315): running the conformance test suite locally leaked the raw `APIFY_TOKEN` to the terminal in plain text — CI masked it, but the local script had no equivalent redaction
