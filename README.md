@@ -79,6 +79,9 @@ Tinkering with AI and building skills
 ### [rtk](https://github.com/rtk-ai/rtk) ![stars](https://img.shields.io/github/stars/rtk-ai/rtk?style=flat&label=stars&color=yellow)
 - Fixed [#3560](https://github.com/rtk-ai/rtk/pull/3560): three output-compaction filters (spring-boot, liquibase, ssh) had regexes so broad they silently mangled unrelated commands — e.g. any `java -jar` file got Spring-only filtering, `rm -rf /opt/liquibase` triggered liquibase compaction, and `ssh-keygen`/`ssh-add` got caught by a plain `ssh` filter
 
+### [reticle](https://github.com/reticlehq/reticle) ![stars](https://img.shields.io/github/stars/reticlehq/reticle?style=flat&label=stars&color=yellow)
+- Fixed [#746](https://github.com/reticlehq/reticle/pull/746): a missing OS shared library (e.g. `libnspr4.so`) was misreported as "Chromium is not installed," sending users to run a reinstall command that succeeded but fixed nothing
+
 ### [Needle](https://github.com/cactus-compute/needle) ![stars](https://img.shields.io/github/stars/cactus-compute/needle?style=flat&label=stars&color=yellow)
 - [#98](https://github.com/cactus-compute/needle/pull/98) - Made the setup script auto-detect and prefer `uv` (10-100x faster than pip) when available, falling back to pip only when it isn't installed
 
