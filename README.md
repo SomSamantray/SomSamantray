@@ -73,6 +73,9 @@ Tinkering with AI and building skills
 ### [CodexBar](https://github.com/steipete/CodexBar) ![stars](https://img.shields.io/github/stars/steipete/CodexBar?style=flat&label=stars&color=yellow)
 - Fixed [#3438](https://github.com/steipete/CodexBar/pull/3438): China-region Moonshot account balances and deficits were mislabeled in USD instead of CNY, both in the menu bar display and CLI output
 
+### [cve-lite-cli](https://github.com/OWASP/cve-lite-cli) ![stars](https://img.shields.io/github/stars/OWASP/cve-lite-cli?style=flat&label=stars&color=yellow)
+- Fixed [#1084](https://github.com/OWASP/cve-lite-cli/pull/1084): the version comparator ranked a pre-release version (e.g. `1.2.3-beta.1`) as *greater than* its stable release, causing the vulnerability scanner to falsely report a vulnerable pre-release install as safe
+
 ### [MemPalace](https://github.com/MemPalace/mempalace) ![stars](https://img.shields.io/github/stars/MemPalace/mempalace?style=flat&label=stars&color=yellow)
 - [#2342](https://github.com/MemPalace/mempalace/pull/2342) - Pre-commit's Ruff hook could drift from the version pinned in `pyproject.toml` and CI, letting local checks silently pass or fail differently than CI; aligned all three sources and scoped version extraction to the Ruff hook block so unrelated hook bumps can't trip the check
 
