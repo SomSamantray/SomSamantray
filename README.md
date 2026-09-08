@@ -53,6 +53,7 @@ Tinkering with AI and building skills
 - [#955](https://github.com/mvanhorn/last30days-skill/pull/955) - GitHub searches for a topic could silently return zero results because the tool's own date filter clashed with search filters already baked into the query
 - [#1083](https://github.com/mvanhorn/last30days-skill/pull/1083) - Reddit enrichment slots skipping high-comment threads
 - Fixed [#1072](https://github.com/mvanhorn/last30days-skill/pull/1072): the X-search subprocess was handed a full copy of the environment, so every unrelated API key or secret on the machine could leak to it if that vendored client were ever compromised — now it only receives an explicit allowlist of the variables it actually needs
+- [#1098](https://github.com/mvanhorn/last30days-skill/pull/1098) - Added a live CI status badge (Validate workflow, which runs the full pytest suite on every push/PR) to the README across all seven language translations, closing a long-open visibility request instead of duplicating the suite with a redundant second workflow
 
 ### [hermes-agent](https://github.com/NousResearch/hermes-agent) ![stars](https://img.shields.io/github/stars/NousResearch/hermes-agent?style=flat&label=stars&color=yellow)
 - Diagnosed and fixed [#92242](https://github.com/NousResearch/hermes-agent/pull/92242): large streamed tool calls (big `write_file`/`apply_patch` payloads) got quadratically slower to assemble as more chunks arrived, credited by the maintainer in the merged salvage ([#101906](https://github.com/NousResearch/hermes-agent/pull/101906))
