@@ -71,6 +71,9 @@ Tinkering with AI and building skills
 - [#1292](https://github.com/EveryInc/compound-engineering-plugin/pull/1292) - On Windows, background AI workers could quietly launch on the wrong bash (WSL instead of Git Bash) and skip work without any error
 - [#1291](https://github.com/EveryInc/compound-engineering-plugin/pull/1291) - Renamed a confusing internal flag (`mode:headless` → `mode:non-interactive`) across skills, keeping the old name working temporarily so nothing breaks
 
+### [VoiceStudio](https://github.com/debpalash/VoiceStudio) ![stars](https://img.shields.io/github/stars/debpalash/VoiceStudio?style=flat&label=stars&color=yellow)
+- [Setup wizard](https://github.com/debpalash/VoiceStudio/pull/1930) - Stopped the consent and dictation steps repeating the same title 2-3 times on one screen: real description subtitles across all 21 locales, redundant card heading removed
+
 ### [CodexBar](https://github.com/steipete/CodexBar) ![stars](https://img.shields.io/github/stars/steipete/CodexBar?style=flat&label=stars&color=yellow)
 - Fixed [#3438](https://github.com/steipete/CodexBar/pull/3438): China-region Moonshot account balances and deficits were mislabeled in USD instead of CNY, both in the menu bar display and CLI output
 
