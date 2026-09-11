@@ -72,6 +72,9 @@ Tinkering with AI and building skills
 - [#1292](https://github.com/EveryInc/compound-engineering-plugin/pull/1292) - On Windows, background AI workers could quietly launch on the wrong bash (WSL instead of Git Bash) and skip work without any error
 - [#1291](https://github.com/EveryInc/compound-engineering-plugin/pull/1291) - Renamed a confusing internal flag (`mode:headless` → `mode:non-interactive`) across skills, keeping the old name working temporarily so nothing breaks
 
+### [LocalAI](https://github.com/mudler/LocalAI) ![stars](https://img.shields.io/github/stars/mudler/LocalAI?style=flat&label=stars&color=yellow)
+- Fixed [#11652](https://github.com/mudler/LocalAI/pull/11652): the whisper backend ignored the port LocalAI actually launched it on and always bound to a hardcoded default, causing a misleading "connection unavailable" error instead of working
+
 ### [VoiceStudio](https://github.com/debpalash/VoiceStudio) ![stars](https://img.shields.io/github/stars/debpalash/VoiceStudio?style=flat&label=stars&color=yellow)
 - [Setup wizard](https://github.com/debpalash/VoiceStudio/pull/1930) - Stopped the consent and dictation steps repeating the same title 2-3 times on one screen: real description subtitles across all 21 locales, redundant card heading removed
 
