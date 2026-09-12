@@ -103,6 +103,7 @@ Tinkering with AI and building skills
 
 ### [Needle](https://github.com/cactus-compute/needle) ![stars](https://img.shields.io/github/stars/cactus-compute/needle?style=flat&label=stars&color=yellow)
 - [#98](https://github.com/cactus-compute/needle/pull/98) - Made the setup script auto-detect and prefer `uv` (10-100x faster than pip) when available, falling back to pip only when it isn't installed
+- [#123](https://github.com/cactus-compute/needle/pull/123): a correctly-extracted number was rejected as "fabricated" whenever the source text wrote it with a thousands separator (e.g. `$1,200.00`), since the grounding check compared values as plain text instead of as numbers — this broke even the README's own example
 
 ### [quickjs-ng](https://github.com/quickjs-ng/quickjs) ![stars](https://img.shields.io/github/stars/quickjs-ng/quickjs?style=flat&label=stars&color=yellow)
 - Fixed [#1657](https://github.com/quickjs-ng/quickjs/pull/1657): `quickjs.c` failed to compile on GCC 14+ for any ESP32 target, because six call sites passed `int*` where the platform's `int32_t*` was expected (or vice versa)
