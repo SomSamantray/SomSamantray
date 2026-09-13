@@ -90,6 +90,9 @@ Tinkering with AI and building skills
 ### [MemPalace](https://github.com/MemPalace/mempalace) ![stars](https://img.shields.io/github/stars/MemPalace/mempalace?style=flat&label=stars&color=yellow)
 - [#2342](https://github.com/MemPalace/mempalace/pull/2342) - Pre-commit's Ruff hook could drift from the version pinned in `pyproject.toml` and CI, letting local checks silently pass or fail differently than CI; aligned all three sources and scoped version extraction to the Ruff hook block so unrelated hook bumps can't trip the check
 
+### [spliit](https://github.com/spliit-app/spliit) ![stars](https://img.shields.io/github/stars/spliit-app/spliit?style=flat&label=stars&color=yellow)
+- Fixed [#635](https://github.com/spliit-app/spliit/pull/635): an expense dated the 1st of the month could be grouped under "Last month" while its own row still showed the 1st, because the timezone conversion for grouping (unlike display) shifted UTC-midnight dates backward for anyone west of UTC
+
 ### [Actual Budget](https://github.com/actualbudget/actual) ![stars](https://img.shields.io/github/stars/actualbudget/actual?style=flat&label=stars&color=yellow)
 - Fixed [#8719](https://github.com/actualbudget/actual/pull/8719): merging two payees left "one of"/"not one of" rule conditions with the merged payee listed twice, so deleting the visible duplicate in the UI silently deleted both underlying entries and dropped the payee from the rule entirely
 
