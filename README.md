@@ -63,6 +63,9 @@ Tinkering with AI and building skills
 ### [hermes-agent](https://github.com/NousResearch/hermes-agent) ![stars](https://img.shields.io/github/stars/NousResearch/hermes-agent?style=flat&label=stars&color=yellow)
 - Diagnosed and fixed [#92242](https://github.com/NousResearch/hermes-agent/pull/92242): large streamed tool calls (big `write_file`/`apply_patch` payloads) got quadratically slower to assemble as more chunks arrived, credited by the maintainer in the merged salvage ([#101906](https://github.com/NousResearch/hermes-agent/pull/101906))
 
+### [Cloudflare Docs](https://github.com/cloudflare/cloudflare-docs) ![stars](https://img.shields.io/github/stars/cloudflare/cloudflare-docs?style=flat&label=stars&color=yellow)
+- Fixed [#33406](https://github.com/cloudflare/cloudflare-docs/pull/33406): the Workers AI JSON Mode docs listed three models as supporting it even though none of their schemas actually declare that capability, misleading anyone trying to use it
+
 ### [pascalorg/editor](https://github.com/pascalorg/editor) ![stars](https://img.shields.io/github/stars/pascalorg/editor?style=flat&label=stars&color=yellow)
 - [#636](https://github.com/pascalorg/editor/pull/636) - `exportFloorplanPdf` wasn't exported from the package, blocking host apps from building their own floorplan-export UI outside the built-in Settings panel; also deduped a repeated export-scope check into one shared predicate with direct test coverage
 
