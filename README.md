@@ -79,6 +79,9 @@ Tinkering with AI and building skills
 - [#1292](https://github.com/EveryInc/compound-engineering-plugin/pull/1292) - On Windows, background AI workers could quietly launch on the wrong bash (WSL instead of Git Bash) and skip work without any error
 - [#1291](https://github.com/EveryInc/compound-engineering-plugin/pull/1291) - Renamed a confusing internal flag (`mode:headless` → `mode:non-interactive`) across skills, keeping the old name working temporarily so nothing breaks
 
+### [mastra-ai/mastra](https://github.com/mastra-ai/mastra) ![stars](https://img.shields.io/github/stars/mastra-ai/mastra?style=flat&label=stars&color=yellow)
+- [#24239](https://github.com/mastra-ai/mastra/pull/24239) - Multi-step agentic loops with Observational Memory enabled could crash with `Turn already ended` when a sealed turn got reused on the same message list; the processor now discards an ended turn before reuse so the next step starts fresh
+
 ### [LocalAI](https://github.com/mudler/LocalAI) ![stars](https://img.shields.io/github/stars/mudler/LocalAI?style=flat&label=stars&color=yellow)
 - Fixed [#11652](https://github.com/mudler/LocalAI/pull/11652): the whisper backend ignored the port LocalAI actually launched it on and always bound to a hardcoded default, causing a misleading "connection unavailable" error instead of working
 
