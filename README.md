@@ -65,6 +65,7 @@ Tinkering with AI and building skills
 
 ### [Cloudflare Docs](https://github.com/cloudflare/cloudflare-docs) ![stars](https://img.shields.io/github/stars/cloudflare/cloudflare-docs?style=flat&label=stars&color=yellow)
 - Fixed [#33406](https://github.com/cloudflare/cloudflare-docs/pull/33406): the Workers AI JSON Mode docs listed three models as supporting it even though none of their schemas actually declare that capability, misleading anyone trying to use it
+- Fixed [#33408](https://github.com/cloudflare/cloudflare-docs/pull/33408): R2 Sippy command examples rendered with a broken syntax-highlight color, because the shell syntax highlighter misread the unquoted `<BUCKET_NAME>` placeholder as a redirect operator
 
 ### [pascalorg/editor](https://github.com/pascalorg/editor) ![stars](https://img.shields.io/github/stars/pascalorg/editor?style=flat&label=stars&color=yellow)
 - [#636](https://github.com/pascalorg/editor/pull/636) - `exportFloorplanPdf` wasn't exported from the package, blocking host apps from building their own floorplan-export UI outside the built-in Settings panel; also deduped a repeated export-scope check into one shared predicate with direct test coverage
