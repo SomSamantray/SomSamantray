@@ -79,6 +79,7 @@ Tinkering with AI and building skills
 ### [Compound Engineering Plugin](https://github.com/EveryInc/compound-engineering-plugin) ![stars](https://img.shields.io/github/stars/EveryInc/compound-engineering-plugin?style=flat&label=stars&color=yellow)
 - [#1292](https://github.com/EveryInc/compound-engineering-plugin/pull/1292) - On Windows, background AI workers could quietly launch on the wrong bash (WSL instead of Git Bash) and skip work without any error
 - [#1291](https://github.com/EveryInc/compound-engineering-plugin/pull/1291) - Renamed a confusing internal flag (`mode:headless` → `mode:non-interactive`) across skills, keeping the old name working temporarily so nothing breaks
+- Fixed [#1733](https://github.com/EveryInc/compound-engineering-plugin/pull/1733): a fully completed code review could report its adversarial-review coverage using the exact same phrase as a skipped one, making a finished review indistinguishable from a skipped one at a glance
 
 ### [mastra-ai/mastra](https://github.com/mastra-ai/mastra) ![stars](https://img.shields.io/github/stars/mastra-ai/mastra?style=flat&label=stars&color=yellow)
 - [#24239](https://github.com/mastra-ai/mastra/pull/24239) - Multi-step agentic loops with Observational Memory enabled could crash with `Turn already ended` when a sealed turn got reused on the same message list; the processor now discards an ended turn before reuse so the next step starts fresh
