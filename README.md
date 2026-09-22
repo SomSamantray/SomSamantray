@@ -173,3 +173,6 @@ Tinkering with AI and building skills
 
 ### [impeccable](https://github.com/pbakaus/impeccable) ![stars](https://img.shields.io/github/stars/pbakaus/impeccable?style=flat&label=stars&color=yellow)
 - Diagnosed [#551](https://github.com/pbakaus/impeccable/pull/551): `hooks reset` silently re-armed a disabled hook because it deleted the config but left provider manifests wired — fix credited by name in the merged follow-up ([#668](https://github.com/pbakaus/impeccable/pull/668))
+
+### [Recordly](https://github.com/webadderallorg/Recordly) ![stars](https://img.shields.io/github/stars/webadderallorg/Recordly?style=flat&label=stars&color=yellow)
+- Fixed [#1003](https://github.com/webadderallorg/Recordly/pull/1003): cancelling a native-capture recording never stopped the mic fallback recorder's stream, so the next recording opened a second concurrent mic stream and came out silent until the device was manually reselected — cancel now stops both recorders together
