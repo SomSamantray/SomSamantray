@@ -1,6 +1,8 @@
 # Hey, I'm Som Samantray
 
+[![X](https://img.shields.io/badge/X-@raazor5050-black?style=flat&logo=x)](https://x.com/raazor5050)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-som--samantray-blue?style=flat&logo=linkedin)](https://linkedin.com/in/som-samantray)
+[![Email](https://img.shields.io/badge/Email-som.samantray@gmail.com-red?style=flat&logo=gmail)](mailto:som.samantray@gmail.com)
 
 Tinkering with AI and building skills
 
@@ -114,6 +116,7 @@ Tinkering with AI and building skills
 ### [Needle](https://github.com/cactus-compute/needle) ![stars](https://img.shields.io/github/stars/cactus-compute/needle?style=flat&label=stars&color=yellow)
 - [#98](https://github.com/cactus-compute/needle/pull/98) - Made the setup script auto-detect and prefer `uv` (10-100x faster than pip) when available, falling back to pip only when it isn't installed
 - [#123](https://github.com/cactus-compute/needle/pull/123): a correctly-extracted number was rejected as "fabricated" whenever the source text wrote it with a thousands separator (e.g. `$1,200.00`), since the grounding check compared values as plain text instead of as numbers — this broke even the README's own example
+- [#124](https://github.com/cactus-compute/needle/pull/124): the acceptance suites' pass/fail scoring rule (90% threshold, critical-failure override, confidence gate) was documented but never actually tested, so a silent change to it could ship without anyone noticing — pinned with regression tests and documented what a red suite means
 
 ### [quickjs-ng](https://github.com/quickjs-ng/quickjs) ![stars](https://img.shields.io/github/stars/quickjs-ng/quickjs?style=flat&label=stars&color=yellow)
 - Fixed [#1657](https://github.com/quickjs-ng/quickjs/pull/1657): `quickjs.c` failed to compile on GCC 14+ for any ESP32 target, because six call sites passed `int*` where the platform's `int32_t*` was expected (or vice versa)
@@ -173,12 +176,3 @@ Tinkering with AI and building skills
 
 ### [impeccable](https://github.com/pbakaus/impeccable) ![stars](https://img.shields.io/github/stars/pbakaus/impeccable?style=flat&label=stars&color=yellow)
 - Diagnosed [#551](https://github.com/pbakaus/impeccable/pull/551): `hooks reset` silently re-armed a disabled hook because it deleted the config but left provider manifests wired — fix credited by name in the merged follow-up ([#668](https://github.com/pbakaus/impeccable/pull/668))
-
-### [Recordly](https://github.com/webadderallorg/Recordly) ![stars](https://img.shields.io/github/stars/webadderallorg/Recordly?style=flat&label=stars&color=yellow)
-- Fixed [#1003](https://github.com/webadderallorg/Recordly/pull/1003): cancelling a native-capture recording never stopped the mic fallback recorder's stream, so the next recording opened a second concurrent mic stream and came out silent until the device was manually reselected — cancel now stops both recorders together
-
-### [opendataloader-pdf](https://github.com/opendataloader-project/opendataloader-pdf) ![stars](https://img.shields.io/github/stars/opendataloader-project/opendataloader-pdf?style=flat&label=stars&color=yellow)
-- [#710](https://github.com/opendataloader-project/opendataloader-pdf/pull/710) - The hybrid backend's page batch size was hardcoded, so constrained backends had no way to avoid a known hang on large PDFs; added a configurable `--hybrid-chunk-size` flag (default 50, unchanged) on both the CLI and Python API
-
-### [semantica](https://github.com/semantica-agi/semantica) ![stars](https://img.shields.io/github/stars/semantica-agi/semantica?style=flat&label=stars&color=yellow)
-- [#1595](https://github.com/semantica-agi/semantica/pull/1595) - Added a Looker connector (Looks, Dashboards, LookML models/Explores, Folders, Projects) to `semantica/ingest/` following the existing connector convention, as an optional dependency that isn't pulled in by a plain install; also fixed an IPv6 authority-formatting bug in the shared SSRF-guarded request path along the way
