@@ -179,3 +179,6 @@ Tinkering with AI and building skills
 
 ### [semantica](https://github.com/semantica-agi/semantica) ![stars](https://img.shields.io/github/stars/semantica-agi/semantica?style=flat&label=stars&color=yellow)
 - [#1595](https://github.com/semantica-agi/semantica/pull/1595) - Added a Looker connector (Looks, Dashboards, LookML models, Folders, Projects) as an optional dependency, plus SSRF hardening on the SDK's session (URL/DNS-rebind validation, forced TLS, zero redirects, secret-field stripping) since the official SDK builds its own HTTP transport outside the repo's existing request guard
+
+### [opendataloader-pdf](https://github.com/opendataloader-project/opendataloader-pdf) ![stars](https://img.shields.io/github/stars/opendataloader-project/opendataloader-pdf?style=flat&label=stars&color=yellow)
+- [#710](https://github.com/opendataloader-project/opendataloader-pdf/pull/710) - Made the hybrid backend's page batch size configurable (`--hybrid-chunk-size`) instead of a fixed 50, letting users on constrained backends shrink batches to avoid a known request-hang issue
