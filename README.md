@@ -176,3 +176,6 @@ Tinkering with AI and building skills
 
 ### [impeccable](https://github.com/pbakaus/impeccable) ![stars](https://img.shields.io/github/stars/pbakaus/impeccable?style=flat&label=stars&color=yellow)
 - Diagnosed [#551](https://github.com/pbakaus/impeccable/pull/551): `hooks reset` silently re-armed a disabled hook because it deleted the config but left provider manifests wired — fix credited by name in the merged follow-up ([#668](https://github.com/pbakaus/impeccable/pull/668))
+
+### [semantica](https://github.com/semantica-agi/semantica) ![stars](https://img.shields.io/github/stars/semantica-agi/semantica?style=flat&label=stars&color=yellow)
+- [#1595](https://github.com/semantica-agi/semantica/pull/1595) - Added a Looker connector (Looks, Dashboards, LookML models, Folders, Projects) as an optional dependency, plus SSRF hardening on the SDK's session (URL/DNS-rebind validation, forced TLS, zero redirects, secret-field stripping) since the official SDK builds its own HTTP transport outside the repo's existing request guard
