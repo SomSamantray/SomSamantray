@@ -179,3 +179,6 @@ Tinkering with AI and building skills
 
 ### [opendataloader-pdf](https://github.com/opendataloader-project/opendataloader-pdf) ![stars](https://img.shields.io/github/stars/opendataloader-project/opendataloader-pdf?style=flat&label=stars&color=yellow)
 - [#710](https://github.com/opendataloader-project/opendataloader-pdf/pull/710) - The hybrid backend's page batch size was hardcoded, so constrained backends had no way to avoid a known hang on large PDFs; added a configurable `--hybrid-chunk-size` flag (default 50, unchanged) on both the CLI and Python API
+
+### [semantica](https://github.com/semantica-agi/semantica) ![stars](https://img.shields.io/github/stars/semantica-agi/semantica?style=flat&label=stars&color=yellow)
+- [#1595](https://github.com/semantica-agi/semantica/pull/1595) - Added a Looker connector (Looks, Dashboards, LookML models/Explores, Folders, Projects) to `semantica/ingest/` following the existing connector convention, as an optional dependency that isn't pulled in by a plain install; also fixed an IPv6 authority-formatting bug in the shared SSRF-guarded request path along the way
