@@ -1,6 +1,8 @@
 # Hey, I'm Som Samantray
 
+[![X](https://img.shields.io/badge/X-@raazor5050-black?style=flat&logo=x)](https://x.com/raazor5050)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-som--samantray-blue?style=flat&logo=linkedin)](https://linkedin.com/in/som-samantray)
+[![Email](https://img.shields.io/badge/Email-som.samantray@gmail.com-red?style=flat&logo=gmail)](mailto:som.samantray@gmail.com)
 
 Tinkering with AI and building skills
 
@@ -131,6 +133,7 @@ Tinkering with AI and building skills
 ### [gstack](https://github.com/garrytan/gstack) ![stars](https://img.shields.io/github/stars/garrytan/gstack?style=flat&label=stars&color=yellow)
 - Fixed [#2409](https://github.com/garrytan/gstack/pull/2409): setup docs told agents to run two memory-sync scripts as bare commands, which fail with "No such file or directory" since they're plain `.ts` files with no bin alias — corrected to the proper `bun run` invocation
 - Fixed [#2615](https://github.com/garrytan/gstack/pull/2615): a test meant to catch a missing gbrain install leaked the real system PATH, so it passed even when the bug was present on machines where gbrain is actually installed (e.g. Homebrew on Apple Silicon)
+- Fixed [#2976](https://github.com/garrytan/gstack/pull/2976): design-detect only looked for the Impeccable skill in its legacy install path, so anyone who installed it as a Claude Code plugin (the current normal way) always got reported as not having it — commits retained and merged via maintainer's hardening pass ([#2978](https://github.com/garrytan/gstack/pull/2978))
 
 ### [rueidis](https://github.com/redis/rueidis) ![stars](https://img.shields.io/github/stars/redis/rueidis?style=flat&label=stars&color=yellow) 
 - Fixed [#1023](https://github.com/redis/rueidis/pull/1023): `rueidiscompatmock` panicked with "unexpected call to DoCache" whenever a test tried to mock a client-side-cached `Cache(ttl)` call, instead of routing it through the existing expectation queue.
