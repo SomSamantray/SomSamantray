@@ -48,6 +48,7 @@ Tinkering with AI and building skills
 - [#3857](https://github.com/mvanhorn/cli-printing-press/pull/3857) - Generated export/sync tools could report "success" even when saving the file actually failed
 - [#1890](https://github.com/mvanhorn/printing-press-library/pull/1890) - Google Search Console CLI's `sitemaps-submit`/`get`/`delete` 404'd whenever a feedpath was an absolute URL, since the raw `https://` slashes split the REST path; now percent-encoded as a single path segment so it routes correctly
 - [#1893](https://github.com/mvanhorn/printing-press-library/pull/1893) - Movie Goat CLI's local/offline search silently returned zero results (exit 0) because the untyped search branch never assigned results, and separately crashed on FTS5-syntax queries like `Space: 1999`; both fixed with real FTS hits and per-token query sanitization
+- Fixed [#4829](https://github.com/mvanhorn/cli-printing-press/pull/4829): dogfood testing flagged a false WARN for CLIs with no sync command at all, mistaking "no sync command exists" for "sync command uses generic Upsert calls"
 
 ### [Last30Days Skill](https://github.com/mvanhorn/last30days-skill) ![stars](https://img.shields.io/github/stars/mvanhorn/last30days-skill?style=flat&label=stars&color=yellow)
 - [#911](https://github.com/mvanhorn/last30days-skill/pull/911) - Windows setup silently failed to auto-install `npx` because the resolved path wasn't passed to the install command
@@ -83,6 +84,9 @@ Tinkering with AI and building skills
 
 ### [mastra-ai/mastra](https://github.com/mastra-ai/mastra) ![stars](https://img.shields.io/github/stars/mastra-ai/mastra?style=flat&label=stars&color=yellow)
 - [#24239](https://github.com/mastra-ai/mastra/pull/24239) - Multi-step agentic loops with Observational Memory enabled could crash with `Turn already ended` when a sealed turn got reused on the same message list; the processor now discards an ended turn before reuse so the next step starts fresh
+
+### [laya](https://github.com/NandhaKishorM/laya) ![stars](https://img.shields.io/github/stars/NandhaKishorM/laya?style=flat&label=stars&color=yellow)
+- [#656](https://github.com/NandhaKishorM/laya/pull/656) - Added `LAYA_ROOT_PATH` support so the FastAPI server can be deployed behind a reverse proxy under a URL prefix (e.g. `/laya`), with OpenAPI/Swagger UI generating correct prefixed URLs
 
 ### [LocalAI](https://github.com/mudler/LocalAI) ![stars](https://img.shields.io/github/stars/mudler/LocalAI?style=flat&label=stars&color=yellow)
 - Fixed [#11652](https://github.com/mudler/LocalAI/pull/11652): the whisper backend ignored the port LocalAI actually launched it on and always bound to a hardcoded default, causing a misleading "connection unavailable" error instead of working
