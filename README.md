@@ -1,8 +1,6 @@
 # Hey, I'm Som Samantray
 
-[![X](https://img.shields.io/badge/X-@raazor5050-black?style=flat&logo=x)](https://x.com/raazor5050)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-som--samantray-blue?style=flat&logo=linkedin)](https://linkedin.com/in/som-samantray)
-[![Email](https://img.shields.io/badge/Email-som.samantray@gmail.com-red?style=flat&logo=gmail)](mailto:som.samantray@gmail.com)
 
 Tinkering with AI and building skills
 
@@ -40,6 +38,7 @@ Tinkering with AI and building skills
 - [Groq](https://github.com/mvanhorn/printing-press-library/pull/1854) - Full Groq Cloud inference CLI, plus a local ledger tracking token cost and rate-limit budget, multi-model prompt comparison (latency/cost/tokens-per-sec), and batch-file validation before upload
 - [MyAnimeList](https://github.com/mvanhorn/printing-press-library/pull/1976) - Every public MyAnimeList surface in one binary, plus offline analytics the site can't answer: score-split/divisive detection, drift tracking, drop-risk scoring, per-episode consistency trends, manga-adaptation coverage, and franchise-gap detection
 - [Swiggy](https://github.com/mvanhorn/printing-press-library/pull/1994) - CLI for Swiggy's MCP API (Food, Instamart, Dineout) — 51 tools plus cross-domain spend history, a safe-retry guard for failed order placement, and a UPI payment-wait command
+- [Philonet](https://github.com/mvanhorn/printing-press-library/pull/2112) - CLI for Philonet (no public API; reverse-engineered from the logged-in web app): reading streaks, friends' thoughts, and unanswered-thread tracking, plus local history the web app doesn't keep — weekly/monthly reading rhythm, a read-later queue fitted to your free minutes, and which of your thoughts earned reactions
 
 ### [CLI Printing Press](https://github.com/mvanhorn/cli-printing-press) ![stars](https://img.shields.io/github/stars/mvanhorn/cli-printing-press?style=flat&label=stars&color=yellow)
 - [#4049](https://github.com/mvanhorn/cli-printing-press/pull/4049) - A passing local check still let an unrewritten module path slip into a packaged CLI; added a module-path check and surfaced the review-gate rules agents were missing
