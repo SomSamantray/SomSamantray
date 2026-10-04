@@ -16,8 +16,6 @@ Tinkering with AI and building skills
 
 ## Opensource Contributions:
 
-### [caveman](https://github.com/JuliusBrussee/caveman) ![stars](https://img.shields.io/github/stars/JuliusBrussee/caveman?style=flat&label=stars&color=yellow)
-- Fixed [#1084](https://github.com/JuliusBrussee/caveman/pull/1084): added native Grok Build support to the unified installer, including owned skill copies under `GROK_HOME/skills` and discovery in `--list`.
 
 ### [open-notebook](https://github.com/lfnovo/open-notebook) ![stars](https://img.shields.io/github/stars/lfnovo/open-notebook?style=flat&label=stars&color=yellow)
 - Fixed [#1360](https://github.com/lfnovo/open-notebook/pull/1360): stored provider API keys now use versioned PBKDF2-HMAC-SHA256 derivation, while legacy values remain readable and can be migrated in place.
@@ -138,6 +136,7 @@ Tinkering with AI and building skills
 
 ### [caveman](https://github.com/JuliusBrussee/caveman) ![stars](https://img.shields.io/github/stars/JuliusBrussee/caveman?style=flat&label=stars&color=yellow)
 - Fixed [#900](https://github.com/JuliusBrussee/caveman/pull/900): `/caveman-stats` and the statusline showed no cost-savings figure at all on any Claude 5 session, because the pricing table only recognized Claude 3/4 model names
+- Fixed [#1084](https://github.com/JuliusBrussee/caveman/pull/1084): added native Grok Build support to the unified installer, including owned skill copies under `GROK_HOME/skills` and discovery in `--list`.
 
 ### [gstack](https://github.com/garrytan/gstack) ![stars](https://img.shields.io/github/stars/garrytan/gstack?style=flat&label=stars&color=yellow)
 - Fixed [#2409](https://github.com/garrytan/gstack/pull/2409): setup docs told agents to run two memory-sync scripts as bare commands, which fail with "No such file or directory" since they're plain `.ts` files with no bin alias — corrected to the proper `bun run` invocation
