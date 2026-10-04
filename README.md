@@ -16,6 +16,12 @@ Tinkering with AI and building skills
 
 ## Opensource Contributions:
 
+### [caveman](https://github.com/JuliusBrussee/caveman) ![stars](https://img.shields.io/github/stars/JuliusBrussee/caveman?style=flat&label=stars&color=yellow)
+- Fixed [#1084](https://github.com/JuliusBrussee/caveman/pull/1084): added native Grok Build support to the unified installer, including owned skill copies under `GROK_HOME/skills` and discovery in `--list`.
+
+### [open-notebook](https://github.com/lfnovo/open-notebook) ![stars](https://img.shields.io/github/stars/lfnovo/open-notebook?style=flat&label=stars&color=yellow)
+- Fixed [#1360](https://github.com/lfnovo/open-notebook/pull/1360): stored provider API keys now use versioned PBKDF2-HMAC-SHA256 derivation, while legacy values remain readable and can be migrated in place.
+
 ### [Printing Press Library](https://github.com/mvanhorn/printing-press-library) ![stars](https://img.shields.io/github/stars/mvanhorn/printing-press-library?style=flat&label=stars&color=yellow)
 - [Screener](https://github.com/mvanhorn/printing-press-library/pull/1715) - Indian stock market fundamental analysis, screening, and market pulse, with company compare, quarterly trend detection, screen overlap/ranking, and insider buy/sell flow tracking
 - [Pinecone](https://github.com/mvanhorn/printing-press-library/pull/1710) - Every Pinecone API feature, plus local sync, snapshot history, and text-first search no other Pinecone tool has
@@ -146,6 +152,7 @@ Tinkering with AI and building skills
 
 ### [OpenMAIC](https://github.com/THU-MAIC/OpenMAIC) ![stars](https://img.shields.io/github/stars/THU-MAIC/OpenMAIC?style=flat&label=stars&color=yellow)
 - Fixed [#1144](https://github.com/THU-MAIC/OpenMAIC/pull/1144) - Added a "Download Script" feature letting teachers export a classroom's narration text as Markdown or a real Word `.docx` for lesson prep, localized across all 12 supported languages
+- Fixed [#1621](https://github.com/THU-MAIC/OpenMAIC/pull/1621): extracted a shared narration walk for script and speaker-notes exports, keeping speech-text handling consistent across both.
 
 ### [plano](https://github.com/katanemo/plano) ![stars](https://img.shields.io/github/stars/katanemo/plano?style=flat&label=stars&color=yellow)
 - Fixed [#1018](https://github.com/katanemo/plano/pull/1018): fast, short streaming responses could crash the LLM gateway worker with a divide-by-zero error while recording throughput metrics, taking down other requests sharing that worker
