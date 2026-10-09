@@ -16,6 +16,8 @@ Tinkering with AI and building skills
 
 ## Opensource Contributions:
 
+### [PriceBuddy](https://github.com/jez500/pricebuddy) ![stars](https://img.shields.io/github/stars/jez500/pricebuddy?style=flat&label=stars&color=yellow)
+- Fixed [#215](https://github.com/jez500/pricebuddy/pull/215): formatted the dashboard's Potential savings stat with the configured currency and locale, matching other dashboard values.
 
 ### [open-notebook](https://github.com/lfnovo/open-notebook) ![stars](https://img.shields.io/github/stars/lfnovo/open-notebook?style=flat&label=stars&color=yellow)
 - Fixed [#1360](https://github.com/lfnovo/open-notebook/pull/1360): stored provider API keys now use versioned PBKDF2-HMAC-SHA256 derivation, while legacy values remain readable and can be migrated in place.
@@ -116,6 +118,8 @@ Tinkering with AI and building skills
 - Fixed [#3560](https://github.com/rtk-ai/rtk/pull/3560): three output-compaction filters (spring-boot, liquibase, ssh) had regexes so broad they silently mangled unrelated commands — e.g. any `java -jar` file got Spring-only filtering, `rm -rf /opt/liquibase` triggered liquibase compaction, and `ssh-keygen`/`ssh-add` got caught by a plain `ssh` filter
 
 ### [reticle](https://github.com/reticlehq/reticle) ![stars](https://img.shields.io/github/stars/reticlehq/reticle?style=flat&label=stars&color=yellow)
+- Fixed [#1330](https://github.com/reticlehq/reticle/pull/1330): corrected `reticle_lease` documentation to use the accepted `seedStorage` keys and a valid `local` example.
+- Fixed [#1332](https://github.com/reticlehq/reticle/pull/1332): added `reticle_lease` guidance to the recovery message when opening a URL fails to launch the browser.
 - Fixed [#746](https://github.com/reticlehq/reticle/pull/746): a missing OS shared library (e.g. `libnspr4.so`) was misreported as "Chromium is not installed," sending users to run a reinstall command that succeeded but fixed nothing
 - Fixed [#743](https://github.com/reticlehq/reticle/pull/743): `reticle init` kept reporting its install step as failed on every re-run even after the dependencies were correctly installed by hand, and gave the wrong error hint for a pnpm virtual-store conflict
 - Fixed [#744](https://github.com/reticlehq/reticle/pull/744): flow files silently dropped typo'd or unsupported `expect` assertion keys instead of erroring, so a broken test could "pass" while asserting nothing at all
