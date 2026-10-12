@@ -16,6 +16,9 @@ Tinkering with AI and building skills
 
 ## Opensource Contributions:
 
+### [floci](https://github.com/floci-io/floci) ![stars](https://img.shields.io/github/stars/floci-io/floci?style=flat&label=stars&color=yellow)
+- Fixed [#5450](https://github.com/floci-io/floci/pull/5450): imported API Gateway methods with API-key security could be called without a key, so imports now enforce `x-api-key` when every security alternative requires it while preserving access through optional alternatives.
+
 ### [Unciv](https://github.com/yairm210/Unciv) ![stars](https://img.shields.io/github/stars/yairm210/Unciv?style=flat&label=stars&color=yellow)
 - Fixed [#15756](https://github.com/yairm210/Unciv/pull/15756): restored ruleset order for promotion battle modifiers so they appear in the same order as the promotions in the battle preview.
 
