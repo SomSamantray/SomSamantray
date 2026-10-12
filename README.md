@@ -16,6 +16,9 @@ Tinkering with AI and building skills
 
 ## Opensource Contributions:
 
+### [Unciv](https://github.com/yairm210/Unciv) ![stars](https://img.shields.io/github/stars/yairm210/Unciv?style=flat&label=stars&color=yellow)
+- Fixed [#15756](https://github.com/yairm210/Unciv/pull/15756): restored ruleset order for promotion battle modifiers so they appear in the same order as the promotions in the battle preview.
+
 ### [phonopy](https://github.com/phonopy/phonopy) ![stars](https://img.shields.io/github/stars/phonopy/phonopy?style=flat&label=stars&color=yellow)
 - Fixed [#1055](https://github.com/phonopy/phonopy/pull/1055): documented the limitation on irreducible representations for magnetic space groups.
 
