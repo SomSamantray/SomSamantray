@@ -16,6 +16,19 @@ Tinkering with AI and building skills
 
 ## Opensource Contributions:
 
+### [phonopy](https://github.com/phonopy/phonopy) ![stars](https://img.shields.io/github/stars/phonopy/phonopy?style=flat&label=stars&color=yellow)
+- Fixed [#1055](https://github.com/phonopy/phonopy/pull/1055): documented the limitation on irreducible representations for magnetic space groups.
+
+### [trzsz-ssh](https://github.com/trzsz/trzsz-ssh) ![stars](https://img.shields.io/github/stars/trzsz/trzsz-ssh?style=flat&label=stars&color=yellow)
+- Fixed [#288](https://github.com/trzsz/trzsz-ssh/pull/288): added support for `@` in SSH usernames.
+
+### [ebiten](https://github.com/hajimehoshi/ebiten) ![stars](https://img.shields.io/github/stars/hajimehoshi/ebiten?style=flat&label=stars&color=yellow)
+- Fixed [#3921](https://github.com/hajimehoshi/ebiten/pull/3921): corrected `RestoreWindow` behavior when the window has finite size limits.
+
+### [github-chinese](https://github.com/maboloshi/github-chinese) ![stars](https://img.shields.io/github/stars/maboloshi/github-chinese?style=flat&label=stars&color=yellow)
+- Fixed [#806](https://github.com/maboloshi/github-chinese/pull/806): added Simplified and Traditional Chinese feature-request templates.
+- Fixed [#805](https://github.com/maboloshi/github-chinese/pull/805): fixed a leftover “on” after translating a time element.
+
 ### [PriceBuddy](https://github.com/jez500/pricebuddy) ![stars](https://img.shields.io/github/stars/jez500/pricebuddy?style=flat&label=stars&color=yellow)
 - Fixed [#215](https://github.com/jez500/pricebuddy/pull/215): formatted the dashboard's Potential savings stat with the configured currency and locale, matching other dashboard values.
 
@@ -56,6 +69,7 @@ Tinkering with AI and building skills
 - Fixed [#4829](https://github.com/mvanhorn/cli-printing-press/pull/4829): dogfood testing flagged a false WARN for CLIs with no sync command at all, mistaking "no sync command exists" for "sync command uses generic Upsert calls"
 
 ### [Last30Days Skill](https://github.com/mvanhorn/last30days-skill) ![stars](https://img.shields.io/github/stars/mvanhorn/last30days-skill?style=flat&label=stars&color=yellow)
+- Fixed [#1009](https://github.com/mvanhorn/last30days-skill/pull/1009): YouTube search now uses a ScrapeCreators backstop below the thin-results floor, preserves yt-dlp results, and marks degraded lanes partial; carried into merged [#1248](https://github.com/mvanhorn/last30days-skill/pull/1248).
 - [#911](https://github.com/mvanhorn/last30days-skill/pull/911) - Windows setup silently failed to auto-install `npx` because the resolved path wasn't passed to the install command
 - [#912](https://github.com/mvanhorn/last30days-skill/pull/912) - Four bugs: `--web-backend=keyless` flag was rejected by the CLI, arXiv searches returned nothing for normal phrases, source links showed as plain text instead of clickable links, and Truth Social requests were blocked by Cloudflare
 - [#955](https://github.com/mvanhorn/last30days-skill/pull/955) - GitHub searches for a topic could silently return zero results because the tool's own date filter clashed with search filters already baked into the query
@@ -83,6 +97,8 @@ Tinkering with AI and building skills
 - [#65243](https://github.com/nodejs/node/pull/65243) - Clarified the `process` signal docs: `SIGTERM`/`SIGINT` listeners run asynchronously, so an otherwise-idle process can exit before the listener actually runs — a gap that had confused users since 2019
 
 ### [Compound Engineering Plugin](https://github.com/EveryInc/compound-engineering-plugin) ![stars](https://img.shields.io/github/stars/EveryInc/compound-engineering-plugin?style=flat&label=stars&color=yellow)
+- Fixed [#1848](https://github.com/EveryInc/compound-engineering-plugin/pull/1848): clarified which project assets Stage 4 of code review should read.
+- Fixed [#1849](https://github.com/EveryInc/compound-engineering-plugin/pull/1849): made the commit workflow follow the project’s own commit conventions.
 - [#1292](https://github.com/EveryInc/compound-engineering-plugin/pull/1292) - On Windows, background AI workers could quietly launch on the wrong bash (WSL instead of Git Bash) and skip work without any error
 - [#1291](https://github.com/EveryInc/compound-engineering-plugin/pull/1291) - Renamed a confusing internal flag (`mode:headless` → `mode:non-interactive`) across skills, keeping the old name working temporarily so nothing breaks
 - Fixed [#1733](https://github.com/EveryInc/compound-engineering-plugin/pull/1733): a fully completed code review could report its adversarial-review coverage using the exact same phrase as a skipped one, making a finished review indistinguishable from a skipped one at a glance
@@ -143,6 +159,8 @@ Tinkering with AI and building skills
 - Fixed [#1084](https://github.com/JuliusBrussee/caveman/pull/1084): added native Grok Build support to the unified installer, including owned skill copies under `GROK_HOME/skills` and discovery in `--list`.
 
 ### [gstack](https://github.com/garrytan/gstack) ![stars](https://img.shields.io/github/stars/garrytan/gstack?style=flat&label=stars&color=yellow)
+- Fixed [#2966](https://github.com/garrytan/gstack/pull/2966): Codex templates now report `mktemp` failures clearly instead of continuing with empty temp-file paths; carried into merged release [#3057](https://github.com/garrytan/gstack/pull/3057).
+- Fixed [#2961](https://github.com/garrytan/gstack/pull/2961): Ubuntu 26.04 setup now selects the Playwright browser build for the host architecture; carried into merged release [#2959](https://github.com/garrytan/gstack/pull/2959).
 - Fixed [#2409](https://github.com/garrytan/gstack/pull/2409): setup docs told agents to run two memory-sync scripts as bare commands, which fail with "No such file or directory" since they're plain `.ts` files with no bin alias — corrected to the proper `bun run` invocation
 - Fixed [#2615](https://github.com/garrytan/gstack/pull/2615): a test meant to catch a missing gbrain install leaked the real system PATH, so it passed even when the bug was present on machines where gbrain is actually installed (e.g. Homebrew on Apple Silicon)
 - Fixed [#2976](https://github.com/garrytan/gstack/pull/2976): design-detect only looked for the Impeccable skill in its legacy install path, so anyone who installed it as a Claude Code plugin (the current normal way) always got reported as not having it — commits retained and merged via maintainer's hardening pass ([#2978](https://github.com/garrytan/gstack/pull/2978))
@@ -187,6 +205,7 @@ Tinkering with AI and building skills
 - Fixed [#291](https://github.com/OthmanAdi/planning-with-files/pull/291): Cursor's hooks used an old event and response schema the current Cursor runtime no longer recognizes, so plan context silently stopped reaching Cursor conversations
 
 ### [OpenMausBot](https://github.com/milind-soni/OpenMausBot) ![stars](https://img.shields.io/github/stars/milind-soni/OpenMausBot?style=flat&label=stars&color=yellow)
+- Fixed [#2633](https://github.com/milind-soni/OpenMausBot/pull/2633): reduced glass pop-up flicker on Windows.
 - Fixed [#230](https://github.com/milind-soni/OpenMausBot/pull/230): two permission requests arriving with the same ID could silently clobber each other, leaving one request permanently stuck with no way to answer it — now the second one is rejected outright instead of overwriting the first
 - Fixed [#234](https://github.com/milind-soni/OpenMausBot/pull/234): a test suite from #230 broke on Windows because four test cases accidentally shared the same truncated identifier, causing one test's leftover named pipe to block the next — renamed the IDs and added a check.
 
