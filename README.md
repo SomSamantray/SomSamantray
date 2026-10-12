@@ -16,31 +16,6 @@ Tinkering with AI and building skills
 
 ## Opensource Contributions:
 
-### [floci](https://github.com/floci-io/floci) ![stars](https://img.shields.io/github/stars/floci-io/floci?style=flat&label=stars&color=yellow)
-- Fixed [#5450](https://github.com/floci-io/floci/pull/5450): imported API Gateway methods with API-key security could be called without a key, so imports now enforce `x-api-key` when every security alternative requires it while preserving access through optional alternatives.
-
-### [Unciv](https://github.com/yairm210/Unciv) ![stars](https://img.shields.io/github/stars/yairm210/Unciv?style=flat&label=stars&color=yellow)
-- Fixed [#15756](https://github.com/yairm210/Unciv/pull/15756): restored ruleset order for promotion battle modifiers so they appear in the same order as the promotions in the battle preview.
-
-### [phonopy](https://github.com/phonopy/phonopy) ![stars](https://img.shields.io/github/stars/phonopy/phonopy?style=flat&label=stars&color=yellow)
-- Fixed [#1055](https://github.com/phonopy/phonopy/pull/1055): documented the limitation on irreducible representations for magnetic space groups.
-
-### [trzsz-ssh](https://github.com/trzsz/trzsz-ssh) ![stars](https://img.shields.io/github/stars/trzsz/trzsz-ssh?style=flat&label=stars&color=yellow)
-- Fixed [#288](https://github.com/trzsz/trzsz-ssh/pull/288): added support for `@` in SSH usernames.
-
-### [ebiten](https://github.com/hajimehoshi/ebiten) ![stars](https://img.shields.io/github/stars/hajimehoshi/ebiten?style=flat&label=stars&color=yellow)
-- Fixed [#3921](https://github.com/hajimehoshi/ebiten/pull/3921): corrected `RestoreWindow` behavior when the window has finite size limits.
-
-### [github-chinese](https://github.com/maboloshi/github-chinese) ![stars](https://img.shields.io/github/stars/maboloshi/github-chinese?style=flat&label=stars&color=yellow)
-- Fixed [#806](https://github.com/maboloshi/github-chinese/pull/806): added Simplified and Traditional Chinese feature-request templates.
-- Fixed [#805](https://github.com/maboloshi/github-chinese/pull/805): fixed a leftover “on” after translating a time element.
-
-### [PriceBuddy](https://github.com/jez500/pricebuddy) ![stars](https://img.shields.io/github/stars/jez500/pricebuddy?style=flat&label=stars&color=yellow)
-- Fixed [#215](https://github.com/jez500/pricebuddy/pull/215): formatted the dashboard's Potential savings stat with the configured currency and locale, matching other dashboard values.
-
-### [open-notebook](https://github.com/lfnovo/open-notebook) ![stars](https://img.shields.io/github/stars/lfnovo/open-notebook?style=flat&label=stars&color=yellow)
-- Fixed [#1360](https://github.com/lfnovo/open-notebook/pull/1360): stored provider API keys now use versioned PBKDF2-HMAC-SHA256 derivation, while legacy values remain readable and can be migrated in place.
-
 ### [Printing Press Library](https://github.com/mvanhorn/printing-press-library) ![stars](https://img.shields.io/github/stars/mvanhorn/printing-press-library?style=flat&label=stars&color=yellow)
 - [Screener](https://github.com/mvanhorn/printing-press-library/pull/1715) - Indian stock market fundamental analysis, screening, and market pulse, with company compare, quarterly trend detection, screen overlap/ranking, and insider buy/sell flow tracking
 - [Pinecone](https://github.com/mvanhorn/printing-press-library/pull/1710) - Every Pinecone API feature, plus local sync, snapshot history, and text-first search no other Pinecone tool has
@@ -196,6 +171,31 @@ Tinkering with AI and building skills
 
 ### [AgentMemory](https://github.com/rohitg00/agentmemory) ![stars](https://img.shields.io/github/stars/rohitg00/agentmemory?style=flat&label=stars&color=yellow)
 - Fixed [#1132](https://github.com/rohitg00/agentmemory/pull/1132): deleting a memory could falsely say "deleted" when nothing was actually removed, and there was no way to delete a saved lesson at all — both now fixed
+
+### [floci](https://github.com/floci-io/floci) ![stars](https://img.shields.io/github/stars/floci-io/floci?style=flat&label=stars&color=yellow)
+- Fixed [#5450](https://github.com/floci-io/floci/pull/5450): imported API Gateway methods with API-key security could be called without a key, so imports now enforce `x-api-key` when every security alternative requires it while preserving access through optional alternatives.
+
+### [Unciv](https://github.com/yairm210/Unciv) ![stars](https://img.shields.io/github/stars/yairm210/Unciv?style=flat&label=stars&color=yellow)
+- Fixed [#15756](https://github.com/yairm210/Unciv/pull/15756): restored ruleset order for promotion battle modifiers so they appear in the same order as the promotions in the battle preview.
+
+### [phonopy](https://github.com/phonopy/phonopy) ![stars](https://img.shields.io/github/stars/phonopy/phonopy?style=flat&label=stars&color=yellow)
+- Fixed [#1055](https://github.com/phonopy/phonopy/pull/1055): documented the limitation on irreducible representations for magnetic space groups.
+
+### [trzsz-ssh](https://github.com/trzsz/trzsz-ssh) ![stars](https://img.shields.io/github/stars/trzsz/trzsz-ssh?style=flat&label=stars&color=yellow)
+- Fixed [#288](https://github.com/trzsz/trzsz-ssh/pull/288): added support for `@` in SSH usernames.
+
+### [ebiten](https://github.com/hajimehoshi/ebiten) ![stars](https://img.shields.io/github/stars/hajimehoshi/ebiten?style=flat&label=stars&color=yellow)
+- Fixed [#3921](https://github.com/hajimehoshi/ebiten/pull/3921): corrected `RestoreWindow` behavior when the window has finite size limits.
+
+### [github-chinese](https://github.com/maboloshi/github-chinese) ![stars](https://img.shields.io/github/stars/maboloshi/github-chinese?style=flat&label=stars&color=yellow)
+- Fixed [#806](https://github.com/maboloshi/github-chinese/pull/806): added Simplified and Traditional Chinese feature-request templates.
+- Fixed [#805](https://github.com/maboloshi/github-chinese/pull/805): fixed a leftover “on” after translating a time element.
+
+### [PriceBuddy](https://github.com/jez500/pricebuddy) ![stars](https://img.shields.io/github/stars/jez500/pricebuddy?style=flat&label=stars&color=yellow)
+- Fixed [#215](https://github.com/jez500/pricebuddy/pull/215): formatted the dashboard's Potential savings stat with the configured currency and locale, matching other dashboard values.
+
+### [open-notebook](https://github.com/lfnovo/open-notebook) ![stars](https://img.shields.io/github/stars/lfnovo/open-notebook?style=flat&label=stars&color=yellow)
+- Fixed [#1360](https://github.com/lfnovo/open-notebook/pull/1360): stored provider API keys now use versioned PBKDF2-HMAC-SHA256 derivation, while legacy values remain readable and can be migrated in place.
 
 ### [qm](https://github.com/yc-software/qm) ![stars](https://img.shields.io/github/stars/yc-software/qm?style=flat&label=stars&color=yellow)
 - Fixed [#149](https://github.com/yc-software/qm/pull/149): a brief database hiccup while waiting for a job to finish could crash the whole process instead of just timing out safely
