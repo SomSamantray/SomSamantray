@@ -16,6 +16,9 @@ Tinkering with AI and building skills
 
 ## Opensource Contributions:
 
+### [FluxDown](https://github.com/zerx-lab/FluxDown) ![stars](https://img.shields.io/github/stars/zerx-lab/FluxDown?style=flat&label=stars&color=yellow)
+- Fixed [#849](https://github.com/zerx-lab/FluxDown/pull/849): users were pointed to a nonexistent in-app feedback button; issue templates and READMEs now direct them to the website feedback page, and the English/Chinese interface guides no longer describe the button.
+
 ### [split-pro](https://github.com/oss-apps/split-pro) ![stars](https://img.shields.io/github/stars/oss-apps/split-pro?style=flat&label=stars&color=yellow)
 - Fixed [#752](https://github.com/oss-apps/split-pro/pull/752): invite-email failures now show a clear error in expense and group flows instead of appearing successful, while retaining the added friend.
 
