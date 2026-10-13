@@ -50,6 +50,7 @@ Tinkering with AI and building skills
 - [Philonet](https://github.com/mvanhorn/printing-press-library/pull/2112) - CLI for Philonet (no public API; reverse-engineered from the logged-in web app): reading streaks, friends' thoughts, and unanswered-thread tracking, plus local history the web app doesn't keep — weekly/monthly reading rhythm, a read-later queue fitted to your free minutes, and which of your thoughts earned reactions
 
 ### [CLI Printing Press](https://github.com/mvanhorn/cli-printing-press) ![stars](https://img.shields.io/github/stars/mvanhorn/cli-printing-press?style=flat&label=stars&color=yellow)
+- Fixed [#4990](https://github.com/mvanhorn/cli-printing-press/pull/4990): when dogfood still failed after two fix loops, the receipt system rejected the handoff to archive manuscripts; it now records the hold and archives without promoting the failed CLI.
 - [#4049](https://github.com/mvanhorn/cli-printing-press/pull/4049) - A passing local check still let an unrewritten module path slip into a packaged CLI; added a module-path check and surfaced the review-gate rules agents were missing
 - [#3855](https://github.com/mvanhorn/cli-printing-press/pull/3855) - Windows credential tests failed because sandbox test folders had overly loose permissions, now locked to owner-only
 - [#3856](https://github.com/mvanhorn/cli-printing-press/pull/3856) - A Windows test failure showed the wrong folder path, making the real problem hard to track down
