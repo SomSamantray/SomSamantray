@@ -16,6 +16,12 @@ Tinkering with AI and building skills
 
 ## Opensource Contributions:
 
+### [split-pro](https://github.com/oss-apps/split-pro) ![stars](https://img.shields.io/github/stars/oss-apps/split-pro?style=flat&label=stars&color=yellow)
+- Fixed [#752](https://github.com/oss-apps/split-pro/pull/752): invite-email failures now show a clear error in expense and group flows instead of appearing successful, while retaining the added friend.
+
+### [kiss-translator](https://github.com/fishjar/kiss-translator) ![stars](https://img.shields.io/github/stars/fishjar/kiss-translator?style=flat&label=stars&color=yellow)
+- Fixed [#1167](https://github.com/fishjar/kiss-translator/pull/1167): translating nearby text no longer gives unloaded inline images zero dimensions, preventing blank image previews.
+
 ### [Printing Press Library](https://github.com/mvanhorn/printing-press-library) ![stars](https://img.shields.io/github/stars/mvanhorn/printing-press-library?style=flat&label=stars&color=yellow)
 - [Screener](https://github.com/mvanhorn/printing-press-library/pull/1715) - Indian stock market fundamental analysis, screening, and market pulse, with company compare, quarterly trend detection, screen overlap/ranking, and insider buy/sell flow tracking
 - [Pinecone](https://github.com/mvanhorn/printing-press-library/pull/1710) - Every Pinecone API feature, plus local sync, snapshot history, and text-first search no other Pinecone tool has
@@ -173,6 +179,7 @@ Tinkering with AI and building skills
 - Fixed [#1132](https://github.com/rohitg00/agentmemory/pull/1132): deleting a memory could falsely say "deleted" when nothing was actually removed, and there was no way to delete a saved lesson at all — both now fixed
 
 ### [floci](https://github.com/floci-io/floci) ![stars](https://img.shields.io/github/stars/floci-io/floci?style=flat&label=stars&color=yellow)
+- Fixed [#5448](https://github.com/floci-io/floci/pull/5448): Cognito user-pool responses now include configured prefix and custom domain names, omitting either field when it is unset.
 - Fixed [#5450](https://github.com/floci-io/floci/pull/5450): imported API Gateway methods with API-key security could be called without a key, so imports now enforce `x-api-key` when every security alternative requires it while preserving access through optional alternatives.
 
 ### [Unciv](https://github.com/yairm210/Unciv) ![stars](https://img.shields.io/github/stars/yairm210/Unciv?style=flat&label=stars&color=yellow)
