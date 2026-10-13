@@ -16,6 +16,9 @@ Tinkering with AI and building skills
 
 ## Opensource Contributions:
 
+### [xdsl](https://github.com/xdslproject/xdsl) ![stars](https://img.shields.io/github/stars/xdslproject/xdsl?style=flat&label=stars&color=yellow)
+- Fixed [#6560](https://github.com/xdslproject/xdsl/pull/6560): IRDL verification now rejects negative, malformed, or inconsistent variadic segment sizes for operands and results, with clear diagnostics and regression coverage.
+
 ### [FluxDown](https://github.com/zerx-lab/FluxDown) ![stars](https://img.shields.io/github/stars/zerx-lab/FluxDown?style=flat&label=stars&color=yellow)
 - Fixed [#849](https://github.com/zerx-lab/FluxDown/pull/849): users were pointed to a nonexistent in-app feedback button; issue templates and READMEs now direct them to the website feedback page, and the English/Chinese interface guides no longer describe the button.
 
