@@ -16,6 +16,9 @@ Tinkering with AI and building skills
 
 ## Opensource Contributions:
 
+### [cherry-markdown](https://github.com/Tencent/cherry-markdown) ![stars](https://img.shields.io/github/stars/Tencent/cherry-markdown?style=flat&label=stars&color=yellow)
+- Fixed [#1901](https://github.com/Tencent/cherry-markdown/pull/1901): applying a heading level to a multiline selection containing ordinary text and an existing heading did not update both lines consistently; it now applies the selected level to each line while preserving spacing after an existing marker.
+
 ### [WordPress-iOS](https://github.com/wordpress-mobile/WordPress-iOS) ![stars](https://img.shields.io/github/stars/wordpress-mobile/WordPress-iOS?style=flat&label=stars&color=yellow)
 - Fixed [#26137](https://github.com/wordpress-mobile/WordPress-iOS/pull/26137): clearing the Store Sandbox secret could leave a stale cookie in WebKit and send checkout to the wrong store; the fix synchronizes cookie updates and deletion across shared storage and WebKit.
 
