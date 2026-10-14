@@ -16,6 +16,9 @@ Tinkering with AI and building skills
 
 ## Opensource Contributions:
 
+### [WordPress-iOS](https://github.com/wordpress-mobile/WordPress-iOS) ![stars](https://img.shields.io/github/stars/wordpress-mobile/WordPress-iOS?style=flat&label=stars&color=yellow)
+- Fixed [#26137](https://github.com/wordpress-mobile/WordPress-iOS/pull/26137): clearing the Store Sandbox secret could leave a stale cookie in WebKit and send checkout to the wrong store; the fix synchronizes cookie updates and deletion across shared storage and WebKit.
+
 ### [xdsl](https://github.com/xdslproject/xdsl) ![stars](https://img.shields.io/github/stars/xdslproject/xdsl?style=flat&label=stars&color=yellow)
 - Fixed [#6560](https://github.com/xdslproject/xdsl/pull/6560): IRDL verification now rejects negative, malformed, or inconsistent variadic segment sizes for operands and results, with clear diagnostics and regression coverage.
 
