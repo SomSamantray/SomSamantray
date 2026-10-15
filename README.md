@@ -16,6 +16,9 @@ Tinkering with AI and building skills
 
 ## Opensource Contributions:
 
+### [chrome-devtools-mcp](https://github.com/ChromeDevTools/chrome-devtools-mcp) ![stars](https://img.shields.io/github/stars/ChromeDevTools/chrome-devtools-mcp?style=flat&label=stars&color=yellow)
+- Fixed [#3085](https://github.com/ChromeDevTools/chrome-devtools-mcp/pull/3085): slim-mode `evaluate` failures looked like successful text responses instead of errors; they now return `Error: …` with `isError: true`, while successful response text stays unchanged.
+
 ### [cherry-markdown](https://github.com/Tencent/cherry-markdown) ![stars](https://img.shields.io/github/stars/Tencent/cherry-markdown?style=flat&label=stars&color=yellow)
 - Fixed [#1901](https://github.com/Tencent/cherry-markdown/pull/1901): applying a heading level to a multiline selection containing ordinary text and an existing heading did not update both lines consistently; it now applies the selected level to each line while preserving spacing after an existing marker.
 
