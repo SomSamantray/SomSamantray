@@ -16,6 +16,9 @@ Tinkering with AI and building skills
 
 ## Opensource Contributions:
 
+### [filebrowser](https://github.com/gtsteffaniak/filebrowser) ![stars](https://img.shields.io/github/stars/gtsteffaniak/filebrowser?style=flat&label=stars&color=yellow)
+- Fixed [#3125](https://github.com/gtsteffaniak/filebrowser/pull/3125): admins using `createUserDir` could be narrowed to a personal folder; new admins now keep the source root and skip personal-directory creation, while non-admins still get their own directory.
+
 ### [chrome-devtools-mcp](https://github.com/ChromeDevTools/chrome-devtools-mcp) ![stars](https://img.shields.io/github/stars/ChromeDevTools/chrome-devtools-mcp?style=flat&label=stars&color=yellow)
 - Fixed [#3085](https://github.com/ChromeDevTools/chrome-devtools-mcp/pull/3085): slim-mode `evaluate` failures looked like successful text responses instead of errors; they now return `Error: …` with `isError: true`, while successful response text stays unchanged.
 
