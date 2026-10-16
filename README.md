@@ -16,6 +16,9 @@ Tinkering with AI and building skills
 
 ## Opensource Contributions:
 
+### [mcpproxy-go](https://github.com/smart-mcp-proxy/mcpproxy-go) ![stars](https://img.shields.io/github/stars/smart-mcp-proxy/mcpproxy-go?style=flat&label=stars&color=yellow)
+- Fixed [#1627](https://github.com/smart-mcp-proxy/mcpproxy-go/pull/1627): removing a server with more than 1,000 tools could leave the excess tools indexed; it now deletes matching tools in bounded pages and batches until none remain, while preserving other servers' tools.
+
 ### [maki](https://github.com/tontinton/maki) ![stars](https://img.shields.io/github/stars/tontinton/maki?style=flat&label=stars&color=yellow)
 - Fixed [#1265](https://github.com/tontinton/maki/pull/1265): `maki auth login` sent users setting up the Vibe / Coding profile to the outdated Codestral CLI page; it now opens Mistral’s Vibe Code extensions page, where they can create or choose an API key.
 
