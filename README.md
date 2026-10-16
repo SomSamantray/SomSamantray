@@ -244,6 +244,10 @@ Tinkering with AI and building skills
 ### [PriceBuddy](https://github.com/jez500/pricebuddy) ![stars](https://img.shields.io/github/stars/jez500/pricebuddy?style=flat&label=stars&color=yellow)
 - Fixed [#215](https://github.com/jez500/pricebuddy/pull/215): formatted the dashboard's Potential savings stat with the configured currency and locale, matching other dashboard values.
 
+### [backpass](https://github.com/kunchenguid/backpass) ![stars](https://img.shields.io/github/stars/kunchenguid/backpass?style=flat&label=stars&color=yellow)
+- Fixed [#216](https://github.com/kunchenguid/backpass/pull/216): the Quick Start omitted the default review UI's `lavish-axi` requirement and terminal fallback, so it now documents the install command and `--no-ui` option.
+- Fixed [#217](https://github.com/kunchenguid/backpass/pull/217): a `CLAUDE.md` symlink to `AGENTS.md` triggered a false separate-memory warning; symlinks resolving to the same file are now treated as pointers, with regression coverage.
+
 ### [reticle](https://github.com/reticlehq/reticle) ![stars](https://img.shields.io/github/stars/reticlehq/reticle?style=flat&label=stars&color=yellow)
 - Fixed [#1330](https://github.com/reticlehq/reticle/pull/1330): corrected `reticle_lease` documentation to use the accepted `seedStorage` keys and a valid `local` example.
 - Fixed [#1332](https://github.com/reticlehq/reticle/pull/1332): added `reticle_lease` guidance to the recovery message when opening a URL fails to launch the browser.
