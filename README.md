@@ -16,6 +16,9 @@ Tinkering with AI and building skills
 
 ## Opensource Contributions:
 
+### [trino](https://github.com/trinodb/trino) ![stars](https://img.shields.io/github/stars/trinodb/trino?style=flat&label=stars&color=yellow)
+- Fixed [#31540](https://github.com/trinodb/trino/pull/31540): wide Iceberg ORC tables could miss metrics for sorted columns beyond the inferred-column limit, and `OPTIMIZE` could miss NULLs in required columns when metrics were disabled; metrics now honor the output schema and sort order, and required columns retain null counts.
+
 ### [filebrowser](https://github.com/gtsteffaniak/filebrowser) ![stars](https://img.shields.io/github/stars/gtsteffaniak/filebrowser?style=flat&label=stars&color=yellow)
 - Fixed [#3125](https://github.com/gtsteffaniak/filebrowser/pull/3125): admins using `createUserDir` could be narrowed to a personal folder; new admins now keep the source root and skip personal-directory creation, while non-admins still get their own directory.
 
