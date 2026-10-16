@@ -254,4 +254,5 @@ Tinkering with AI and building skills
 - [#710](https://github.com/opendataloader-project/opendataloader-pdf/pull/710) - Made the hybrid backend's page batch size configurable (`--hybrid-chunk-size`) instead of a fixed 50, letting users on constrained backends shrink batches to avoid a known request-hang issue
 
 ### [Recordly](https://github.com/webadderallorg/Recordly) ![stars](https://img.shields.io/github/stars/webadderallorg/Recordly?style=flat&label=stars&color=yellow)
+- Fixed [#1127](https://github.com/webadderallorg/Recordly/pull/1127): microphone and system audio companion files such as `recording-mic.wav` or `system.mp4` could be treated as mixed audio and routed to the wrong track; the fix recognizes supported filename patterns and routes each file to its matching track.
 - Fixed [#1003](https://github.com/webadderallorg/Recordly/pull/1003): cancelling a screen recording left the microphone stream open in the background, so the next recording opened a second concurrent mic stream and produced silent/dead audio until the device was manually reselected
