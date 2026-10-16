@@ -16,38 +16,200 @@ Tinkering with AI and building skills
 
 ## Opensource Contributions:
 
-### [mcpproxy-go](https://github.com/smart-mcp-proxy/mcpproxy-go) ![stars](https://img.shields.io/github/stars/smart-mcp-proxy/mcpproxy-go?style=flat&label=stars&color=yellow)
-- Fixed [#1627](https://github.com/smart-mcp-proxy/mcpproxy-go/pull/1627): removing a server with more than 1,000 tools could leave the excess tools indexed; it now deletes matching tools in bounded pages and batches until none remain, while preserving other servers' tools.
+### [hermes-agent](https://github.com/NousResearch/hermes-agent) ![stars](https://img.shields.io/github/stars/NousResearch/hermes-agent?style=flat&label=stars&color=yellow)
+- Diagnosed and fixed [#92242](https://github.com/NousResearch/hermes-agent/pull/92242): large streamed tool calls (big `write_file`/`apply_patch` payloads) got quadratically slower to assemble as more chunks arrived, credited by the maintainer in the merged salvage ([#101906](https://github.com/NousResearch/hermes-agent/pull/101906))
 
-### [maki](https://github.com/tontinton/maki) ![stars](https://img.shields.io/github/stars/tontinton/maki?style=flat&label=stars&color=yellow)
-- Fixed [#1265](https://github.com/tontinton/maki/pull/1265): `maki auth login` sent users setting up the Vibe / Coding profile to the outdated Codestral CLI page; it now opens Mistral’s Vibe Code extensions page, where they can create or choose an API key.
+### [gstack](https://github.com/garrytan/gstack) ![stars](https://img.shields.io/github/stars/garrytan/gstack?style=flat&label=stars&color=yellow)
+- Fixed [#2966](https://github.com/garrytan/gstack/pull/2966): Codex templates now report `mktemp` failures clearly instead of continuing with empty temp-file paths; carried into merged release [#3057](https://github.com/garrytan/gstack/pull/3057).
+- Fixed [#2961](https://github.com/garrytan/gstack/pull/2961): Ubuntu 26.04 setup now selects the Playwright browser build for the host architecture; carried into merged release [#2959](https://github.com/garrytan/gstack/pull/2959).
+- Fixed [#2409](https://github.com/garrytan/gstack/pull/2409): setup docs told agents to run two memory-sync scripts as bare commands, which fail with "No such file or directory" since they're plain `.ts` files with no bin alias — corrected to the proper `bun run` invocation
+- Fixed [#2615](https://github.com/garrytan/gstack/pull/2615): a test meant to catch a missing gbrain install leaked the real system PATH, so it passed even when the bug was present on machines where gbrain is actually installed (e.g. Homebrew on Apple Silicon)
+- Fixed [#2976](https://github.com/garrytan/gstack/pull/2976): design-detect only looked for the Impeccable skill in its legacy install path, so anyone who installed it as a Claude Code plugin (the current normal way) always got reported as not having it — commits retained and merged via maintainer's hardening pass ([#2978](https://github.com/garrytan/gstack/pull/2978))
+- Fixed [#2965](https://github.com/garrytan/gstack/pull/2965): the Aside readiness probe reported `NEEDS_ASIDE` when the CLI was installed at `~/.local/bin` but that directory wasn't on `PATH` — it now finds and uses the CLI there; fix ported and credited in merged release PR [#3025](https://github.com/garrytan/gstack/pull/3025)
 
-### [trino](https://github.com/trinodb/trino) ![stars](https://img.shields.io/github/stars/trinodb/trino?style=flat&label=stars&color=yellow)
-- Fixed [#31540](https://github.com/trinodb/trino/pull/31540): wide Iceberg ORC tables could miss metrics for sorted columns beyond the inferred-column limit, and `OPTIMIZE` could miss NULLs in required columns when metrics were disabled; metrics now honor the output schema and sort order, and required columns retain null counts.
+### [Node.js](https://github.com/nodejs/node) ![stars](https://img.shields.io/github/stars/nodejs/node?style=flat&label=stars&color=yellow)
+- [#65243](https://github.com/nodejs/node/pull/65243) - Clarified the `process` signal docs: `SIGTERM`/`SIGINT` listeners run asynchronously, so an otherwise-idle process can exit before the listener actually runs — a gap that had confused users since 2019
 
-### [filebrowser](https://github.com/gtsteffaniak/filebrowser) ![stars](https://img.shields.io/github/stars/gtsteffaniak/filebrowser?style=flat&label=stars&color=yellow)
-- Fixed [#3125](https://github.com/gtsteffaniak/filebrowser/pull/3125): admins using `createUserDir` could be narrowed to a personal folder; new admins now keep the source root and skip personal-directory creation, while non-admins still get their own directory.
+### [caveman](https://github.com/JuliusBrussee/caveman) ![stars](https://img.shields.io/github/stars/JuliusBrussee/caveman?style=flat&label=stars&color=yellow)
+- Fixed [#900](https://github.com/JuliusBrussee/caveman/pull/900): `/caveman-stats` and the statusline showed no cost-savings figure at all on any Claude 5 session, because the pricing table only recognized Claude 3/4 model names
+- Fixed [#1084](https://github.com/JuliusBrussee/caveman/pull/1084): added native Grok Build support to the unified installer, including owned skill copies under `GROK_HOME/skills` and discovery in `--list`.
+
+### [rtk](https://github.com/rtk-ai/rtk) ![stars](https://img.shields.io/github/stars/rtk-ai/rtk?style=flat&label=stars&color=yellow)
+- Fixed [#3560](https://github.com/rtk-ai/rtk/pull/3560): three output-compaction filters (spring-boot, liquibase, ssh) had regexes so broad they silently mangled unrelated commands — e.g. any `java -jar` file got Spring-only filtering, `rm -rf /opt/liquibase` triggered liquibase compaction, and `ssh-keygen`/`ssh-add` got caught by a plain `ssh` filter
+
+### [impeccable](https://github.com/pbakaus/impeccable) ![stars](https://img.shields.io/github/stars/pbakaus/impeccable?style=flat&label=stars&color=yellow)
+- Diagnosed [#551](https://github.com/pbakaus/impeccable/pull/551): `hooks reset` silently re-armed a disabled hook because it deleted the config but left provider manifests wired — fix credited by name in the merged follow-up ([#668](https://github.com/pbakaus/impeccable/pull/668))
+
+### [CPython](https://github.com/python/cpython) ![stars](https://img.shields.io/github/stars/python/cpython?style=flat&label=stars&color=yellow)
+- Fixed [#155862](https://github.com/python/cpython/pull/155862): `class MyFlag(Mixin, Flag)` silently threw away the mixin's own `|`/`&`/`^` operator overrides in favor of `Flag`'s defaults, because `enum.py` never checked what the mixin's operators actually resolved to before overwriting them
+
+### [tesseract-ocr](https://github.com/tesseract-ocr/tesseract) ![stars](https://img.shields.io/github/stars/tesseract-ocr/tesseract?style=flat&label=stars&color=yellow)
+- [#4609](https://github.com/tesseract-ocr/tesseract/pull/4609) - `UNICHAR::UTF8ToUTF32` read one byte past a string ending in a truncated multibyte UTF-8 prefix — a real out-of-bounds read confirmed under AddressSanitizer; now clamps the step to the bytes actually remaining and returns empty on invalid input as documented
+
+### [VoiceStudio](https://github.com/debpalash/VoiceStudio) ![stars](https://img.shields.io/github/stars/debpalash/VoiceStudio?style=flat&label=stars&color=yellow)
+- [Setup wizard](https://github.com/debpalash/VoiceStudio/pull/1930) - Stopped the consent and dictation steps repeating the same title 2-3 times on one screen: real description subtitles across all 21 locales, redundant card heading removed
+
+### [Last30Days Skill](https://github.com/mvanhorn/last30days-skill) ![stars](https://img.shields.io/github/stars/mvanhorn/last30days-skill?style=flat&label=stars&color=yellow)
+- Fixed [#1009](https://github.com/mvanhorn/last30days-skill/pull/1009): YouTube search now uses a ScrapeCreators backstop below the thin-results floor, preserves yt-dlp results, and marks degraded lanes partial; carried into merged [#1248](https://github.com/mvanhorn/last30days-skill/pull/1248).
+- [#911](https://github.com/mvanhorn/last30days-skill/pull/911) - Windows setup silently failed to auto-install `npx` because the resolved path wasn't passed to the install command
+- [#912](https://github.com/mvanhorn/last30days-skill/pull/912) - Four bugs: `--web-backend=keyless` flag was rejected by the CLI, arXiv searches returned nothing for normal phrases, source links showed as plain text instead of clickable links, and Truth Social requests were blocked by Cloudflare
+- [#955](https://github.com/mvanhorn/last30days-skill/pull/955) - GitHub searches for a topic could silently return zero results because the tool's own date filter clashed with search filters already baked into the query
+- [#1083](https://github.com/mvanhorn/last30days-skill/pull/1083) - Reddit enrichment slots skipping high-comment threads
+- Fixed [#1072](https://github.com/mvanhorn/last30days-skill/pull/1072): the X-search subprocess was handed a full copy of the environment, so every unrelated API key or secret on the machine could leak to it if that vendored client were ever compromised — now it only receives an explicit allowlist of the variables it actually needs
+- [#1098](https://github.com/mvanhorn/last30days-skill/pull/1098) - Added a live CI status badge (Validate workflow, which runs the full pytest suite on every push/PR) to the README across all seven language translations, closing a long-open visibility request instead of duplicating the suite with a redundant second workflow
+- [#970](https://github.com/mvanhorn/last30days-skill/pull/970) - GitHub search qualifiers wrapped in parentheses, quotes, or brackets (e.g. `(created:>2025-03-20)`) still slipped past the earlier strip, colliding with the tool's own date filter and silently returning zero results
+- [#1027](https://github.com/mvanhorn/last30days-skill/pull/1027) - X search kept reporting "not authenticated" even with valid credentials, because it only recognized xurl's old flat credential file, not its current directory-based layout
+- [#1126](https://github.com/mvanhorn/last30days-skill/pull/1126) - When Claude Desktop leaves an API key field blank, it writes a literal placeholder string instead of nothing — this was being read as a valid credential, so the tool reported healthy setup right up until the request hit the real API and failed
+
+### [MemPalace](https://github.com/MemPalace/mempalace) ![stars](https://img.shields.io/github/stars/MemPalace/mempalace?style=flat&label=stars&color=yellow)
+- [#2342](https://github.com/MemPalace/mempalace/pull/2342) - Pre-commit's Ruff hook could drift from the version pinned in `pyproject.toml` and CI, letting local checks silently pass or fail differently than CI; aligned all three sources and scoped version extraction to the Ruff hook block so unrelated hook bumps can't trip the check
 
 ### [chrome-devtools-mcp](https://github.com/ChromeDevTools/chrome-devtools-mcp) ![stars](https://img.shields.io/github/stars/ChromeDevTools/chrome-devtools-mcp?style=flat&label=stars&color=yellow)
 - Fixed [#3085](https://github.com/ChromeDevTools/chrome-devtools-mcp/pull/3085): slim-mode `evaluate` failures looked like successful text responses instead of errors; they now return `Error: …` with `isError: true`, while successful response text stays unchanged.
 
+### [LocalAI](https://github.com/mudler/LocalAI) ![stars](https://img.shields.io/github/stars/mudler/LocalAI?style=flat&label=stars&color=yellow)
+- Fixed [#11652](https://github.com/mudler/LocalAI/pull/11652): the whisper backend ignored the port LocalAI actually launched it on and always bound to a hardcoded default, causing a misleading "connection unavailable" error instead of working
+
+### [OpenMAIC](https://github.com/THU-MAIC/OpenMAIC) ![stars](https://img.shields.io/github/stars/THU-MAIC/OpenMAIC?style=flat&label=stars&color=yellow)
+- Fixed [#1144](https://github.com/THU-MAIC/OpenMAIC/pull/1144) - Added a "Download Script" feature letting teachers export a classroom's narration text as Markdown or a real Word `.docx` for lesson prep, localized across all 12 supported languages
+- Fixed [#1621](https://github.com/THU-MAIC/OpenMAIC/pull/1621): extracted a shared narration walk for script and speaker-notes exports, keeping speech-text handling consistent across both.
+
+### [open-notebook](https://github.com/lfnovo/open-notebook) ![stars](https://img.shields.io/github/stars/lfnovo/open-notebook?style=flat&label=stars&color=yellow)
+- Fixed [#1360](https://github.com/lfnovo/open-notebook/pull/1360): stored provider API keys now use versioned PBKDF2-HMAC-SHA256 derivation, while legacy values remain readable and can be migrated in place.
+
+### [Buzz](https://github.com/block/buzz) ![stars](https://img.shields.io/github/stars/block/buzz?style=flat&label=stars&color=yellow)
+- Fixed [#4500](https://github.com/block/buzz/pull/4500): docs told users to import agent packs via a "zip file + Install Pack button" that doesn't exist anymore in the app, now corrected to match the real import flow
+
+### [github-chinese](https://github.com/maboloshi/github-chinese) ![stars](https://img.shields.io/github/stars/maboloshi/github-chinese?style=flat&label=stars&color=yellow)
+- Fixed [#806](https://github.com/maboloshi/github-chinese/pull/806): added Simplified and Traditional Chinese feature-request templates.
+- Fixed [#805](https://github.com/maboloshi/github-chinese/pull/805): fixed a leftover “on” after translating a time element.
+
+### [Recordly](https://github.com/webadderallorg/Recordly) ![stars](https://img.shields.io/github/stars/webadderallorg/Recordly?style=flat&label=stars&color=yellow)
+- Fixed [#1127](https://github.com/webadderallorg/Recordly/pull/1127): microphone and system audio companion files such as `recording-mic.wav` or `system.mp4` could be treated as mixed audio and routed to the wrong track; the fix recognizes supported filename patterns and routes each file to its matching track.
+- Fixed [#1003](https://github.com/webadderallorg/Recordly/pull/1003): cancelling a screen recording left the microphone stream open in the background, so the next recording opened a second concurrent mic stream and produced silent/dead audio until the device was manually reselected
+
+### [laya](https://github.com/NandhaKishorM/laya) ![stars](https://img.shields.io/github/stars/NandhaKishorM/laya?style=flat&label=stars&color=yellow)
+- [#656](https://github.com/NandhaKishorM/laya/pull/656) - Added `LAYA_ROOT_PATH` support so the FastAPI server can be deployed behind a reverse proxy under a URL prefix (e.g. `/laya`), with OpenAPI/Swagger UI generating correct prefixed URLs
+
+### [DeepAgents](https://github.com/langchain-ai/deepagents) ![stars](https://img.shields.io/github/stars/langchain-ai/deepagents?style=flat&label=stars&color=yellow)
+- Fixed [#5747](https://github.com/langchain-ai/deepagents/pull/5747): `edit_file` with an empty search string silently corrupted files by inserting the replacement between every single character instead of erroring out
+
+### [opendataloader-pdf](https://github.com/opendataloader-project/opendataloader-pdf) ![stars](https://img.shields.io/github/stars/opendataloader-project/opendataloader-pdf?style=flat&label=stars&color=yellow)
+- [#710](https://github.com/opendataloader-project/opendataloader-pdf/pull/710) - Made the hybrid backend's page batch size configurable (`--hybrid-chunk-size`) instead of a fixed 50, letting users on constrained backends shrink batches to avoid a known request-hang issue
+
+### [AgentMemory](https://github.com/rohitg00/agentmemory) ![stars](https://img.shields.io/github/stars/rohitg00/agentmemory?style=flat&label=stars&color=yellow)
+- Fixed [#1132](https://github.com/rohitg00/agentmemory/pull/1132): deleting a memory could falsely say "deleted" when nothing was actually removed, and there was no way to delete a saved lesson at all — both now fixed
+
+### [Actual Budget](https://github.com/actualbudget/actual) ![stars](https://img.shields.io/github/stars/actualbudget/actual?style=flat&label=stars&color=yellow)
+- Fixed [#8719](https://github.com/actualbudget/actual/pull/8719): merging two payees left "one of"/"not one of" rule conditions with the merged payee listed twice, so deleting the visible duplicate in the UI silently deleted both underlying entries and dropped the payee from the rule entirely
+
+### [mastra-ai/mastra](https://github.com/mastra-ai/mastra) ![stars](https://img.shields.io/github/stars/mastra-ai/mastra?style=flat&label=stars&color=yellow)
+- [#24239](https://github.com/mastra-ai/mastra/pull/24239) - Multi-step agentic loops with Observational Memory enabled could crash with `Turn already ended` when a sealed turn got reused on the same message list; the processor now discards an ended turn before reuse so the next step starts fresh
+
+### [planning-with-files](https://github.com/OthmanAdi/planning-with-files) ![stars](https://img.shields.io/github/stars/OthmanAdi/planning-with-files?style=flat&label=stars&color=yellow)
+- Audited [#216](https://github.com/OthmanAdi/planning-with-files/pull/216): found 5 duplicate language skills had silently drifted out of sync (missing bug fixes, missing features)
+- Fixed [#291](https://github.com/OthmanAdi/planning-with-files/pull/291): Cursor's hooks used an old event and response schema the current Cursor runtime no longer recognizes, so plan context silently stopped reaching Cursor conversations
+
+### [floci](https://github.com/floci-io/floci) ![stars](https://img.shields.io/github/stars/floci-io/floci?style=flat&label=stars&color=yellow)
+- Fixed [#5448](https://github.com/floci-io/floci/pull/5448): Cognito user-pool responses now include configured prefix and custom domain names, omitting either field when it is unset.
+- Fixed [#5450](https://github.com/floci-io/floci/pull/5450): imported API Gateway methods with API-key security could be called without a key, so imports now enforce `x-api-key` when every security alternative requires it while preserving access through optional alternatives.
+
+### [Compound Engineering Plugin](https://github.com/EveryInc/compound-engineering-plugin) ![stars](https://img.shields.io/github/stars/EveryInc/compound-engineering-plugin?style=flat&label=stars&color=yellow)
+- Fixed [#1848](https://github.com/EveryInc/compound-engineering-plugin/pull/1848): clarified which project assets Stage 4 of code review should read.
+- Fixed [#1849](https://github.com/EveryInc/compound-engineering-plugin/pull/1849): made the commit workflow follow the project’s own commit conventions.
+- [#1292](https://github.com/EveryInc/compound-engineering-plugin/pull/1292) - On Windows, background AI workers could quietly launch on the wrong bash (WSL instead of Git Bash) and skip work without any error
+- [#1291](https://github.com/EveryInc/compound-engineering-plugin/pull/1291) - Renamed a confusing internal flag (`mode:headless` → `mode:non-interactive`) across skills, keeping the old name working temporarily so nothing breaks
+- Fixed [#1733](https://github.com/EveryInc/compound-engineering-plugin/pull/1733): a fully completed code review could report its adversarial-review coverage using the exact same phrase as a skipped one, making a finished review indistinguishable from a skipped one at a glance
+
+### [pascalorg/editor](https://github.com/pascalorg/editor) ![stars](https://img.shields.io/github/stars/pascalorg/editor?style=flat&label=stars&color=yellow)
+- [#636](https://github.com/pascalorg/editor/pull/636) - `exportFloorplanPdf` wasn't exported from the package, blocking host apps from building their own floorplan-export UI outside the built-in Settings panel; also deduped a repeated export-scope check into one shared predicate with direct test coverage
+
+### [CodexBar](https://github.com/steipete/CodexBar) ![stars](https://img.shields.io/github/stars/steipete/CodexBar?style=flat&label=stars&color=yellow)
+- Fixed [#3438](https://github.com/steipete/CodexBar/pull/3438): China-region Moonshot account balances and deficits were mislabeled in USD instead of CNY, both in the menu bar display and CLI output
+
+### [qm](https://github.com/yc-software/qm) ![stars](https://img.shields.io/github/stars/yc-software/qm?style=flat&label=stars&color=yellow)
+- Fixed [#149](https://github.com/yc-software/qm/pull/149): a brief database hiccup while waiting for a job to finish could crash the whole process instead of just timing out safely
+
+### [semantica](https://github.com/semantica-agi/semantica) ![stars](https://img.shields.io/github/stars/semantica-agi/semantica?style=flat&label=stars&color=yellow)
+- [#1595](https://github.com/semantica-agi/semantica/pull/1595) - Added a Looker connector (Looks, Dashboards, LookML models, Folders, Projects) as an optional dependency, plus SSRF hardening on the SDK's session (URL/DNS-rebind validation, forced TLS, zero redirects, secret-field stripping) since the official SDK builds its own HTTP transport outside the repo's existing request guard
+
+### [Needle](https://github.com/cactus-compute/needle) ![stars](https://img.shields.io/github/stars/cactus-compute/needle?style=flat&label=stars&color=yellow)
+- [#98](https://github.com/cactus-compute/needle/pull/98) - Made the setup script auto-detect and prefer `uv` (10-100x faster than pip) when available, falling back to pip only when it isn't installed
+- [#123](https://github.com/cactus-compute/needle/pull/123): a correctly-extracted number was rejected as "fabricated" whenever the source text wrote it with a thousands separator (e.g. `$1,200.00`), since the grounding check compared values as plain text instead of as numbers — this broke even the README's own example
+- [#124](https://github.com/cactus-compute/needle/pull/124): the acceptance suites' pass/fail scoring rule (90% threshold, critical-failure override, confidence gate) was documented but never actually tested, so a silent change to it could ship without anyone noticing — pinned with regression tests and documented what a red suite means
+
+### [ebiten](https://github.com/hajimehoshi/ebiten) ![stars](https://img.shields.io/github/stars/hajimehoshi/ebiten?style=flat&label=stars&color=yellow)
+- Fixed [#3921](https://github.com/hajimehoshi/ebiten/pull/3921): corrected `RestoreWindow` behavior when the window has finite size limits.
+
+### [trino](https://github.com/trinodb/trino) ![stars](https://img.shields.io/github/stars/trinodb/trino?style=flat&label=stars&color=yellow)
+- Fixed [#31540](https://github.com/trinodb/trino/pull/31540): wide Iceberg ORC tables could miss metrics for sorted columns beyond the inferred-column limit, and `OPTIMIZE` could miss NULLs in required columns when metrics were disabled; metrics now honor the output schema and sort order, and required columns retain null counts.
+
+### [kiss-translator](https://github.com/fishjar/kiss-translator) ![stars](https://img.shields.io/github/stars/fishjar/kiss-translator?style=flat&label=stars&color=yellow)
+- Fixed [#1167](https://github.com/fishjar/kiss-translator/pull/1167): translating nearby text no longer gives unloaded inline images zero dimensions, preventing blank image previews.
+
+### [apify-mcp-server](https://github.com/apify/apify-mcp-server) ![stars](https://img.shields.io/github/stars/apify/apify-mcp-server?style=flat&label=stars&color=yellow)
+- Fixed [#1315](https://github.com/apify/apify-mcp-server/pull/1315): running the conformance test suite locally leaked the raw `APIFY_TOKEN` to the terminal in plain text — CI masked it, but the local script had no equivalent redaction
+
+### [Unciv](https://github.com/yairm210/Unciv) ![stars](https://img.shields.io/github/stars/yairm210/Unciv?style=flat&label=stars&color=yellow)
+- Fixed [#15756](https://github.com/yairm210/Unciv/pull/15756): restored ruleset order for promotion battle modifiers so they appear in the same order as the promotions in the battle preview.
+
+### [pypdf](https://github.com/py-pdf/pypdf) ![stars](https://img.shields.io/github/stars/py-pdf/pypdf?style=flat&label=stars&color=yellow)
+- Fixed [#3998](https://github.com/py-pdf/pypdf/pull/3998): PDF outline items created with `is_open=False` still showed expanded in PDF viewers, because the writer never actually marked them collapsed per the PDF spec
+
+### [filebrowser](https://github.com/gtsteffaniak/filebrowser) ![stars](https://img.shields.io/github/stars/gtsteffaniak/filebrowser?style=flat&label=stars&color=yellow)
+- Fixed [#3125](https://github.com/gtsteffaniak/filebrowser/pull/3125): admins using `createUserDir` could be narrowed to a personal folder; new admins now keep the source root and skip personal-directory creation, while non-admins still get their own directory.
+
+### [plano](https://github.com/katanemo/plano) ![stars](https://img.shields.io/github/stars/katanemo/plano?style=flat&label=stars&color=yellow)
+- Fixed [#1018](https://github.com/katanemo/plano/pull/1018): fast, short streaming responses could crash the LLM gateway worker with a divide-by-zero error while recording throughput metrics, taking down other requests sharing that worker
+
+### [loopx](https://github.com/huangruiteng/loopx) ![stars](https://img.shields.io/github/stars/huangruiteng/loopx?style=flat&label=stars&color=yellow)
+- Fixed [#2801](https://github.com/huangruiteng/loopx/pull/2801): repeated `/loopx` calls picked a random agent each time instead of remembering which one a conversation was already using
+
+### [Cloudflare Docs](https://github.com/cloudflare/cloudflare-docs) ![stars](https://img.shields.io/github/stars/cloudflare/cloudflare-docs?style=flat&label=stars&color=yellow)
+- Fixed [#33406](https://github.com/cloudflare/cloudflare-docs/pull/33406): the Workers AI JSON Mode docs listed three models as supporting it even though none of their schemas actually declare that capability, misleading anyone trying to use it
+- Fixed [#33408](https://github.com/cloudflare/cloudflare-docs/pull/33408): R2 Sippy command examples rendered with a broken syntax-highlight color, because the shell syntax highlighter misread the unquoted `<BUCKET_NAME>` placeholder as a redirect operator
+
+### [OpenMausBot](https://github.com/milind-soni/OpenMausBot) ![stars](https://img.shields.io/github/stars/milind-soni/OpenMausBot?style=flat&label=stars&color=yellow)
+- Fixed [#2633](https://github.com/milind-soni/OpenMausBot/pull/2633): reduced glass pop-up flicker on Windows.
+- Fixed [#230](https://github.com/milind-soni/OpenMausBot/pull/230): two permission requests arriving with the same ID could silently clobber each other, leaving one request permanently stuck with no way to answer it — now the second one is rejected outright instead of overwriting the first
+- Fixed [#234](https://github.com/milind-soni/OpenMausBot/pull/234): a test suite from #230 broke on Windows because four test cases accidentally shared the same truncated identifier, causing one test's leftover named pipe to block the next — renamed the IDs and added a check.
+
 ### [cherry-markdown](https://github.com/Tencent/cherry-markdown) ![stars](https://img.shields.io/github/stars/Tencent/cherry-markdown?style=flat&label=stars&color=yellow)
 - Fixed [#1901](https://github.com/Tencent/cherry-markdown/pull/1901): applying a heading level to a multiline selection containing ordinary text and an existing heading did not update both lines consistently; it now applies the selected level to each line while preserving spacing after an existing marker.
 
-### [WordPress-iOS](https://github.com/wordpress-mobile/WordPress-iOS) ![stars](https://img.shields.io/github/stars/wordpress-mobile/WordPress-iOS?style=flat&label=stars&color=yellow)
-- Fixed [#26137](https://github.com/wordpress-mobile/WordPress-iOS/pull/26137): clearing the Store Sandbox secret could leave a stale cookie in WebKit and send checkout to the wrong store; the fix synchronizes cookie updates and deletion across shared storage and WebKit.
-
-### [xdsl](https://github.com/xdslproject/xdsl) ![stars](https://img.shields.io/github/stars/xdslproject/xdsl?style=flat&label=stars&color=yellow)
-- Fixed [#6560](https://github.com/xdslproject/xdsl/pull/6560): IRDL verification now rejects negative, malformed, or inconsistent variadic segment sizes for operands and results, with clear diagnostics and regression coverage.
+### [CLI Printing Press](https://github.com/mvanhorn/cli-printing-press) ![stars](https://img.shields.io/github/stars/mvanhorn/cli-printing-press?style=flat&label=stars&color=yellow)
+- Fixed [#4990](https://github.com/mvanhorn/cli-printing-press/pull/4990): when dogfood still failed after two fix loops, the receipt system rejected the handoff to archive manuscripts; it now records the hold and archives without promoting the failed CLI.
+- [#4049](https://github.com/mvanhorn/cli-printing-press/pull/4049) - A passing local check still let an unrewritten module path slip into a packaged CLI; added a module-path check and surfaced the review-gate rules agents were missing
+- [#3855](https://github.com/mvanhorn/cli-printing-press/pull/3855) - Windows credential tests failed because sandbox test folders had overly loose permissions, now locked to owner-only
+- [#3856](https://github.com/mvanhorn/cli-printing-press/pull/3856) - A Windows test failure showed the wrong folder path, making the real problem hard to track down
+- [#3857](https://github.com/mvanhorn/cli-printing-press/pull/3857) - Generated export/sync tools could report "success" even when saving the file actually failed
+- [#1890](https://github.com/mvanhorn/printing-press-library/pull/1890) - Google Search Console CLI's `sitemaps-submit`/`get`/`delete` 404'd whenever a feedpath was an absolute URL, since the raw `https://` slashes split the REST path; now percent-encoded as a single path segment so it routes correctly
+- [#1893](https://github.com/mvanhorn/printing-press-library/pull/1893) - Movie Goat CLI's local/offline search silently returned zero results (exit 0) because the untyped search branch never assigned results, and separately crashed on FTS5-syntax queries like `Space: 1999`; both fixed with real FTS hits and per-token query sanitization
+- Fixed [#4829](https://github.com/mvanhorn/cli-printing-press/pull/4829): dogfood testing flagged a false WARN for CLIs with no sync command at all, mistaking "no sync command exists" for "sync command uses generic Upsert calls"
 
 ### [FluxDown](https://github.com/zerx-lab/FluxDown) ![stars](https://img.shields.io/github/stars/zerx-lab/FluxDown?style=flat&label=stars&color=yellow)
 - Fixed [#849](https://github.com/zerx-lab/FluxDown/pull/849): users were pointed to a nonexistent in-app feedback button; issue templates and READMEs now direct them to the website feedback page, and the English/Chinese interface guides no longer describe the button.
 
-### [split-pro](https://github.com/oss-apps/split-pro) ![stars](https://img.shields.io/github/stars/oss-apps/split-pro?style=flat&label=stars&color=yellow)
-- Fixed [#752](https://github.com/oss-apps/split-pro/pull/752): invite-email failures now show a clear error in expense and group flows instead of appearing successful, while retaining the added friend.
+### [quickjs-ng](https://github.com/quickjs-ng/quickjs) ![stars](https://img.shields.io/github/stars/quickjs-ng/quickjs?style=flat&label=stars&color=yellow)
+- Fixed [#1657](https://github.com/quickjs-ng/quickjs/pull/1657): `quickjs.c` failed to compile on GCC 14+ for any ESP32 target, because six call sites passed `int*` where the platform's `int32_t*` was expected (or vice versa)
 
-### [kiss-translator](https://github.com/fishjar/kiss-translator) ![stars](https://img.shields.io/github/stars/fishjar/kiss-translator?style=flat&label=stars&color=yellow)
-- Fixed [#1167](https://github.com/fishjar/kiss-translator/pull/1167): translating nearby text no longer gives unloaded inline images zero dimensions, preventing blank image previews.
+### [WordPress-iOS](https://github.com/wordpress-mobile/WordPress-iOS) ![stars](https://img.shields.io/github/stars/wordpress-mobile/WordPress-iOS?style=flat&label=stars&color=yellow)
+- Fixed [#26137](https://github.com/wordpress-mobile/WordPress-iOS/pull/26137): clearing the Store Sandbox secret could leave a stale cookie in WebKit and send checkout to the wrong store; the fix synchronizes cookie updates and deletion across shared storage and WebKit.
+
+### [tslearn](https://github.com/tslearn-team/tslearn) ![stars](https://img.shields.io/github/stars/tslearn-team/tslearn?style=flat&label=stars&color=yellow)
+- Fixed [#703](https://github.com/tslearn-team/tslearn/pull/703) - Added `silhouette_samples()` for time-series clustering, giving per-series silhouette scores (for outlier detection and silhouette plots) with DTW/soft-DTW metrics — previously only the single aggregate score was available, forcing a manual workaround
+
+### [spliit](https://github.com/spliit-app/spliit) ![stars](https://img.shields.io/github/stars/spliit-app/spliit?style=flat&label=stars&color=yellow)
+- Fixed [#635](https://github.com/spliit-app/spliit/pull/635): an expense dated the 1st of the month could be grouped under "Last month" while its own row still showed the 1st, because the timezone conversion for grouping (unlike display) shifted UTC-midnight dates backward for anyone west of UTC
+
+### [rueidis](https://github.com/redis/rueidis) ![stars](https://img.shields.io/github/stars/redis/rueidis?style=flat&label=stars&color=yellow) 
+- Fixed [#1023](https://github.com/redis/rueidis/pull/1023): `rueidiscompatmock` panicked with "unexpected call to DoCache" whenever a test tried to mock a client-side-cached `Cache(ttl)` call, instead of routing it through the existing expectation queue.
+
+### [openstreetmap-website](https://github.com/openstreetmap/openstreetmap-website) ![stars](https://img.shields.io/github/stars/openstreetmap/openstreetmap-website?style=flat&label=stars&color=yellow)
+- Fixed [#7297](https://github.com/openstreetmap/openstreetmap-website/pull/7297): future-tense block-expiry text ("in 3 days") bypassed the app's own translation file and fell back to an English-only default
+
+### [trzsz-ssh](https://github.com/trzsz/trzsz-ssh) ![stars](https://img.shields.io/github/stars/trzsz/trzsz-ssh?style=flat&label=stars&color=yellow)
+- Fixed [#288](https://github.com/trzsz/trzsz-ssh/pull/288): added support for `@` in SSH usernames.
 
 ### [Printing Press Library](https://github.com/mvanhorn/printing-press-library) ![stars](https://img.shields.io/github/stars/mvanhorn/printing-press-library?style=flat&label=stars&color=yellow)
 - [Screener](https://github.com/mvanhorn/printing-press-library/pull/1715) - Indian stock market fundamental analysis, screening, and market pulse, with company compare, quarterly trend detection, screen overlap/ranking, and insider buy/sell flow tracking
@@ -73,80 +235,11 @@ Tinkering with AI and building skills
 - [Swiggy](https://github.com/mvanhorn/printing-press-library/pull/1994) - CLI for Swiggy's MCP API (Food, Instamart, Dineout) — 51 tools plus cross-domain spend history, a safe-retry guard for failed order placement, and a UPI payment-wait command
 - [Philonet](https://github.com/mvanhorn/printing-press-library/pull/2112) - CLI for Philonet (no public API; reverse-engineered from the logged-in web app): reading streaks, friends' thoughts, and unanswered-thread tracking, plus local history the web app doesn't keep — weekly/monthly reading rhythm, a read-later queue fitted to your free minutes, and which of your thoughts earned reactions
 
-### [CLI Printing Press](https://github.com/mvanhorn/cli-printing-press) ![stars](https://img.shields.io/github/stars/mvanhorn/cli-printing-press?style=flat&label=stars&color=yellow)
-- Fixed [#4990](https://github.com/mvanhorn/cli-printing-press/pull/4990): when dogfood still failed after two fix loops, the receipt system rejected the handoff to archive manuscripts; it now records the hold and archives without promoting the failed CLI.
-- [#4049](https://github.com/mvanhorn/cli-printing-press/pull/4049) - A passing local check still let an unrewritten module path slip into a packaged CLI; added a module-path check and surfaced the review-gate rules agents were missing
-- [#3855](https://github.com/mvanhorn/cli-printing-press/pull/3855) - Windows credential tests failed because sandbox test folders had overly loose permissions, now locked to owner-only
-- [#3856](https://github.com/mvanhorn/cli-printing-press/pull/3856) - A Windows test failure showed the wrong folder path, making the real problem hard to track down
-- [#3857](https://github.com/mvanhorn/cli-printing-press/pull/3857) - Generated export/sync tools could report "success" even when saving the file actually failed
-- [#1890](https://github.com/mvanhorn/printing-press-library/pull/1890) - Google Search Console CLI's `sitemaps-submit`/`get`/`delete` 404'd whenever a feedpath was an absolute URL, since the raw `https://` slashes split the REST path; now percent-encoded as a single path segment so it routes correctly
-- [#1893](https://github.com/mvanhorn/printing-press-library/pull/1893) - Movie Goat CLI's local/offline search silently returned zero results (exit 0) because the untyped search branch never assigned results, and separately crashed on FTS5-syntax queries like `Space: 1999`; both fixed with real FTS hits and per-token query sanitization
-- Fixed [#4829](https://github.com/mvanhorn/cli-printing-press/pull/4829): dogfood testing flagged a false WARN for CLIs with no sync command at all, mistaking "no sync command exists" for "sync command uses generic Upsert calls"
+### [split-pro](https://github.com/oss-apps/split-pro) ![stars](https://img.shields.io/github/stars/oss-apps/split-pro?style=flat&label=stars&color=yellow)
+- Fixed [#752](https://github.com/oss-apps/split-pro/pull/752): invite-email failures now show a clear error in expense and group flows instead of appearing successful, while retaining the added friend.
 
-### [Last30Days Skill](https://github.com/mvanhorn/last30days-skill) ![stars](https://img.shields.io/github/stars/mvanhorn/last30days-skill?style=flat&label=stars&color=yellow)
-- Fixed [#1009](https://github.com/mvanhorn/last30days-skill/pull/1009): YouTube search now uses a ScrapeCreators backstop below the thin-results floor, preserves yt-dlp results, and marks degraded lanes partial; carried into merged [#1248](https://github.com/mvanhorn/last30days-skill/pull/1248).
-- [#911](https://github.com/mvanhorn/last30days-skill/pull/911) - Windows setup silently failed to auto-install `npx` because the resolved path wasn't passed to the install command
-- [#912](https://github.com/mvanhorn/last30days-skill/pull/912) - Four bugs: `--web-backend=keyless` flag was rejected by the CLI, arXiv searches returned nothing for normal phrases, source links showed as plain text instead of clickable links, and Truth Social requests were blocked by Cloudflare
-- [#955](https://github.com/mvanhorn/last30days-skill/pull/955) - GitHub searches for a topic could silently return zero results because the tool's own date filter clashed with search filters already baked into the query
-- [#1083](https://github.com/mvanhorn/last30days-skill/pull/1083) - Reddit enrichment slots skipping high-comment threads
-- Fixed [#1072](https://github.com/mvanhorn/last30days-skill/pull/1072): the X-search subprocess was handed a full copy of the environment, so every unrelated API key or secret on the machine could leak to it if that vendored client were ever compromised — now it only receives an explicit allowlist of the variables it actually needs
-- [#1098](https://github.com/mvanhorn/last30days-skill/pull/1098) - Added a live CI status badge (Validate workflow, which runs the full pytest suite on every push/PR) to the README across all seven language translations, closing a long-open visibility request instead of duplicating the suite with a redundant second workflow
-- [#970](https://github.com/mvanhorn/last30days-skill/pull/970) - GitHub search qualifiers wrapped in parentheses, quotes, or brackets (e.g. `(created:>2025-03-20)`) still slipped past the earlier strip, colliding with the tool's own date filter and silently returning zero results
-- [#1027](https://github.com/mvanhorn/last30days-skill/pull/1027) - X search kept reporting "not authenticated" even with valid credentials, because it only recognized xurl's old flat credential file, not its current directory-based layout
-- [#1126](https://github.com/mvanhorn/last30days-skill/pull/1126) - When Claude Desktop leaves an API key field blank, it writes a literal placeholder string instead of nothing — this was being read as a valid credential, so the tool reported healthy setup right up until the request hit the real API and failed
-
-### [hermes-agent](https://github.com/NousResearch/hermes-agent) ![stars](https://img.shields.io/github/stars/NousResearch/hermes-agent?style=flat&label=stars&color=yellow)
-- Diagnosed and fixed [#92242](https://github.com/NousResearch/hermes-agent/pull/92242): large streamed tool calls (big `write_file`/`apply_patch` payloads) got quadratically slower to assemble as more chunks arrived, credited by the maintainer in the merged salvage ([#101906](https://github.com/NousResearch/hermes-agent/pull/101906))
-
-### [Cloudflare Docs](https://github.com/cloudflare/cloudflare-docs) ![stars](https://img.shields.io/github/stars/cloudflare/cloudflare-docs?style=flat&label=stars&color=yellow)
-- Fixed [#33406](https://github.com/cloudflare/cloudflare-docs/pull/33406): the Workers AI JSON Mode docs listed three models as supporting it even though none of their schemas actually declare that capability, misleading anyone trying to use it
-- Fixed [#33408](https://github.com/cloudflare/cloudflare-docs/pull/33408): R2 Sippy command examples rendered with a broken syntax-highlight color, because the shell syntax highlighter misread the unquoted `<BUCKET_NAME>` placeholder as a redirect operator
-
-### [pascalorg/editor](https://github.com/pascalorg/editor) ![stars](https://img.shields.io/github/stars/pascalorg/editor?style=flat&label=stars&color=yellow)
-- [#636](https://github.com/pascalorg/editor/pull/636) - `exportFloorplanPdf` wasn't exported from the package, blocking host apps from building their own floorplan-export UI outside the built-in Settings panel; also deduped a repeated export-scope check into one shared predicate with direct test coverage
-
-### [CPython](https://github.com/python/cpython) ![stars](https://img.shields.io/github/stars/python/cpython?style=flat&label=stars&color=yellow)
-- Fixed [#155862](https://github.com/python/cpython/pull/155862): `class MyFlag(Mixin, Flag)` silently threw away the mixin's own `|`/`&`/`^` operator overrides in favor of `Flag`'s defaults, because `enum.py` never checked what the mixin's operators actually resolved to before overwriting them
-
-### [Node.js](https://github.com/nodejs/node) ![stars](https://img.shields.io/github/stars/nodejs/node?style=flat&label=stars&color=yellow)
-- [#65243](https://github.com/nodejs/node/pull/65243) - Clarified the `process` signal docs: `SIGTERM`/`SIGINT` listeners run asynchronously, so an otherwise-idle process can exit before the listener actually runs — a gap that had confused users since 2019
-
-### [Compound Engineering Plugin](https://github.com/EveryInc/compound-engineering-plugin) ![stars](https://img.shields.io/github/stars/EveryInc/compound-engineering-plugin?style=flat&label=stars&color=yellow)
-- Fixed [#1848](https://github.com/EveryInc/compound-engineering-plugin/pull/1848): clarified which project assets Stage 4 of code review should read.
-- Fixed [#1849](https://github.com/EveryInc/compound-engineering-plugin/pull/1849): made the commit workflow follow the project’s own commit conventions.
-- [#1292](https://github.com/EveryInc/compound-engineering-plugin/pull/1292) - On Windows, background AI workers could quietly launch on the wrong bash (WSL instead of Git Bash) and skip work without any error
-- [#1291](https://github.com/EveryInc/compound-engineering-plugin/pull/1291) - Renamed a confusing internal flag (`mode:headless` → `mode:non-interactive`) across skills, keeping the old name working temporarily so nothing breaks
-- Fixed [#1733](https://github.com/EveryInc/compound-engineering-plugin/pull/1733): a fully completed code review could report its adversarial-review coverage using the exact same phrase as a skipped one, making a finished review indistinguishable from a skipped one at a glance
-
-### [mastra-ai/mastra](https://github.com/mastra-ai/mastra) ![stars](https://img.shields.io/github/stars/mastra-ai/mastra?style=flat&label=stars&color=yellow)
-- [#24239](https://github.com/mastra-ai/mastra/pull/24239) - Multi-step agentic loops with Observational Memory enabled could crash with `Turn already ended` when a sealed turn got reused on the same message list; the processor now discards an ended turn before reuse so the next step starts fresh
-
-### [laya](https://github.com/NandhaKishorM/laya) ![stars](https://img.shields.io/github/stars/NandhaKishorM/laya?style=flat&label=stars&color=yellow)
-- [#656](https://github.com/NandhaKishorM/laya/pull/656) - Added `LAYA_ROOT_PATH` support so the FastAPI server can be deployed behind a reverse proxy under a URL prefix (e.g. `/laya`), with OpenAPI/Swagger UI generating correct prefixed URLs
-
-### [LocalAI](https://github.com/mudler/LocalAI) ![stars](https://img.shields.io/github/stars/mudler/LocalAI?style=flat&label=stars&color=yellow)
-- Fixed [#11652](https://github.com/mudler/LocalAI/pull/11652): the whisper backend ignored the port LocalAI actually launched it on and always bound to a hardcoded default, causing a misleading "connection unavailable" error instead of working
-
-### [VoiceStudio](https://github.com/debpalash/VoiceStudio) ![stars](https://img.shields.io/github/stars/debpalash/VoiceStudio?style=flat&label=stars&color=yellow)
-- [Setup wizard](https://github.com/debpalash/VoiceStudio/pull/1930) - Stopped the consent and dictation steps repeating the same title 2-3 times on one screen: real description subtitles across all 21 locales, redundant card heading removed
-
-### [CodexBar](https://github.com/steipete/CodexBar) ![stars](https://img.shields.io/github/stars/steipete/CodexBar?style=flat&label=stars&color=yellow)
-- Fixed [#3438](https://github.com/steipete/CodexBar/pull/3438): China-region Moonshot account balances and deficits were mislabeled in USD instead of CNY, both in the menu bar display and CLI output
-
-### [cve-lite-cli](https://github.com/OWASP/cve-lite-cli) ![stars](https://img.shields.io/github/stars/OWASP/cve-lite-cli?style=flat&label=stars&color=yellow)
-- Fixed [#1084](https://github.com/OWASP/cve-lite-cli/pull/1084): the version comparator ranked a pre-release version (e.g. `1.2.3-beta.1`) as *greater than* its stable release, causing the vulnerability scanner to falsely report a vulnerable pre-release install as safe
-
-### [MemPalace](https://github.com/MemPalace/mempalace) ![stars](https://img.shields.io/github/stars/MemPalace/mempalace?style=flat&label=stars&color=yellow)
-- [#2342](https://github.com/MemPalace/mempalace/pull/2342) - Pre-commit's Ruff hook could drift from the version pinned in `pyproject.toml` and CI, letting local checks silently pass or fail differently than CI; aligned all three sources and scoped version extraction to the Ruff hook block so unrelated hook bumps can't trip the check
-
-### [spliit](https://github.com/spliit-app/spliit) ![stars](https://img.shields.io/github/stars/spliit-app/spliit?style=flat&label=stars&color=yellow)
-- Fixed [#635](https://github.com/spliit-app/spliit/pull/635): an expense dated the 1st of the month could be grouped under "Last month" while its own row still showed the 1st, because the timezone conversion for grouping (unlike display) shifted UTC-midnight dates backward for anyone west of UTC
-
-### [Actual Budget](https://github.com/actualbudget/actual) ![stars](https://img.shields.io/github/stars/actualbudget/actual?style=flat&label=stars&color=yellow)
-- Fixed [#8719](https://github.com/actualbudget/actual/pull/8719): merging two payees left "one of"/"not one of" rule conditions with the merged payee listed twice, so deleting the visible duplicate in the UI silently deleted both underlying entries and dropped the payee from the rule entirely
-
-### [rtk](https://github.com/rtk-ai/rtk) ![stars](https://img.shields.io/github/stars/rtk-ai/rtk?style=flat&label=stars&color=yellow)
-- Fixed [#3560](https://github.com/rtk-ai/rtk/pull/3560): three output-compaction filters (spring-boot, liquibase, ssh) had regexes so broad they silently mangled unrelated commands — e.g. any `java -jar` file got Spring-only filtering, `rm -rf /opt/liquibase` triggered liquibase compaction, and `ssh-keygen`/`ssh-add` got caught by a plain `ssh` filter
+### [PriceBuddy](https://github.com/jez500/pricebuddy) ![stars](https://img.shields.io/github/stars/jez500/pricebuddy?style=flat&label=stars&color=yellow)
+- Fixed [#215](https://github.com/jez500/pricebuddy/pull/215): formatted the dashboard's Potential savings stat with the configured currency and locale, matching other dashboard values.
 
 ### [reticle](https://github.com/reticlehq/reticle) ![stars](https://img.shields.io/github/stars/reticlehq/reticle?style=flat&label=stars&color=yellow)
 - Fixed [#1330](https://github.com/reticlehq/reticle/pull/1330): corrected `reticle_lease` documentation to use the accepted `seedStorage` keys and a valid `local` example.
@@ -155,110 +248,17 @@ Tinkering with AI and building skills
 - Fixed [#743](https://github.com/reticlehq/reticle/pull/743): `reticle init` kept reporting its install step as failed on every re-run even after the dependencies were correctly installed by hand, and gave the wrong error hint for a pnpm virtual-store conflict
 - Fixed [#744](https://github.com/reticlehq/reticle/pull/744): flow files silently dropped typo'd or unsupported `expect` assertion keys instead of erroring, so a broken test could "pass" while asserting nothing at all
 
-### [Needle](https://github.com/cactus-compute/needle) ![stars](https://img.shields.io/github/stars/cactus-compute/needle?style=flat&label=stars&color=yellow)
-- [#98](https://github.com/cactus-compute/needle/pull/98) - Made the setup script auto-detect and prefer `uv` (10-100x faster than pip) when available, falling back to pip only when it isn't installed
-- [#123](https://github.com/cactus-compute/needle/pull/123): a correctly-extracted number was rejected as "fabricated" whenever the source text wrote it with a thousands separator (e.g. `$1,200.00`), since the grounding check compared values as plain text instead of as numbers — this broke even the README's own example
-- [#124](https://github.com/cactus-compute/needle/pull/124): the acceptance suites' pass/fail scoring rule (90% threshold, critical-failure override, confidence gate) was documented but never actually tested, so a silent change to it could ship without anyone noticing — pinned with regression tests and documented what a red suite means
+### [maki](https://github.com/tontinton/maki) ![stars](https://img.shields.io/github/stars/tontinton/maki?style=flat&label=stars&color=yellow)
+- Fixed [#1265](https://github.com/tontinton/maki/pull/1265): `maki auth login` sent users setting up the Vibe / Coding profile to the outdated Codestral CLI page; it now opens Mistral’s Vibe Code extensions page, where they can create or choose an API key.
 
-### [quickjs-ng](https://github.com/quickjs-ng/quickjs) ![stars](https://img.shields.io/github/stars/quickjs-ng/quickjs?style=flat&label=stars&color=yellow)
-- Fixed [#1657](https://github.com/quickjs-ng/quickjs/pull/1657): `quickjs.c` failed to compile on GCC 14+ for any ESP32 target, because six call sites passed `int*` where the platform's `int32_t*` was expected (or vice versa)
+### [cve-lite-cli](https://github.com/OWASP/cve-lite-cli) ![stars](https://img.shields.io/github/stars/OWASP/cve-lite-cli?style=flat&label=stars&color=yellow)
+- Fixed [#1084](https://github.com/OWASP/cve-lite-cli/pull/1084): the version comparator ranked a pre-release version (e.g. `1.2.3-beta.1`) as *greater than* its stable release, causing the vulnerability scanner to falsely report a vulnerable pre-release install as safe
 
-### [DeepAgents](https://github.com/langchain-ai/deepagents) ![stars](https://img.shields.io/github/stars/langchain-ai/deepagents?style=flat&label=stars&color=yellow)
-- Fixed [#5747](https://github.com/langchain-ai/deepagents/pull/5747): `edit_file` with an empty search string silently corrupted files by inserting the replacement between every single character instead of erroring out
-
-### [apify-mcp-server](https://github.com/apify/apify-mcp-server) ![stars](https://img.shields.io/github/stars/apify/apify-mcp-server?style=flat&label=stars&color=yellow)
-- Fixed [#1315](https://github.com/apify/apify-mcp-server/pull/1315): running the conformance test suite locally leaked the raw `APIFY_TOKEN` to the terminal in plain text — CI masked it, but the local script had no equivalent redaction
-
-### [caveman](https://github.com/JuliusBrussee/caveman) ![stars](https://img.shields.io/github/stars/JuliusBrussee/caveman?style=flat&label=stars&color=yellow)
-- Fixed [#900](https://github.com/JuliusBrussee/caveman/pull/900): `/caveman-stats` and the statusline showed no cost-savings figure at all on any Claude 5 session, because the pricing table only recognized Claude 3/4 model names
-- Fixed [#1084](https://github.com/JuliusBrussee/caveman/pull/1084): added native Grok Build support to the unified installer, including owned skill copies under `GROK_HOME/skills` and discovery in `--list`.
-
-### [gstack](https://github.com/garrytan/gstack) ![stars](https://img.shields.io/github/stars/garrytan/gstack?style=flat&label=stars&color=yellow)
-- Fixed [#2966](https://github.com/garrytan/gstack/pull/2966): Codex templates now report `mktemp` failures clearly instead of continuing with empty temp-file paths; carried into merged release [#3057](https://github.com/garrytan/gstack/pull/3057).
-- Fixed [#2961](https://github.com/garrytan/gstack/pull/2961): Ubuntu 26.04 setup now selects the Playwright browser build for the host architecture; carried into merged release [#2959](https://github.com/garrytan/gstack/pull/2959).
-- Fixed [#2409](https://github.com/garrytan/gstack/pull/2409): setup docs told agents to run two memory-sync scripts as bare commands, which fail with "No such file or directory" since they're plain `.ts` files with no bin alias — corrected to the proper `bun run` invocation
-- Fixed [#2615](https://github.com/garrytan/gstack/pull/2615): a test meant to catch a missing gbrain install leaked the real system PATH, so it passed even when the bug was present on machines where gbrain is actually installed (e.g. Homebrew on Apple Silicon)
-- Fixed [#2976](https://github.com/garrytan/gstack/pull/2976): design-detect only looked for the Impeccable skill in its legacy install path, so anyone who installed it as a Claude Code plugin (the current normal way) always got reported as not having it — commits retained and merged via maintainer's hardening pass ([#2978](https://github.com/garrytan/gstack/pull/2978))
-- Fixed [#2965](https://github.com/garrytan/gstack/pull/2965): the Aside readiness probe reported `NEEDS_ASIDE` when the CLI was installed at `~/.local/bin` but that directory wasn't on `PATH` — it now finds and uses the CLI there; fix ported and credited in merged release PR [#3025](https://github.com/garrytan/gstack/pull/3025)
-
-### [rueidis](https://github.com/redis/rueidis) ![stars](https://img.shields.io/github/stars/redis/rueidis?style=flat&label=stars&color=yellow) 
-- Fixed [#1023](https://github.com/redis/rueidis/pull/1023): `rueidiscompatmock` panicked with "unexpected call to DoCache" whenever a test tried to mock a client-side-cached `Cache(ttl)` call, instead of routing it through the existing expectation queue.
-
-### [tslearn](https://github.com/tslearn-team/tslearn) ![stars](https://img.shields.io/github/stars/tslearn-team/tslearn?style=flat&label=stars&color=yellow)
-- Fixed [#703](https://github.com/tslearn-team/tslearn/pull/703) - Added `silhouette_samples()` for time-series clustering, giving per-series silhouette scores (for outlier detection and silhouette plots) with DTW/soft-DTW metrics — previously only the single aggregate score was available, forcing a manual workaround
-
-### [OpenMAIC](https://github.com/THU-MAIC/OpenMAIC) ![stars](https://img.shields.io/github/stars/THU-MAIC/OpenMAIC?style=flat&label=stars&color=yellow)
-- Fixed [#1144](https://github.com/THU-MAIC/OpenMAIC/pull/1144) - Added a "Download Script" feature letting teachers export a classroom's narration text as Markdown or a real Word `.docx` for lesson prep, localized across all 12 supported languages
-- Fixed [#1621](https://github.com/THU-MAIC/OpenMAIC/pull/1621): extracted a shared narration walk for script and speaker-notes exports, keeping speech-text handling consistent across both.
-
-### [plano](https://github.com/katanemo/plano) ![stars](https://img.shields.io/github/stars/katanemo/plano?style=flat&label=stars&color=yellow)
-- Fixed [#1018](https://github.com/katanemo/plano/pull/1018): fast, short streaming responses could crash the LLM gateway worker with a divide-by-zero error while recording throughput metrics, taking down other requests sharing that worker
-
-### [openstreetmap-website](https://github.com/openstreetmap/openstreetmap-website) ![stars](https://img.shields.io/github/stars/openstreetmap/openstreetmap-website?style=flat&label=stars&color=yellow)
-- Fixed [#7297](https://github.com/openstreetmap/openstreetmap-website/pull/7297): future-tense block-expiry text ("in 3 days") bypassed the app's own translation file and fell back to an English-only default
-
-### [pypdf](https://github.com/py-pdf/pypdf) ![stars](https://img.shields.io/github/stars/py-pdf/pypdf?style=flat&label=stars&color=yellow)
-- Fixed [#3998](https://github.com/py-pdf/pypdf/pull/3998): PDF outline items created with `is_open=False` still showed expanded in PDF viewers, because the writer never actually marked them collapsed per the PDF spec
-
-### [loopx](https://github.com/huangruiteng/loopx) ![stars](https://img.shields.io/github/stars/huangruiteng/loopx?style=flat&label=stars&color=yellow)
-- Fixed [#2801](https://github.com/huangruiteng/loopx/pull/2801): repeated `/loopx` calls picked a random agent each time instead of remembering which one a conversation was already using
-
-### [AgentMemory](https://github.com/rohitg00/agentmemory) ![stars](https://img.shields.io/github/stars/rohitg00/agentmemory?style=flat&label=stars&color=yellow)
-- Fixed [#1132](https://github.com/rohitg00/agentmemory/pull/1132): deleting a memory could falsely say "deleted" when nothing was actually removed, and there was no way to delete a saved lesson at all — both now fixed
-
-### [floci](https://github.com/floci-io/floci) ![stars](https://img.shields.io/github/stars/floci-io/floci?style=flat&label=stars&color=yellow)
-- Fixed [#5448](https://github.com/floci-io/floci/pull/5448): Cognito user-pool responses now include configured prefix and custom domain names, omitting either field when it is unset.
-- Fixed [#5450](https://github.com/floci-io/floci/pull/5450): imported API Gateway methods with API-key security could be called without a key, so imports now enforce `x-api-key` when every security alternative requires it while preserving access through optional alternatives.
-
-### [Unciv](https://github.com/yairm210/Unciv) ![stars](https://img.shields.io/github/stars/yairm210/Unciv?style=flat&label=stars&color=yellow)
-- Fixed [#15756](https://github.com/yairm210/Unciv/pull/15756): restored ruleset order for promotion battle modifiers so they appear in the same order as the promotions in the battle preview.
+### [xdsl](https://github.com/xdslproject/xdsl) ![stars](https://img.shields.io/github/stars/xdslproject/xdsl?style=flat&label=stars&color=yellow)
+- Fixed [#6560](https://github.com/xdslproject/xdsl/pull/6560): IRDL verification now rejects negative, malformed, or inconsistent variadic segment sizes for operands and results, with clear diagnostics and regression coverage.
 
 ### [phonopy](https://github.com/phonopy/phonopy) ![stars](https://img.shields.io/github/stars/phonopy/phonopy?style=flat&label=stars&color=yellow)
 - Fixed [#1055](https://github.com/phonopy/phonopy/pull/1055): documented the limitation on irreducible representations for magnetic space groups.
 
-### [trzsz-ssh](https://github.com/trzsz/trzsz-ssh) ![stars](https://img.shields.io/github/stars/trzsz/trzsz-ssh?style=flat&label=stars&color=yellow)
-- Fixed [#288](https://github.com/trzsz/trzsz-ssh/pull/288): added support for `@` in SSH usernames.
-
-### [ebiten](https://github.com/hajimehoshi/ebiten) ![stars](https://img.shields.io/github/stars/hajimehoshi/ebiten?style=flat&label=stars&color=yellow)
-- Fixed [#3921](https://github.com/hajimehoshi/ebiten/pull/3921): corrected `RestoreWindow` behavior when the window has finite size limits.
-
-### [github-chinese](https://github.com/maboloshi/github-chinese) ![stars](https://img.shields.io/github/stars/maboloshi/github-chinese?style=flat&label=stars&color=yellow)
-- Fixed [#806](https://github.com/maboloshi/github-chinese/pull/806): added Simplified and Traditional Chinese feature-request templates.
-- Fixed [#805](https://github.com/maboloshi/github-chinese/pull/805): fixed a leftover “on” after translating a time element.
-
-### [PriceBuddy](https://github.com/jez500/pricebuddy) ![stars](https://img.shields.io/github/stars/jez500/pricebuddy?style=flat&label=stars&color=yellow)
-- Fixed [#215](https://github.com/jez500/pricebuddy/pull/215): formatted the dashboard's Potential savings stat with the configured currency and locale, matching other dashboard values.
-
-### [open-notebook](https://github.com/lfnovo/open-notebook) ![stars](https://img.shields.io/github/stars/lfnovo/open-notebook?style=flat&label=stars&color=yellow)
-- Fixed [#1360](https://github.com/lfnovo/open-notebook/pull/1360): stored provider API keys now use versioned PBKDF2-HMAC-SHA256 derivation, while legacy values remain readable and can be migrated in place.
-
-### [qm](https://github.com/yc-software/qm) ![stars](https://img.shields.io/github/stars/yc-software/qm?style=flat&label=stars&color=yellow)
-- Fixed [#149](https://github.com/yc-software/qm/pull/149): a brief database hiccup while waiting for a job to finish could crash the whole process instead of just timing out safely
-
-### [Buzz](https://github.com/block/buzz) ![stars](https://img.shields.io/github/stars/block/buzz?style=flat&label=stars&color=yellow)
-- Fixed [#4500](https://github.com/block/buzz/pull/4500): docs told users to import agent packs via a "zip file + Install Pack button" that doesn't exist anymore in the app, now corrected to match the real import flow
-
-### [tesseract-ocr](https://github.com/tesseract-ocr/tesseract) ![stars](https://img.shields.io/github/stars/tesseract-ocr/tesseract?style=flat&label=stars&color=yellow)
-- [#4609](https://github.com/tesseract-ocr/tesseract/pull/4609) - `UNICHAR::UTF8ToUTF32` read one byte past a string ending in a truncated multibyte UTF-8 prefix — a real out-of-bounds read confirmed under AddressSanitizer; now clamps the step to the bytes actually remaining and returns empty on invalid input as documented
-
-### [planning-with-files](https://github.com/OthmanAdi/planning-with-files) ![stars](https://img.shields.io/github/stars/OthmanAdi/planning-with-files?style=flat&label=stars&color=yellow)
-- Audited [#216](https://github.com/OthmanAdi/planning-with-files/pull/216): found 5 duplicate language skills had silently drifted out of sync (missing bug fixes, missing features)
-- Fixed [#291](https://github.com/OthmanAdi/planning-with-files/pull/291): Cursor's hooks used an old event and response schema the current Cursor runtime no longer recognizes, so plan context silently stopped reaching Cursor conversations
-
-### [OpenMausBot](https://github.com/milind-soni/OpenMausBot) ![stars](https://img.shields.io/github/stars/milind-soni/OpenMausBot?style=flat&label=stars&color=yellow)
-- Fixed [#2633](https://github.com/milind-soni/OpenMausBot/pull/2633): reduced glass pop-up flicker on Windows.
-- Fixed [#230](https://github.com/milind-soni/OpenMausBot/pull/230): two permission requests arriving with the same ID could silently clobber each other, leaving one request permanently stuck with no way to answer it — now the second one is rejected outright instead of overwriting the first
-- Fixed [#234](https://github.com/milind-soni/OpenMausBot/pull/234): a test suite from #230 broke on Windows because four test cases accidentally shared the same truncated identifier, causing one test's leftover named pipe to block the next — renamed the IDs and added a check.
-
-### [impeccable](https://github.com/pbakaus/impeccable) ![stars](https://img.shields.io/github/stars/pbakaus/impeccable?style=flat&label=stars&color=yellow)
-- Diagnosed [#551](https://github.com/pbakaus/impeccable/pull/551): `hooks reset` silently re-armed a disabled hook because it deleted the config but left provider manifests wired — fix credited by name in the merged follow-up ([#668](https://github.com/pbakaus/impeccable/pull/668))
-
-### [semantica](https://github.com/semantica-agi/semantica) ![stars](https://img.shields.io/github/stars/semantica-agi/semantica?style=flat&label=stars&color=yellow)
-- [#1595](https://github.com/semantica-agi/semantica/pull/1595) - Added a Looker connector (Looks, Dashboards, LookML models, Folders, Projects) as an optional dependency, plus SSRF hardening on the SDK's session (URL/DNS-rebind validation, forced TLS, zero redirects, secret-field stripping) since the official SDK builds its own HTTP transport outside the repo's existing request guard
-
-### [opendataloader-pdf](https://github.com/opendataloader-project/opendataloader-pdf) ![stars](https://img.shields.io/github/stars/opendataloader-project/opendataloader-pdf?style=flat&label=stars&color=yellow)
-- [#710](https://github.com/opendataloader-project/opendataloader-pdf/pull/710) - Made the hybrid backend's page batch size configurable (`--hybrid-chunk-size`) instead of a fixed 50, letting users on constrained backends shrink batches to avoid a known request-hang issue
-
-### [Recordly](https://github.com/webadderallorg/Recordly) ![stars](https://img.shields.io/github/stars/webadderallorg/Recordly?style=flat&label=stars&color=yellow)
-- Fixed [#1127](https://github.com/webadderallorg/Recordly/pull/1127): microphone and system audio companion files such as `recording-mic.wav` or `system.mp4` could be treated as mixed audio and routed to the wrong track; the fix recognizes supported filename patterns and routes each file to its matching track.
-- Fixed [#1003](https://github.com/webadderallorg/Recordly/pull/1003): cancelling a screen recording left the microphone stream open in the background, so the next recording opened a second concurrent mic stream and produced silent/dead audio until the device was manually reselected
+### [mcpproxy-go](https://github.com/smart-mcp-proxy/mcpproxy-go) ![stars](https://img.shields.io/github/stars/smart-mcp-proxy/mcpproxy-go?style=flat&label=stars&color=yellow)
+- Fixed [#1627](https://github.com/smart-mcp-proxy/mcpproxy-go/pull/1627): removing a server with more than 1,000 tools could leave the excess tools indexed; it now deletes matching tools in bounded pages and batches until none remain, while preserving other servers' tools.
