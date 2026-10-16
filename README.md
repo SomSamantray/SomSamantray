@@ -16,6 +16,9 @@ Tinkering with AI and building skills
 
 ## Opensource Contributions:
 
+### [maki](https://github.com/tontinton/maki) ![stars](https://img.shields.io/github/stars/tontinton/maki?style=flat&label=stars&color=yellow)
+- Fixed [#1265](https://github.com/tontinton/maki/pull/1265): `maki auth login` sent users setting up the Vibe / Coding profile to the outdated Codestral CLI page; it now opens Mistral’s Vibe Code extensions page, where they can create or choose an API key.
+
 ### [trino](https://github.com/trinodb/trino) ![stars](https://img.shields.io/github/stars/trinodb/trino?style=flat&label=stars&color=yellow)
 - Fixed [#31540](https://github.com/trinodb/trino/pull/31540): wide Iceberg ORC tables could miss metrics for sorted columns beyond the inferred-column limit, and `OPTIMIZE` could miss NULLs in required columns when metrics were disabled; metrics now honor the output schema and sort order, and required columns retain null counts.
 
