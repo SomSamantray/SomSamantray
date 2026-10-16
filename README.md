@@ -174,6 +174,9 @@ Tinkering with AI and building skills
 - Fixed [#230](https://github.com/milind-soni/OpenMausBot/pull/230): two permission requests arriving with the same ID could silently clobber each other, leaving one request permanently stuck with no way to answer it — now the second one is rejected outright instead of overwriting the first
 - Fixed [#234](https://github.com/milind-soni/OpenMausBot/pull/234): a test suite from #230 broke on Windows because four test cases accidentally shared the same truncated identifier, causing one test's leftover named pipe to block the next — renamed the IDs and added a check.
 
+### [chat-on-steroids](https://github.com/totec448-spec/chat-on-steroids) ![stars](https://img.shields.io/github/stars/totec448-spec/chat-on-steroids?style=flat&label=stars&color=yellow)
+- Fixed [#1555](https://github.com/totec448-spec/chat-on-steroids/pull/1555): users could only select Skills from leading slash completion and had no inline project-file references; added inline `/` Skill and `@` file pickers that insert references as text without running app commands.
+
 ### [cherry-markdown](https://github.com/Tencent/cherry-markdown) ![stars](https://img.shields.io/github/stars/Tencent/cherry-markdown?style=flat&label=stars&color=yellow)
 - Fixed [#1901](https://github.com/Tencent/cherry-markdown/pull/1901): applying a heading level to a multiline selection containing ordinary text and an existing heading did not update both lines consistently; it now applies the selected level to each line while preserving spacing after an existing marker.
 
