@@ -214,11 +214,11 @@ Tinkering with AI and building skills
 ### [trzsz-ssh](https://github.com/trzsz/trzsz-ssh) ![stars](https://img.shields.io/github/stars/trzsz/trzsz-ssh?style=flat&label=stars&color=yellow)
 - Fixed [#288](https://github.com/trzsz/trzsz-ssh/pull/288): added support for `@` in SSH usernames.
 
-### [Universal-G-Code-Sender](https://github.com/winder/Universal-G-Code-Sender) ![stars](https://img.shields.io/github/stars/winder/Universal-G-Code-Sender?style=flat&label=stars&color=yellow)
-- Fixed [#3219](https://github.com/winder/Universal-G-Code-Sender/pull/3219): inch-reported GRBL positions could show incorrect calibration values, skew step estimates, and misapply jog soft limits; the wizard now converts positions to millimeters for display, estimates, and limit checks.
-
 ### [Xed-Editor](https://github.com/Xed-Editor/Xed-Editor) ![stars](https://img.shields.io/github/stars/Xed-Editor/Xed-Editor?style=flat&label=stars&color=yellow)
 - Fixed [#1708](https://github.com/Xed-Editor/Xed-Editor/pull/1708): the universal runner split script paths containing spaces before Bash could run them; the fix forwards each argument separately so paths like `My stuff/script.py` reach the runner intact.
+
+### [Universal-G-Code-Sender](https://github.com/winder/Universal-G-Code-Sender) ![stars](https://img.shields.io/github/stars/winder/Universal-G-Code-Sender?style=flat&label=stars&color=yellow)
+- Fixed [#3219](https://github.com/winder/Universal-G-Code-Sender/pull/3219): inch-reported GRBL positions could show incorrect calibration values, skew step estimates, and misapply jog soft limits; the wizard now converts positions to millimeters for display, estimates, and limit checks.
 
 ### [Printing Press Library](https://github.com/mvanhorn/printing-press-library) ![stars](https://img.shields.io/github/stars/mvanhorn/printing-press-library?style=flat&label=stars&color=yellow)
 - [Screener](https://github.com/mvanhorn/printing-press-library/pull/1715) - Indian stock market fundamental analysis, screening, and market pulse, with company compare, quarterly trend detection, screen overlap/ranking, and insider buy/sell flow tracking
