@@ -193,6 +193,9 @@ Tinkering with AI and building skills
 ### [FluxDown](https://github.com/zerx-lab/FluxDown) ![stars](https://badgen.net/github/stars/zerx-lab/FluxDown?color=yellow&label=stars)
 - Fixed [#849](https://github.com/zerx-lab/FluxDown/pull/849): users were pointed to a nonexistent in-app feedback button; issue templates and READMEs now direct them to the website feedback page, and the English/Chinese interface guides no longer describe the button.
 
+### [wanderer](https://github.com/open-wanderer/wanderer) ![stars](https://badgen.net/github/stars/open-wanderer/wanderer?color=yellow&label=stars)
+- Fixed [#1384](https://github.com/open-wanderer/wanderer/pull/1384): notifications disappeared from October through February because PocketBase compared numeric `@month` against ISO timestamps; removing the month cutoff lets users see notifications year-round.
+
 ### [quickjs-ng](https://github.com/quickjs-ng/quickjs) ![stars](https://badgen.net/github/stars/quickjs-ng/quickjs?color=yellow&label=stars)
 - Fixed [#1657](https://github.com/quickjs-ng/quickjs/pull/1657): `quickjs.c` failed to compile on GCC 14+ for any ESP32 target, because six call sites passed `int*` where the platform's `int32_t*` was expected (or vice versa)
 
