@@ -267,5 +267,8 @@ Tinkering with AI and building skills
 ### [phonopy](https://github.com/phonopy/phonopy) ![stars](https://img.shields.io/github/stars/phonopy/phonopy?style=flat&label=stars&color=yellow)
 - Fixed [#1055](https://github.com/phonopy/phonopy/pull/1055): documented the limitation on irreducible representations for magnetic space groups.
 
+### [fud-ai](https://github.com/apoorvdarshan/fud-ai) ![stars](https://img.shields.io/github/stars/apoorvdarshan/fud-ai?style=flat&label=stars&color=yellow)
+- Fixed [#531](https://github.com/apoorvdarshan/fud-ai/pull/531): progressive-meal thumbnails could show an earlier capture and open a different photo when tapped; they now prefer the final capture and open its matching viewer image while keeping galleries chronological.
+
 ### [mcpproxy-go](https://github.com/smart-mcp-proxy/mcpproxy-go) ![stars](https://img.shields.io/github/stars/smart-mcp-proxy/mcpproxy-go?style=flat&label=stars&color=yellow)
 - Fixed [#1627](https://github.com/smart-mcp-proxy/mcpproxy-go/pull/1627): removing a server with more than 1,000 tools could leave the excess tools indexed; it now deletes matching tools in bounded pages and batches until none remain, while preserving other servers' tools.
