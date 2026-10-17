@@ -241,6 +241,9 @@ Tinkering with AI and building skills
 - [Swiggy](https://github.com/mvanhorn/printing-press-library/pull/1994) - CLI for Swiggy's MCP API (Food, Instamart, Dineout) — 51 tools plus cross-domain spend history, a safe-retry guard for failed order placement, and a UPI payment-wait command
 - [Philonet](https://github.com/mvanhorn/printing-press-library/pull/2112) - CLI for Philonet (no public API; reverse-engineered from the logged-in web app): reading streaks, friends' thoughts, and unanswered-thread tracking, plus local history the web app doesn't keep — weekly/monthly reading rhythm, a read-later queue fitted to your free minutes, and which of your thoughts earned reactions
 
+### [sleek](https://github.com/ransome1/sleek) ![stars](https://img.shields.io/github/stars/ransome1/sleek?style=flat&label=stars&color=yellow)
+- Fixed [#924](https://github.com/ransome1/sleek/pull/924): Markdown-linked project and context values appeared as raw `[label](url)` text in the drawer and todo group headers; they now show the link label while keeping the original value for filtering.
+
 ### [split-pro](https://github.com/oss-apps/split-pro) ![stars](https://img.shields.io/github/stars/oss-apps/split-pro?style=flat&label=stars&color=yellow)
 - Fixed [#752](https://github.com/oss-apps/split-pro/pull/752): invite-email failures now show a clear error in expense and group flows instead of appearing successful, while retaining the added friend.
 
