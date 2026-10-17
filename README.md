@@ -217,6 +217,9 @@ Tinkering with AI and building skills
 ### [Universal-G-Code-Sender](https://github.com/winder/Universal-G-Code-Sender) ![stars](https://img.shields.io/github/stars/winder/Universal-G-Code-Sender?style=flat&label=stars&color=yellow)
 - Fixed [#3219](https://github.com/winder/Universal-G-Code-Sender/pull/3219): inch-reported GRBL positions could show incorrect calibration values, skew step estimates, and misapply jog soft limits; the wizard now converts positions to millimeters for display, estimates, and limit checks.
 
+### [Xed-Editor](https://github.com/Xed-Editor/Xed-Editor) ![stars](https://img.shields.io/github/stars/Xed-Editor/Xed-Editor?style=flat&label=stars&color=yellow)
+- Fixed [#1708](https://github.com/Xed-Editor/Xed-Editor/pull/1708): the universal runner split script paths containing spaces before Bash could run them; the fix forwards each argument separately so paths like `My stuff/script.py` reach the runner intact.
+
 ### [Printing Press Library](https://github.com/mvanhorn/printing-press-library) ![stars](https://img.shields.io/github/stars/mvanhorn/printing-press-library?style=flat&label=stars&color=yellow)
 - [Screener](https://github.com/mvanhorn/printing-press-library/pull/1715) - Indian stock market fundamental analysis, screening, and market pulse, with company compare, quarterly trend detection, screen overlap/ranking, and insider buy/sell flow tracking
 - [Pinecone](https://github.com/mvanhorn/printing-press-library/pull/1710) - Every Pinecone API feature, plus local sync, snapshot history, and text-first search no other Pinecone tool has
