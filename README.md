@@ -270,6 +270,9 @@ Tinkering with AI and building skills
 ### [maki](https://github.com/tontinton/maki) ![stars](https://badgen.net/github/stars/tontinton/maki?color=yellow&label=stars)
 - Fixed [#1265](https://github.com/tontinton/maki/pull/1265): `maki auth login` sent users setting up the Vibe / Coding profile to the outdated Codestral CLI page; it now opens Mistral’s Vibe Code extensions page, where they can create or choose an API key.
 
+### [sdns](https://github.com/semihalev/sdns) ![stars](https://badgen.net/github/stars/semihalev/sdns?color=yellow&label=stars)
+- Fixed [#711](https://github.com/semihalev/sdns/pull/711): oversized cache settings could exceed the available memory budget without warning; sdns now warns at startup and with `-t` when estimated full-occupancy memory is too high.
+
 ### [cve-lite-cli](https://github.com/OWASP/cve-lite-cli) ![stars](https://badgen.net/github/stars/OWASP/cve-lite-cli?color=yellow&label=stars)
 - Fixed [#1084](https://github.com/OWASP/cve-lite-cli/pull/1084): the version comparator ranked a pre-release version (e.g. `1.2.3-beta.1`) as *greater than* its stable release, causing the vulnerability scanner to falsely report a vulnerable pre-release install as safe
 
