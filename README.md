@@ -203,6 +203,9 @@ Tinkering with AI and building skills
 ### [WordPress-iOS](https://github.com/wordpress-mobile/WordPress-iOS) ![stars](https://badgen.net/github/stars/wordpress-mobile/WordPress-iOS?color=yellow&label=stars)
 - Fixed [#26137](https://github.com/wordpress-mobile/WordPress-iOS/pull/26137): clearing the Store Sandbox secret could leave a stale cookie in WebKit and send checkout to the wrong store; the fix synchronizes cookie updates and deletion across shared storage and WebKit.
 
+### [tuicr](https://github.com/agavra/tuicr) ![stars](https://badgen.net/github/stars/agavra/tuicr?color=yellow&label=stars)
+- Fixed [#768](https://github.com/agavra/tuicr/pull/768): local themes reached through a symlink could not find a relative `.tmTheme` beside the target, and missing or invalid syntax files could make the theme unusable; tuicr now checks the target and falls back to bundled highlighting while preserving the local theme and surfacing a warning.
+
 ### [tslearn](https://github.com/tslearn-team/tslearn) ![stars](https://badgen.net/github/stars/tslearn-team/tslearn?color=yellow&label=stars)
 - Fixed [#703](https://github.com/tslearn-team/tslearn/pull/703) - Added `silhouette_samples()` for time-series clustering, giving per-series silhouette scores (for outlier detection and silhouette plots) with DTW/soft-DTW metrics — previously only the single aggregate score was available, forcing a manual workaround
 
