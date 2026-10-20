@@ -215,6 +215,9 @@ Tinkering with AI and building skills
 ### [rueidis](https://github.com/redis/rueidis) ![stars](https://badgen.net/github/stars/redis/rueidis?color=yellow&label=stars) 
 - Fixed [#1023](https://github.com/redis/rueidis/pull/1023): `rueidiscompatmock` panicked with "unexpected call to DoCache" whenever a test tried to mock a client-side-cached `Cache(ttl)` call, instead of routing it through the existing expectation queue.
 
+### [maps](https://github.com/rnmapbox/maps) ![stars](https://badgen.net/github/stars/rnmapbox/maps?color=yellow&label=stars)
+- Fixed [#4366](https://github.com/rnmapbox/maps/pull/4366): long-pressing an interactive marker also triggered the map's `onLongPress` callback; the iOS map gesture now ignores touches inside `MarkerView` children.
+
 ### [openstreetmap-website](https://github.com/openstreetmap/openstreetmap-website) ![stars](https://badgen.net/github/stars/openstreetmap/openstreetmap-website?color=yellow&label=stars)
 - Fixed [#7297](https://github.com/openstreetmap/openstreetmap-website/pull/7297): future-tense block-expiry text ("in 3 days") bypassed the app's own translation file and fell back to an English-only default
 
