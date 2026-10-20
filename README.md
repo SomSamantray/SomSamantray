@@ -194,6 +194,9 @@ Tinkering with AI and building skills
 ### [FluxDown](https://github.com/zerx-lab/FluxDown) ![stars](https://badgen.net/github/stars/zerx-lab/FluxDown?color=yellow&label=stars)
 - Fixed [#849](https://github.com/zerx-lab/FluxDown/pull/849): users were pointed to a nonexistent in-app feedback button; issue templates and READMEs now direct them to the website feedback page, and the English/Chinese interface guides no longer describe the button.
 
+### [shelfmark](https://github.com/calibrain/shelfmark) ![stars](https://badgen.net/github/stars/calibrain/shelfmark?color=yellow&label=stars)
+- Fixed [#1454](https://github.com/calibrain/shelfmark/pull/1454): users with only a Z-Library mirror saw a generic setup message; it now explains that Anna's Archive is required for search and that Z-Library, LibGen, and Welib mirrors download Anna's Archive results.
+
 ### [wanderer](https://github.com/open-wanderer/wanderer) ![stars](https://badgen.net/github/stars/open-wanderer/wanderer?color=yellow&label=stars)
 - Fixed [#1384](https://github.com/open-wanderer/wanderer/pull/1384): notifications disappeared from October through February because PocketBase compared numeric `@month` against ISO timestamps; removing the month cutoff lets users see notifications year-round.
 
