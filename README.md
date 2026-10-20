@@ -101,6 +101,7 @@ Tinkering with AI and building skills
 ### [AgentMemory](https://github.com/rohitg00/agentmemory) ![stars](https://badgen.net/github/stars/rohitg00/agentmemory?color=yellow&label=stars)
 - Fixed [#1132](https://github.com/rohitg00/agentmemory/pull/1132): deleting a memory could falsely say "deleted" when nothing was actually removed, and there was no way to delete a saved lesson at all — both now fixed
 - Fixed [#1522](https://github.com/rohitg00/agentmemory/pull/1522): routine info and warning logs use stderr during MCP stdio sessions to keep JSON-RPC responses clean, while ordinary worker runs use stdout
+- Fixed [#1523](https://github.com/rohitg00/agentmemory/pull/1523): reflection results now report whether graph-based or Jaccard clustering was used while retaining `usedFallback` compatibility
 - Fixed [#1524](https://github.com/rohitg00/agentmemory/pull/1524): the Actions viewer loads every page, and deep links fetch actions by ID when they are not in the loaded list
 
 ### [Actual Budget](https://github.com/actualbudget/actual) ![stars](https://badgen.net/github/stars/actualbudget/actual?color=yellow&label=stars)
