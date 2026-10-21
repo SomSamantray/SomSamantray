@@ -267,6 +267,9 @@ Tinkering with AI and building skills
 ### [sleek](https://github.com/ransome1/sleek) ![stars](https://badgen.net/github/stars/ransome1/sleek?color=yellow&label=stars)
 - Fixed [#924](https://github.com/ransome1/sleek/pull/924): Markdown-linked project and context values appeared as raw `[label](url)` text in the drawer and todo group headers; they now show the link label while keeping the original value for filtering.
 
+### [Nessie](https://github.com/projectnessie/nessie) ![stars](https://badgen.net/github/stars/projectnessie/nessie?color=yellow&label=stars)
+- Fixed [#13129](https://github.com/projectnessie/nessie/pull/13129): merge and transplant requests now use the documented flag names while retaining the previously emitted `is`-prefixed aliases, preserving dry-run behavior for older clients.
+
 ### [split-pro](https://github.com/oss-apps/split-pro) ![stars](https://badgen.net/github/stars/oss-apps/split-pro?color=yellow&label=stars)
 - Fixed [#752](https://github.com/oss-apps/split-pro/pull/752): invite-email failures now show a clear error in expense and group flows instead of appearing successful, while retaining the added friend.
 
