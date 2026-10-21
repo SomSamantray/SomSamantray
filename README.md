@@ -160,6 +160,9 @@ Tinkering with AI and building skills
 ### [pypdf](https://github.com/py-pdf/pypdf) ![stars](https://badgen.net/github/stars/py-pdf/pypdf?color=yellow&label=stars)
 - Fixed [#3998](https://github.com/py-pdf/pypdf/pull/3998): PDF outline items created with `is_open=False` still showed expanded in PDF viewers, because the writer never actually marked them collapsed per the PDF spec
 
+### [Doctrine ORM](https://github.com/doctrine/orm) ![stars](https://badgen.net/github/stars/doctrine/orm?color=yellow&label=stars)
+- Fixed [#12677](https://github.com/doctrine/orm/pull/12677): result aliases now use the configured unquoted identifier folding on every DBAL platform, with PostgreSQL lowercase and DB2 and Oracle uppercase fallbacks when DBAL lacks the API.
+
 ### [filebrowser](https://github.com/gtsteffaniak/filebrowser) ![stars](https://badgen.net/github/stars/gtsteffaniak/filebrowser?color=yellow&label=stars)
 - Fixed [#3125](https://github.com/gtsteffaniak/filebrowser/pull/3125): admins using `createUserDir` could be narrowed to a personal folder; new admins now keep the source root and skip personal-directory creation, while non-admins still get their own directory.
 
