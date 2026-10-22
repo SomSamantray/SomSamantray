@@ -308,3 +308,6 @@ Tinkering with AI and building skills
 
 ### [mcpproxy-go](https://github.com/smart-mcp-proxy/mcpproxy-go) ![stars](https://badgen.net/github/stars/smart-mcp-proxy/mcpproxy-go?color=yellow&label=stars)
 - Fixed [#1627](https://github.com/smart-mcp-proxy/mcpproxy-go/pull/1627): removing a server with more than 1,000 tools could leave the excess tools indexed; it now deletes matching tools in bounded pages and batches until none remain, while preserving other servers' tools.
+
+### [pychess-variants](https://github.com/pychess/pychess-variants) ![stars](https://badgen.net/github/stars/pychess/pychess-variants?color=yellow&label=stars)
+- Fixed [#2434](https://github.com/pychess/pychess-variants/pull/2434): the tournament page's "Scroll to your player" button was shown to spectators and pending or denied round-robin applicants who have no standings row; it now appears only for joined, paused, or withdrawn players.
