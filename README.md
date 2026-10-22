@@ -311,3 +311,7 @@ Tinkering with AI and building skills
 
 ### [pychess-variants](https://github.com/pychess/pychess-variants) ![stars](https://badgen.net/github/stars/pychess/pychess-variants?color=yellow&label=stars)
 - Fixed [#2434](https://github.com/pychess/pychess-variants/pull/2434): the tournament page's "Scroll to your player" button was shown to spectators and pending or denied round-robin applicants who have no standings row; it now appears only for joined, paused, or withdrawn players.
+
+### [cliamp](https://github.com/bjarneo/cliamp) ![stars](https://badgen.net/github/stars/bjarneo/cliamp?color=yellow&label=stars)
+- Fixed [#621](https://github.com/bjarneo/cliamp/pull/621): EQ presets could only be cycled forward; `Alt+E` now steps back through them, including the saved Custom curve, without triggering the conflicting provider shortcut.
+- Fixed [#620](https://github.com/bjarneo/cliamp/pull/620): Windows source-build docs implied CGO was only needed for Spotify; they now state that CGO and the MSYS2 MinGW64 toolchain are always required, since the Spotify provider is compiled into every build.
