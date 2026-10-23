@@ -315,3 +315,6 @@ Tinkering with AI and building skills
 ### [cliamp](https://github.com/bjarneo/cliamp) ![stars](https://badgen.net/github/stars/bjarneo/cliamp?color=yellow&label=stars)
 - Fixed [#621](https://github.com/bjarneo/cliamp/pull/621): EQ presets could only be cycled forward; `Alt+E` now steps back through them, including the saved Custom curve, without triggering the conflicting provider shortcut.
 - Fixed [#620](https://github.com/bjarneo/cliamp/pull/620): Windows source-build docs implied CGO was only needed for Spotify; they now state that CGO and the MSYS2 MinGW64 toolchain are always required, since the Spotify provider is compiled into every build.
+
+### [teslamate](https://github.com/teslamate-org/teslamate) ![stars](https://badgen.net/github/stars/teslamate-org/teslamate?color=yellow&label=stars)
+- Fixed [#5866](https://github.com/teslamate-org/teslamate/pull/5866): Grafana's Overview and Charge Details dashboards showed meaningless charger voltage and current (e.g. 2 V / 0 A) during DC fast charging; those values are now labeled as AC inputs and hidden while fast charging.
