@@ -318,3 +318,6 @@ Tinkering with AI and building skills
 
 ### [teslamate](https://github.com/teslamate-org/teslamate) ![stars](https://badgen.net/github/stars/teslamate-org/teslamate?color=yellow&label=stars)
 - Fixed [#5866](https://github.com/teslamate-org/teslamate/pull/5866): Grafana's Overview and Charge Details dashboards showed meaningless charger voltage and current (e.g. 2 V / 0 A) during DC fast charging; those values are now labeled as AC inputs and hidden while fast charging.
+
+### [unitycatalog](https://github.com/unitycatalog/unitycatalog) ![stars](https://badgen.net/github/stars/unitycatalog/unitycatalog?color=yellow&label=stars)
+- Fixed [#1996](https://github.com/unitycatalog/unitycatalog/pull/1996): default builds with the bundled `build/sbt` resolved dependencies from `~/.m2/repository`, so stale or POM-only local artifacts could break normal builds; Maven local is now opt-in via `USE_MAVEN_LOCAL=true`, with a regression test for the resolver chain.
