@@ -324,3 +324,6 @@ Tinkering with AI and building skills
 
 ### [sympozium](https://github.com/sympozium-ai/sympozium) ![stars](https://badgen.net/github/stars/sympozium-ai/sympozium?color=yellow&label=stars)
 - Fixed [#670](https://github.com/sympozium-ai/sympozium/pull/670): there was no guide for running the AWS MCP server with IAM Roles Anywhere; added one using temporary STS credentials and a read-only certificate Secret volume, plus an MCPServer reference example linked from the Models & Providers docs.
+
+### [quarkus-tutorial](https://github.com/redhat-developer-demos/quarkus-tutorial) ![stars](https://badgen.net/github/stars/redhat-developer-demos/quarkus-tutorial?color=yellow&label=stars)
+- Fixed [#184](https://github.com/redhat-developer-demos/quarkus-tutorial/pull/184): the JWT security tutorial only had Bash request examples, so Windows users had to translate them by hand; added PowerShell tabs using native variable syntax and `curl.exe`, keeping the Bash examples alongside.
