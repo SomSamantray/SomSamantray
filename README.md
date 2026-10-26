@@ -321,3 +321,6 @@ Tinkering with AI and building skills
 
 ### [unitycatalog](https://github.com/unitycatalog/unitycatalog) ![stars](https://badgen.net/github/stars/unitycatalog/unitycatalog?color=yellow&label=stars)
 - Fixed [#1996](https://github.com/unitycatalog/unitycatalog/pull/1996): default builds with the bundled `build/sbt` resolved dependencies from `~/.m2/repository`, so stale or POM-only local artifacts could break normal builds; Maven local is now opt-in via `USE_MAVEN_LOCAL=true`, with a regression test for the resolver chain.
+
+### [sympozium](https://github.com/sympozium-ai/sympozium) ![stars](https://badgen.net/github/stars/sympozium-ai/sympozium?color=yellow&label=stars)
+- Fixed [#670](https://github.com/sympozium-ai/sympozium/pull/670): there was no guide for running the AWS MCP server with IAM Roles Anywhere; added one using temporary STS credentials and a read-only certificate Secret volume, plus an MCPServer reference example linked from the Models & Providers docs.
