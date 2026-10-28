@@ -327,3 +327,6 @@ Tinkering with AI and building skills
 
 ### [quarkus-tutorial](https://github.com/redhat-developer-demos/quarkus-tutorial) ![stars](https://badgen.net/github/stars/redhat-developer-demos/quarkus-tutorial?color=yellow&label=stars)
 - Fixed [#184](https://github.com/redhat-developer-demos/quarkus-tutorial/pull/184): the JWT security tutorial only had Bash request examples, so Windows users had to translate them by hand; added PowerShell tabs using native variable syntax and `curl.exe`, keeping the Bash examples alongside.
+
+### [qatrackplus](https://github.com/qatrackplus/qatrackplus) ![stars](https://badgen.net/github/stars/qatrackplus/qatrackplus?color=yellow&label=stars)
+- Fixed [#909](https://github.com/qatrackplus/qatrackplus/pull/909): composite calculations that passed an exception object to `UTILS.set_comment` failed JSON serialization of the response; the helper now coerces comment values to strings, with a regression test verifying the returned comment.
