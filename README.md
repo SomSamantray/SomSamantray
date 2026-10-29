@@ -331,3 +331,6 @@ Tinkering with AI and building skills
 
 ### [qatrackplus](https://github.com/qatrackplus/qatrackplus) ![stars](https://badgen.net/github/stars/qatrackplus/qatrackplus?color=yellow&label=stars)
 - Fixed [#909](https://github.com/qatrackplus/qatrackplus/pull/909): composite calculations that passed an exception object to `UTILS.set_comment` failed JSON serialization of the response; the helper now coerces comment values to strings, with a regression test verifying the returned comment.
+
+### [termusic](https://github.com/tramhao/termusic) ![stars](https://badgen.net/github/stars/tramhao/termusic?color=yellow&label=stars)
+- Fixed [#795](https://github.com/tramhao/termusic/pull/795): long artist names and track titles could overrun the Lyrics panel title; artist names are now capped at 20 characters and track titles at 40, short names stay unpadded, and narrow panels still clip the combined title at the border.
