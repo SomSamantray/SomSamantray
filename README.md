@@ -107,6 +107,7 @@ Tinkering with AI and building skills
 
 ### [Actual Budget](https://github.com/actualbudget/actual) ![stars](https://badgen.net/github/stars/actualbudget/actual?color=yellow&label=stars)
 - Fixed [#8719](https://github.com/actualbudget/actual/pull/8719): merging two payees left "one of"/"not one of" rule conditions with the merged payee listed twice, so deleting the visible duplicate in the UI silently deleted both underlying entries and dropped the payee from the rule entirely
+- Fixed [#9173](https://github.com/actualbudget/actual/pull/9173): saving an unrelated edit such as a rename on a recurring schedule could bring back a skipped next date, because the editor's `acct` account condition was compared against `account` and treated as a change; account conditions are now normalized before comparison, so skipped dates survive unrelated edits but still reset when the account, date, or recurrence changes
 
 ### [mastra-ai/mastra](https://github.com/mastra-ai/mastra) ![stars](https://badgen.net/github/stars/mastra-ai/mastra?color=yellow&label=stars)
 - [#24239](https://github.com/mastra-ai/mastra/pull/24239) - Multi-step agentic loops with Observational Memory enabled could crash with `Turn already ended` when a sealed turn got reused on the same message list; the processor now discards an ended turn before reuse so the next step starts fresh
