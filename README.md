@@ -98,6 +98,7 @@ Tinkering with AI and building skills
 ### [opendataloader-pdf](https://github.com/opendataloader-project/opendataloader-pdf) ![stars](https://badgen.net/github/stars/opendataloader-project/opendataloader-pdf?color=yellow&label=stars)
 - [#710](https://github.com/opendataloader-project/opendataloader-pdf/pull/710) - Made the hybrid backend's page batch size configurable (`--hybrid-chunk-size`) instead of a fixed 50, letting users on constrained backends shrink batches to avoid a known request-hang issue
 - Fixed [#771](https://github.com/opendataloader-project/opendataloader-pdf/pull/771): JSON output could retain a NUL from an unmapped `<0000>` ToUnicode mapping, disrupting extracted text; it now omits the NUL while preserving the surrounding paragraph.
+- Fixed [#683](https://github.com/opendataloader-project/opendataloader-pdf/pull/683): on Korean-locale Windows (cp949) the hybrid backend crashed on its first request because docling read its model config with the OS codepage; the hybrid server now re-execs itself in Python UTF-8 mode before docling loads, with regression tests covering the re-exec path.
 
 ### [AgentMemory](https://github.com/rohitg00/agentmemory) ![stars](https://badgen.net/github/stars/rohitg00/agentmemory?color=yellow&label=stars)
 - Fixed [#1132](https://github.com/rohitg00/agentmemory/pull/1132): deleting a memory could falsely say "deleted" when nothing was actually removed, and there was no way to delete a saved lesson at all — both now fixed
