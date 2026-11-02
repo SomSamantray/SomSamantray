@@ -336,3 +336,6 @@ Tinkering with AI and building skills
 
 ### [termusic](https://github.com/tramhao/termusic) ![stars](https://badgen.net/github/stars/tramhao/termusic?color=yellow&label=stars)
 - Fixed [#795](https://github.com/tramhao/termusic/pull/795): long artist names and track titles could overrun the Lyrics panel title; artist names are now capped at 20 characters and track titles at 40, short names stay unpadded, and narrow panels still clip the combined title at the border.
+
+### [CLIProxyAPI](https://github.com/router-for-me/CLIProxyAPI) ![stars](https://badgen.net/github/stars/router-for-me/CLIProxyAPI?color=yellow&label=stars)
+- Fixed [#6315](https://github.com/router-for-me/CLIProxyAPI/pull/6315): Antigravity OAuth logins never requested Google's `aicode` scope, so Gemini 3.5 transcription requests to `aicode.googleapis.com` were not authorized; new grants now request the scope, with a regression test on the generated auth URL.
