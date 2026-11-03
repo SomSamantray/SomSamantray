@@ -339,3 +339,6 @@ Tinkering with AI and building skills
 
 ### [CLIProxyAPI](https://github.com/router-for-me/CLIProxyAPI) ![stars](https://badgen.net/github/stars/router-for-me/CLIProxyAPI?color=yellow&label=stars)
 - Fixed [#6315](https://github.com/router-for-me/CLIProxyAPI/pull/6315): Antigravity OAuth logins never requested Google's `aicode` scope, so Gemini 3.5 transcription requests to `aicode.googleapis.com` were not authorized; new grants now request the scope, with a regression test on the generated auth URL.
+
+### [vutuv](https://github.com/wintermeyer/vutuv) ![stars](https://badgen.net/github/stars/wintermeyer/vutuv?color=yellow&label=stars)
+- Fixed [#2366](https://github.com/wintermeyer/vutuv/pull/2366): submitting a post that referenced the same photo ID twice failed during the image mirror upsert and showed the author an error page; repeated photo IDs are now removed before attachment, keeping their first-seen order so the post publishes.
