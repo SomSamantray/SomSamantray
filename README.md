@@ -343,3 +343,6 @@ Tinkering with AI and building skills
 ### [vutuv](https://github.com/wintermeyer/vutuv) ![stars](https://badgen.net/github/stars/wintermeyer/vutuv?color=yellow&label=stars)
 - Fixed [#2366](https://github.com/wintermeyer/vutuv/pull/2366): submitting a post that referenced the same photo ID twice failed during the image mirror upsert and showed the author an error page; repeated photo IDs are now removed before attachment, keeping their first-seen order so the post publishes.
 - Fixed [#2367](https://github.com/wintermeyer/vutuv/pull/2367): media kit pages offered a PNG download even when the logo's source file was missing, leading to a 404; the HTML page and agent-readable JSON now expose the PNG link and dimensions only when the PNG route can actually serve the raster, with regression tests for deleted and fileless logos.
+
+### [TorrentSearch](https://github.com/prajwalch/TorrentSearch) ![stars](https://badgen.net/github/stars/prajwalch/TorrentSearch?color=yellow&label=stars)
+- Fixed [#119](https://github.com/prajwalch/TorrentSearch/pull/119): Mullvad shut down its public encrypted DNS servers, so the Mullvad DoH provider was removed from settings and the DNS resolver; a prior Mullvad selection falls back to the OS default through `DohProvider.fromId`, with Quad9 still available for encrypted DNS.
