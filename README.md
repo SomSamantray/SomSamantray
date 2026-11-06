@@ -346,3 +346,6 @@ Tinkering with AI and building skills
 
 ### [TorrentSearch](https://github.com/prajwalch/TorrentSearch) ![stars](https://badgen.net/github/stars/prajwalch/TorrentSearch?color=yellow&label=stars)
 - Fixed [#119](https://github.com/prajwalch/TorrentSearch/pull/119): Mullvad shut down its public encrypted DNS servers, so the Mullvad DoH provider was removed from settings and the DNS resolver; a prior Mullvad selection falls back to the OS default through `DohProvider.fromId`, with Quad9 still available for encrypted DNS.
+
+### [grpc](https://github.com/elixir-grpc/grpc) ![stars](https://badgen.net/github/stars/elixir-grpc/grpc?color=yellow&label=stars)
+- Fixed [#601](https://github.com/elixir-grpc/grpc/pull/601): graceful Mint shutdown could start duplicate reconnect retries when GOAWAY and `:tcp_closed` arrived for the same dropped connection, exhausting retries twice and emitting duplicate connection-down notifications; it now starts a single retry chain, with a regression test for that GOAWAY-then-close sequence.
