@@ -349,3 +349,6 @@ Tinkering with AI and building skills
 
 ### [grpc](https://github.com/elixir-grpc/grpc) ![stars](https://badgen.net/github/stars/elixir-grpc/grpc?color=yellow&label=stars)
 - Fixed [#601](https://github.com/elixir-grpc/grpc/pull/601): graceful Mint shutdown could start duplicate reconnect retries when GOAWAY and `:tcp_closed` arrived for the same dropped connection, exhausting retries twice and emitting duplicate connection-down notifications; it now starts a single retry chain, with a regression test for that GOAWAY-then-close sequence.
+
+### [Stirling-PDF](https://github.com/Stirling-Tools/Stirling-PDF) ![stars](https://badgen.net/github/stars/Stirling-Tools/Stirling-PDF?color=yellow&label=stars)
+- Fixed [#7649](https://github.com/Stirling-Tools/Stirling-PDF/pull/7649): choosing Odd-Even Merge in Reorganize Pages failed with Server Error 2 because the backend had no `ODD_EVEN_MERGE` mode even though the UI offered it; the mode now interleaves the two halves of a document (the inverse of Odd-Even Split), the frontend copy no longer describes a two-PDF merge this tool does not perform, and the generated SDK types include the new mode.
