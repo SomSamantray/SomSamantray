@@ -356,3 +356,6 @@ Tinkering with AI and building skills
 
 ### [Container-Compose](https://github.com/Mcrich23/Container-Compose) ![stars](https://badgen.net/github/stars/Mcrich23/Container-Compose?color=yellow&label=stars)
 - Fixed [#164](https://github.com/Mcrich23/Container-Compose/pull/164): `container-compose up -f` resolved relative bind-mount sources like `../data` against the process working directory instead of the Compose file directory, so the wrong (often empty) path was mounted; those sources now resolve from the Compose file directory, matching Docker Compose and the existing `build.context` and `env_file` behavior, with regression coverage for a parent-relative mount.
+
+### [Open-Generative-AI](https://github.com/Anil-matcha/Open-Generative-AI) ![stars](https://badgen.net/github/stars/Anil-matcha/Open-Generative-AI?color=yellow&label=stars)
+- Fixed [#338](https://github.com/Anil-matcha/Open-Generative-AI/pull/338): the standalone Video Studio model picker showed only model-name initials, making providers harder to tell apart; it now displays provider logos from the shared studio mapping, keeps the initials fallback for unmapped or failed logo loads, and avoids repeated failed requests and stale image-error callbacks after search or mode rerenders.
