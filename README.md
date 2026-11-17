@@ -359,3 +359,6 @@ Tinkering with AI and building skills
 
 ### [Open-Generative-AI](https://github.com/Anil-matcha/Open-Generative-AI) ![stars](https://badgen.net/github/stars/Anil-matcha/Open-Generative-AI?color=yellow&label=stars)
 - Fixed [#338](https://github.com/Anil-matcha/Open-Generative-AI/pull/338): the standalone Video Studio model picker showed only model-name initials, making providers harder to tell apart; it now displays provider logos from the shared studio mapping, keeps the initials fallback for unmapped or failed logo loads, and avoids repeated failed requests and stale image-error callbacks after search or mode rerenders.
+
+### [filament](https://github.com/galaxy-io/filament) ![stars](https://badgen.net/github/stars/galaxy-io/filament?color=yellow&label=stars)
+- Fixed [#595](https://github.com/galaxy-io/filament/pull/595): the tracker advanced the dedup high-water mark before apply on the non-terminal path, so a failed apply caused the redelivered fact to be treated as already seen and skipped, leaving run state missing after a transient datastore error; the mark is now advanced only after apply succeeds, matching the terminal path, with a regression test for apply-fail-then-redeliver.
