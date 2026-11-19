@@ -362,3 +362,7 @@ Tinkering with AI and building skills
 
 ### [filament](https://github.com/galaxy-io/filament) ![stars](https://badgen.net/github/stars/galaxy-io/filament?color=yellow&label=stars)
 - Fixed [#595](https://github.com/galaxy-io/filament/pull/595): the tracker marked facts as seen before apply, so failed facts were dropped on retry.
+
+### [Nextcloud Documentation](https://github.com/nextcloud/documentation) ![stars](https://badgen.net/github/stars/nextcloud/documentation?color=yellow&label=stars)
+- Fixed [#15422](https://github.com/nextcloud/documentation/pull/15422): the WebDAV client docs named the auto-create-folders upload header `X-NC-WebDAV-AutoMkcol`, but the server only reads `X-NC-WebDAV-Auto-Mkcol`, so clients following the docs got a 403 on uploads into missing parent directories; corrected in both the request-methods and request-headers tables.
+
