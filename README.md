@@ -36,6 +36,7 @@ Tinkering with AI and building skills
 
 ### [rtk](https://github.com/rtk-ai/rtk) ![stars](https://badgen.net/github/stars/rtk-ai/rtk?color=yellow&label=stars)
 - Fixed [#3560](https://github.com/rtk-ai/rtk/pull/3560): three output-compaction filters (spring-boot, liquibase, ssh) had regexes so broad they silently mangled unrelated commands — e.g. any `java -jar` file got Spring-only filtering, `rm -rf /opt/liquibase` triggered liquibase compaction, and `ssh-keygen`/`ssh-add` got caught by a plain `ssh` filter
+- Fixed [#3344](https://github.com/rtk-ai/rtk/pull/3344): `rtk gain` counted parse failures as token savings, and `playwright`/`vitest` could show empty output when a command wrote only to stderr; failures are now tracked as failures and the fallback keeps the combined output.
 
 ### [impeccable](https://github.com/pbakaus/impeccable) ![stars](https://badgen.net/github/stars/pbakaus/impeccable?color=yellow&label=stars)
 - Diagnosed [#551](https://github.com/pbakaus/impeccable/pull/551): `hooks reset` silently re-armed a disabled hook because it deleted the config but left provider manifests wired — fix credited by name in the merged follow-up ([#668](https://github.com/pbakaus/impeccable/pull/668))
