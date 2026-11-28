@@ -2,7 +2,7 @@
 
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-som--samantray-blue?style=flat&logo=linkedin)](https://linkedin.com/in/som-samantray)
 
-Tinkering with AI and building skills
+Opensource Contributor tinkering with ai...
 
 ## Building:
 
