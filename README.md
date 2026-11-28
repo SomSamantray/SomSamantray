@@ -367,3 +367,6 @@ Opensource Contributor tinkering with ai...
 ### [Nextcloud Documentation](https://github.com/nextcloud/documentation) ![stars](https://badgen.net/github/stars/nextcloud/documentation?color=yellow&label=stars)
 - Fixed [#15422](https://github.com/nextcloud/documentation/pull/15422): the WebDAV client docs named the auto-create-folders upload header `X-NC-WebDAV-AutoMkcol`, but the server only reads `X-NC-WebDAV-Auto-Mkcol`, so clients following the docs got a 403 on uploads into missing parent directories; corrected in both the request-methods and request-headers tables.
 
+### [Slidev](https://github.com/slidevjs/slidev) ![stars](https://badgen.net/github/stars/slidevjs/slidev?color=yellow&label=stars)
+- Fixed [#2714](https://github.com/slidevjs/slidev/pull/2714): custom directives registered in `setup/main.ts` failed with "Failed to resolve directive" on a cold dev-server start until the setup file was resaved, because Vite 8 no longer substituted `__DEV__` and `__SLIDEV_*` flags in `.ts`/`.js` client modules and router creation threw before the setup ran; the `slidev:flags` plugin now replaces them in dev, with unit tests.
+
